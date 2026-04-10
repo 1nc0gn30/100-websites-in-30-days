@@ -1,0 +1,195 @@
+{
+  "challenge": {
+    "title": "100 Websites in 30 Days",
+    "startDate": "2026-03-24T00:00:00Z",
+    "endDate": "2026-04-23T23:59:59Z",
+    "targetCount": 100
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "The Con Archive",
+      "date": "2026-03-24T10:00:00Z",
+      "url": "https://theconarchive.nealfrazier.tech",
+      "description": "A digital archive for convention enthusiasts and collectors.",
+      "tags": ["archive", "community", "web"],
+      "thumbnail": "https://theconarchive.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 2,
+      "title": "Mundane Oracle",
+      "date": "2026-03-24T14:30:00Z",
+      "url": "https://mundaneoracle.nealfrazier.tech",
+      "description": "An AI-powered oracle for the everyday and the ordinary.",
+      "tags": ["ai", "oracle", "fun"],
+      "thumbnail": "https://mundaneoracle.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 3,
+      "title": "One Focus",
+      "date": "2026-03-25T09:00:00Z",
+      "url": "https://onefocus.nealfrazier.tech",
+      "description": "A minimalist productivity tool to help you stay on track.",
+      "tags": ["productivity", "minimalist", "tool"],
+      "thumbnail": "https://onefocus.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 4,
+      "title": "Duck Duck Ducky",
+      "date": "2026-03-25T13:00:00Z",
+      "url": "https://duckduckducky.nealfrazier.tech",
+      "description": "A playful web experience featuring everyone's favorite rubber duck.",
+      "tags": ["playful", "interactive", "web"],
+      "thumbnail": "https://duckduckducky.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 5,
+      "title": "Aether",
+      "date": "2026-03-26T11:00:00Z",
+      "url": "https://aether.nealfrazier.tech",
+      "description": "A conceptual space for digital exploration and discovery.",
+      "tags": ["exploration", "digital", "space"],
+      "thumbnail": "https://aether.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 6,
+      "title": "Lumina",
+      "date": "2026-03-26T16:00:00Z",
+      "url": "https://lumina.757tech.pro",
+      "description": "Illuminating the path for tech professionals in the 757 area.",
+      "tags": ["tech", "community", "757"],
+      "thumbnail": "https://lumina.757tech.pro/og-image.png"
+    },
+    {
+      "id": 7,
+      "title": "SEO Trend Tool",
+      "date": "2026-03-27T10:00:00Z",
+      "url": "https://seo-trend-tool.streamlit.app",
+      "description": "A powerful SEO analysis tool built with Streamlit.",
+      "tags": ["seo", "analytics", "streamlit"],
+      "thumbnail": "https://api.microlink.io?url=https://seo-trend-tool.streamlit.app&screenshot=true&embed=screenshot.url"
+    },
+    {
+      "id": 8,
+      "title": "The Gazette Hub",
+      "date": "2026-03-27T15:00:00Z",
+      "url": "https://thegazettehub.nealfrazier.tech",
+      "description": "A centralized hub for news and community updates.",
+      "tags": ["news", "hub", "community"],
+      "thumbnail": "https://thegazettehub.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 9,
+      "title": "Cats App",
+      "date": "2026-03-28T09:00:00Z",
+      "url": "https://cats.nealfrazier.tech",
+      "description": "Everything you need for your feline friends in one place.",
+      "tags": ["cats", "pets", "app"],
+      "thumbnail": "https://cats.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 10,
+      "title": "Winner Winner Chicken Dinner",
+      "date": "2026-03-28T14:00:00Z",
+      "url": "https://winnerwinnerchickendinner.nealfrazier.tech",
+      "description": "A fun game-inspired landing page for winners.",
+      "tags": ["gaming", "fun", "landing"],
+      "thumbnail": "https://winnerwinnerchickendinner.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 11,
+      "title": "Hack The World",
+      "date": "2026-03-29T11:00:00Z",
+      "url": "https://hacktheworld.nealfrazier.tech",
+      "description": "Exploring the boundaries of cybersecurity and ethical hacking.",
+      "tags": ["security", "hacking", "tech"],
+      "thumbnail": "https://hacktheworld.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 12,
+      "title": "Melt The Machine",
+      "date": "2026-03-29T16:00:00Z",
+      "url": "https://meltthemachine.nealfrazier.tech",
+      "description": "Pushing hardware to its limits with high-performance code.",
+      "tags": ["performance", "hardware", "code"],
+      "thumbnail": "https://meltthemachine.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 13,
+      "title": "SF Arcade",
+      "date": "2026-03-30T10:00:00Z",
+      "url": "https://sf-arcade.nealfrazier.tech",
+      "description": "A retro-inspired arcade experience for the modern web.",
+      "tags": ["arcade", "retro", "gaming"],
+      "thumbnail": "https://sf-arcade.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 14,
+      "title": "Thumb Journey",
+      "date": "2026-03-30T15:00:00Z",
+      "url": "https://thumb-journey.nealfrazier.tech",
+      "description": "A visual journey through the lens of mobile photography.",
+      "tags": ["photography", "mobile", "journey"],
+      "thumbnail": "https://thumb-journey.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 15,
+      "title": "Stoicism",
+      "date": "2026-03-31T09:00:00Z",
+      "url": "https://stoicism.nealfrazier.tech",
+      "description": "Daily wisdom and reflections from the Stoic masters.",
+      "tags": ["philosophy", "stoicism", "wisdom"],
+      "thumbnail": "https://stoicism.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 16,
+      "title": "Audio Cypher",
+      "date": "2026-03-31T14:00:00Z",
+      "url": "https://audiocypher.757tech.pro",
+      "description": "A collaborative platform for audio creators and producers.",
+      "tags": ["audio", "music", "757"],
+      "thumbnail": "https://audiocypher.757tech.pro/og-image.png"
+    },
+    {
+      "id": 17,
+      "title": "Cyber Turtle",
+      "date": "2026-04-01T11:00:00Z",
+      "url": "https://cyberturtle.nealfrazier.tech",
+      "description": "The slowest turtle in the fastest digital world.",
+      "tags": ["cyber", "fun", "tech"],
+      "thumbnail": "https://cyberturtle.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 18,
+      "title": "Nexus",
+      "date": "2026-04-01T16:00:00Z",
+      "url": "https://nexus.757tech.pro",
+      "description": "Connecting the dots in the 757 tech ecosystem.",
+      "tags": ["nexus", "tech", "757"],
+      "thumbnail": "https://nexus.757tech.pro/og-image.png"
+    },
+    {
+      "id": 19,
+      "title": "Aura Map",
+      "date": "2026-04-02T10:00:00Z",
+      "url": "https://auramap.757tech.pro",
+      "description": "Visualizing the energy and vibe of the local tech scene.",
+      "tags": ["aura", "map", "757"],
+      "thumbnail": "https://auramap.757tech.pro/og-image.png"
+    }
+  ],
+  "socialPosts": [
+    {
+      "platform": "X",
+      "url": "#",
+      "content": "Day 1 of 100! Launched 'The Con Archive' and 'Mundane Oracle'. The journey begins! #100Websites #BuildInPublic",
+      "date": "2026-03-24T18:00:00Z"
+    },
+    {
+      "platform": "X",
+      "url": "#",
+      "content": "Just hit 19 projects in 10 days! The momentum is real. #100Websites #AI",
+      "date": "2026-04-02T18:00:00Z"
+    }
+  ]
+}
