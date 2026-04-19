@@ -1,21 +1,35 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 100 Websites in 30 Days
 
-# Run and deploy your AI Studio app
+Official tracker site for Neal Frazier's public build challenge.
 
-This contains everything you need to run your app locally.
+Live domain: `https://100WebsitesIn30Days.nealfrazier.tech`
 
-View your app in AI Studio: https://ai.studio/apps/bda16681-c276-4d0d-b9e8-317af0dbb74b
+## Stack
+- React + Vite
+- Tailwind CSS
+- Motion
+- Netlify (deploy + forms)
 
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
+## Local Development
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
-# 100-websites-in-30-days
+   - `npm install`
+2. Run dev server:
+   - `npm run dev`
+3. Build production output:
+   - `npm run build`
+
+## Deployment (Netlify)
+- Build command: `npm run build`
+- Publish directory: `dist`
+- Redirect rules: `public/_redirects`
+- Netlify config: `netlify.toml`
+
+## SEO + Crawl
+- Canonical base: `https://100WebsitesIn30Days.nealfrazier.tech`
+- Sitemap: `/sitemap.xml`
+- Robots: `/robots.txt`
+
+## Project Structure
+- `src/` app code
+- `public/` static assets and crawl files
+- `scripts/generate-prerender-manifest.ts` route metadata for prerendered pages

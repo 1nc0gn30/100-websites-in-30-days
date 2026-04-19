@@ -14,6 +14,8 @@ import {
   ArrowLeft,
   ChevronRight
 } from "lucide-react";
+import visionaryImage from "../../neal-avatar.jpg";
+import ChallengeCTA from "./ChallengeCTA";
 
 interface AboutPageProps {
   onBack: () => void;
@@ -53,8 +55,38 @@ export default function AboutPage({ onBack }: AboutPageProps) {
             </div>
             <h3 className="text-3xl font-bold mb-4">Neal Frazier</h3>
             <p className="text-google-gray leading-relaxed text-lg">
-              A T-shaped self-taught developer and Virginia Beach native. I'm a builder, a musician, and a skateboarder who believes that in the age of AI, there's no excuse not to create.
+              Virginia Beach builder with a T-shaped background across product, security, and automation. I care about practical execution: ship useful work, document the process, and make the path easier for the next person.
             </p>
+            <div className="mt-6 flex justify-center">
+              <div className="rounded-full p-1.5 bg-gradient-to-br from-google-blue via-google-green to-google-red shadow-lg">
+                <div className="rounded-full p-1.5 bg-white">
+                  <img
+                    src={visionaryImage}
+                    alt="Neal Frazier"
+                    className="w-44 h-44 md:w-52 md:h-52 object-cover rounded-full border border-[#DADCE0]"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="mt-6 space-y-3">
+              <div className="rounded-xl border border-[#DADCE0] bg-[#F8F9FA] px-4 py-3">
+                <p className="text-sm text-[#3C4043] italic leading-relaxed">
+                  "Build in public. Keep scope tight. Ship daily. Let momentum do the heavy lifting."
+                </p>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                <div className="rounded-lg border border-gray-100 bg-white px-3 py-2 text-xs text-google-gray">
+                  <span className="font-semibold text-google-blue">Operating Mode:</span> Secure by default
+                </div>
+                <div className="rounded-lg border border-gray-100 bg-white px-3 py-2 text-xs text-google-gray">
+                  <span className="font-semibold text-google-red">Build Cadence:</span> Daily shipping
+                </div>
+                <div className="rounded-lg border border-gray-100 bg-white px-3 py-2 text-xs text-google-gray">
+                  <span className="font-semibold text-google-green">North Star:</span> Useful outcomes
+                </div>
+              </div>
+            </div>
           </div>
           <div className="flex gap-6 mt-8">
             <div className="flex flex-col items-center gap-1 group">
@@ -73,23 +105,56 @@ export default function AboutPage({ onBack }: AboutPageProps) {
         </BentoCard>
 
         {/* Professional Hat */}
-        <BentoCard className="md:col-span-1 lg:col-span-2" delay={0.2}>
+        <BentoCard className="md:col-span-3 lg:col-span-2" delay={0.2}>
           <div className="flex items-center gap-2 text-google-red mb-4">
             <Shield className="w-5 h-5" />
             <span className="text-xs font-mono uppercase tracking-wider font-bold">Professional Hat</span>
           </div>
-          <h3 className="text-xl font-bold mb-3">Security Analysis & Automation</h3>
-          <p className="text-sm text-google-gray mb-4">
-            Maxx Potential apprentice for 7 months, contracted as a Security Analyst. I build Power Apps and PowerShell tools to automate SOX compliance.
+          <h3 className="text-xl font-bold mb-1">Security Analysis & AI Deployment Specialist</h3>
+          <p className="text-xs font-mono uppercase tracking-wide text-google-gray mb-4">
+            Cybersecurity Analyst | Netlify Deployment Architect | AI Implementation Lead
           </p>
-          <div className="space-y-2">
-            <div className="flex items-center gap-3 text-xs text-google-gray bg-gray-50 p-2 rounded-lg border border-gray-100">
-              <Terminal className="w-4 h-4 text-google-blue" />
-              SOX Compliance Automation (Daily - Annual)
+          <p className="text-sm text-google-gray mb-4 leading-relaxed">
+            High-velocity developer and entrepreneur specializing in stripping away the complexity of technical deployments. I bridge the gap between enterprise-grade security and rapid-fire production, making it "damn easy" for organizations to launch secure sites and for individuals to master the AI revolution.
+          </p>
+          <div className="space-y-4 text-sm text-google-gray">
+            <div>
+              <h4 className="text-xs font-mono uppercase tracking-wide text-google-red mb-1">The Mission: Deployment & Empowerment</h4>
+              <p className="leading-relaxed">
+                I focus on two core pillars: Velocity and Mastery. Whether I am automating a Fortune 500 compliance audit or building a decentralized web app, my goal is to eliminate friction. I do not just ship code; I build workflows that help others become great with the same tools.
+              </p>
             </div>
-            <div className="flex items-center gap-3 text-xs text-google-gray bg-gray-50 p-2 rounded-lg border border-gray-100">
-              <Briefcase className="w-4 h-4 text-google-red" />
-              ServiceNow & SharePoint Specialist
+            <div>
+              <h4 className="text-xs font-mono uppercase tracking-wide text-google-red mb-2">Core Competencies</h4>
+              <div className="space-y-2">
+                <div className="flex items-start gap-3 text-xs text-google-gray bg-gray-50 p-3 rounded-lg border border-gray-100">
+                  <Terminal className="w-4 h-4 text-google-blue mt-0.5 shrink-0" />
+                  Rapid Web Deployment: Netlify Shippers Program participant using a no-Next.js architecture (Astro, Vite, React) to launch high-performance, secure sites fast.
+                </div>
+                <div className="flex items-start gap-3 text-xs text-google-gray bg-gray-50 p-3 rounded-lg border border-gray-100">
+                  <Briefcase className="w-4 h-4 text-google-red mt-0.5 shrink-0" />
+                  Security & Compliance Automation: SOX and logical access specialist building PowerShell and Power Apps workflows for audit-ready reliability.
+                </div>
+                <div className="flex items-start gap-3 text-xs text-google-gray bg-gray-50 p-3 rounded-lg border border-gray-100">
+                  <BrainCircuit className="w-4 h-4 text-google-green mt-0.5 shrink-0" />
+                  AI Orchestration & Mentorship: local AI implementation via Ollama and Docker, with secure team onboarding for practical adoption.
+                </div>
+              </div>
+            </div>
+            <div>
+              <h4 className="text-xs font-mono uppercase tracking-wide text-google-red mb-1">Professional Impact</h4>
+              <p className="leading-relaxed text-xs">
+                Built the "100 Websites" protocol for high-scale Netlify edge deployment, reduced compliance friction through automation-first analyst workflows, and integrated Web3 and privacy-focused infrastructure into accessible business models.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-xs font-mono uppercase tracking-wide text-google-red mb-1">The Entrepreneurial Edge</h4>
+              <p className="leading-relaxed text-xs">
+                Operating out of Virginia Beach, I run service-based and digital ventures with a hacker mindset: optimize, automate, and scale.
+              </p>
+              <p className="text-xs font-medium mt-2">
+                Digital HQ: nealfrazier.tech | 757tech.pro
+              </p>
             </div>
           </div>
         </BentoCard>
@@ -101,6 +166,9 @@ export default function AboutPage({ onBack }: AboutPageProps) {
             <span className="text-xs font-mono uppercase tracking-wider font-bold">AI Stack</span>
           </div>
           <h3 className="text-xl font-bold mb-4">Everyday AI Integration</h3>
+          <p className="text-sm text-google-gray mb-4">
+            Tools are shared openly here. If you see something useful, you can start with the same stack today.
+          </p>
           <div className="grid grid-cols-2 gap-3">
             {['Gemini', 'Codex', 'Ollama', 'LocalAI', 'Netlify Agents'].map((tech) => (
               <div key={tech} className="flex items-center gap-2 text-xs text-google-gray border border-gray-100 p-2 rounded-xl bg-gray-50/50">
@@ -140,7 +208,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
             <span className="text-xs font-mono uppercase tracking-wider font-bold">The Challenge</span>
           </div>
           <p className="text-sm text-google-gray leading-relaxed italic">
-            "Ultimately it's up to you what you want to accomplish. There is no reason not to build an app or website today."
+            "Set a clear target, keep the scope small, and ship daily. Momentum beats perfection."
           </p>
           <div className="mt-4 pt-4 border-t border-google-blue/10 flex items-center justify-between">
             <p className="text-[10px] font-bold text-google-blue uppercase">Netlify AI Shippers Program</p>
@@ -155,6 +223,15 @@ export default function AboutPage({ onBack }: AboutPageProps) {
         </BentoCard>
       </div>
 
+      <ChallengeCTA
+        title="Take The 100-in-30 Challenge"
+        description="You do not need perfect tools to start. Commit to daily shipping, keep your scope tight, and publish every win. The reps compound faster than you think."
+        primaryLabel="I'm In - Start Now"
+        secondaryLabel="See Builder Resources"
+        onPrimary={() => (window as any).setActiveTab("contact")}
+        onSecondary={() => (window as any).setActiveTab("resources")}
+      />
+
       {/* Main CTA for Article */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
@@ -165,7 +242,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
         <div className="max-w-xl text-center md:text-left">
           <h3 className="text-3xl font-bold mb-4">Want to know the full story?</h3>
           <p className="text-indigo-100 text-lg opacity-90">
-            I've written a detailed article about my journey from a self-taught enthusiast to a security analyst and AI builder. It's a deep dive into the "T-Shaped" philosophy.
+            I documented the full story from self-taught experiments to security and AI product work, including what worked, what failed, and what I would repeat.
           </p>
         </div>
         <button 

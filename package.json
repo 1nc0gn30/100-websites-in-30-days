@@ -8,7 +8,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "clean": "rm -rf dist",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "prebuild": "tsx scripts/generate-prerender-manifest.ts",
+    "prerender:manifest": "tsx scripts/generate-prerender-manifest.ts"
   },
   "dependencies": {
     "@google/genai": "^1.29.0",

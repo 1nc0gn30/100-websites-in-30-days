@@ -2,88 +2,172 @@ import React from "react";
 import { motion } from "motion/react";
 import { 
   ArrowLeft, 
+  Calendar,
   Clock, 
   Share2, 
-  Bookmark, 
   Quote as QuoteIcon,
   Terminal,
-  Shield,
-  Music,
   Zap,
-  Globe,
-  Rocket,
-  Waves,
-  Activity,
-  Apple,
-  Briefcase,
-  BrainCircuit,
-  ChevronRight,
   Camera
 } from "lucide-react";
+import avatarImage from "../../neal-avatar.jpg";
+import configData from "../challenge-config.json";
 
 interface ArticlePageProps {
   onBack: () => void;
 }
 
+const DAY_IMAGE_MODULES = import.meta.glob("../../day*.{png,jpg,jpeg,webp,avif,gif}", {
+  eager: true,
+  import: "default",
+}) as Record<string, string>;
+
+const EXT_PRIORITY = ["png", "jpg", "jpeg", "webp", "avif", "gif"] as const;
+
+const DAY_IMAGES: Partial<Record<number, string>> = Object.values(DAY_IMAGE_MODULES).reduce(
+  (acc, imagePath) => {
+    const match = imagePath.match(/day(\d+)(?:-[^/.]+)?\.(png|jpg|jpeg|webp|avif|gif)$/i);
+    if (!match) return acc;
+    const day = Number(match[1]);
+    const ext = match[2].toLowerCase();
+    const current = acc[day];
+
+    if (!current) {
+      acc[day] = imagePath;
+      return acc;
+    }
+
+    const currentExt = current.match(/\.(png|jpg|jpeg|webp|avif|gif)$/i)?.[1]?.toLowerCase() ?? "gif";
+    if (EXT_PRIORITY.indexOf(ext as (typeof EXT_PRIORITY)[number]) < EXT_PRIORITY.indexOf(currentExt as (typeof EXT_PRIORITY)[number])) {
+      acc[day] = imagePath;
+    }
+    return acc;
+  },
+  {} as Partial<Record<number, string>>
+);
+
+const buildImageIdea = (day: number, title: string, retrospect: string) => {
+  const styles = [
+    "editorial documentary photo",
+    "cinematic natural light shot",
+    "moody workstation capture",
+    "clean product-style composition",
+    "street-level lifestyle frame",
+  ];
+  const lenses = ["35mm look", "50mm look", "wide environmental framing", "tight portrait crop"];
+  const accents = [
+    "subtle grain",
+    "high-detail texture",
+    "warm dusk tones",
+    "cool neon highlights",
+    "balanced daylight color",
+  ];
+
+  const style = styles[(day - 1) % styles.length];
+  const lens = lenses[(day + 1) % lenses.length];
+  const accent = accents[(day + 2) % accents.length];
+
+  return `Day ${day} visual prompt: ${title}. Scene inspired by: ${retrospect} Composition: ${style}, ${lens}, ${accent}.`;
+};
+
+const QUOTES = [
+  { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+  { text: "It always seems impossible until it's done.", author: "Nelson Mandela" },
+  { text: "Don't count the days, make the days count.", author: "Muhammad Ali" },
+  { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
+  { text: "Your time is limited, so don't waste it living someone else's life.", author: "Steve Jobs" },
+  { text: "Hardships often prepare ordinary people for an extraordinary destiny.", author: "C.S. Lewis" },
+  { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+  { text: "Everything you've ever wanted is on the other side of fear.", author: "George Addair" },
+  { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill" },
+  { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+];
+
 const DAYS_CONTENT = Array.from({ length: 30 }, (_, i) => {
   const day = i + 1;
-  const quotes = [
-    { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
-    { text: "It always seems impossible until it's done.", author: "Nelson Mandela" },
-    { text: "Don't count the days, make the days count.", author: "Muhammad Ali" },
-    { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
-    { text: "Your time is limited, so don't waste it living someone else's life.", author: "Steve Jobs" },
-    { text: "Hardships often prepare ordinary people for an extraordinary destiny.", author: "C.S. Lewis" },
-    { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
-    { text: "Everything you've ever wanted is on the other side of fear.", author: "George Addair" },
-    { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill" },
-    { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" }
-  ];
+  const dayStart = new Date(configData.challenge.startDate);
+  dayStart.setUTCDate(dayStart.getUTCDate() + i);
+  const dayEnd = new Date(dayStart);
+  dayEnd.setUTCDate(dayEnd.getUTCDate() + 1);
 
-  const retrospects = [
-    "Hit the Virginia Beach boardwalk today. The ocean air clears the mind like nothing else. Skateboarding is the ultimate reset.",
-    "Deep in SOX compliance land at work. PowerApps is saving us hours of manual labor. It's rewarding to see the code actually work in production.",
-    "Spent the evening at the studio. Music production and coding share the same DNA—it's all about layers and rhythm.",
-    "Valet Ninjas is scaling. Managing a team while building 100 sites is a lesson in extreme time management.",
-    "Fresh fruit for breakfast. Ripe mangoes and berries. Fuel for the brain. Pushing through the Day 10 slump.",
-    "Tech Pro is starting to take shape. The vision is becoming clearer every day. AI is the force multiplier.",
-    "Skating at the local park. Landed a kickflip I've been struggling with. Persistence in skating translates directly to persistence in debugging.",
-    "Meeting with the Netlify AI Shippers. The energy is infectious. We're all building the future together.",
-    "Late night session with Ollama. Running local AI models is a game changer for privacy and speed.",
-    "Reflecting on the 'T-Shaped' path. The breadth of experience is what makes the depth meaningful."
-  ];
+  const dayLabel = dayStart.toLocaleDateString("en-US", {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+  const weekday = dayStart.getUTCDay();
+  const isWeekend = weekday === 0 || weekday === 6;
+  const thinkTankDay = day % 2 === 0;
+  const workBlock = isWeekend
+    ? "Weekend structure today: no 9-5 contractor block, focus shifted to challenge builds and business systems."
+    : "Worked 9am-5pm at MaxxPotential as a private-contractor Security Analyst, then moved into evening build mode.";
+  const catSittingBlock = "Cat-sitting stayed part of the daily rhythm and kept the schedule grounded between work and shipping blocks.";
+  const thinkTankBlock = thinkTankDay
+    ? "Met at a cafe/workspace for think-tank time on real businesses launching this year, then translated those notes into product scope."
+    : "Ran a focused solo execution block after work, tightening scope and moving directly into build + publish reps.";
+  const skateBlock = isWeekend
+    ? "Weekend note: if weather held, I got skateboard sessions in; that includes this weekend cadence and the prior weekend rhythm."
+    : "Skate sessions were held for weekend weather windows so weekday momentum stayed clean.";
 
-  const imageIdeas = [
-    "A shot of my desk with multiple monitors, a skateboard leaning against the wall, and a bowl of fresh fruit.",
-    "A close-up of a terminal screen running a complex PowerShell script for SOX compliance.",
-    "A sunset photo from the Virginia Beach oceanfront, reflecting on the day's progress.",
-    "A photo of my music production setup—MIDI controllers and a DAW open next to VS Code.",
-    "A candid shot of me skating at a local park, capturing the 'flow state'.",
-    "A screenshot of a successful deployment on Netlify, the 'Site is live' message.",
-    "A photo of a whiteboard covered in architectural diagrams for Tech Pro.",
-    "A macro shot of a perfectly ripe piece of fruit, symbolizing the 'fruits of labor'.",
-    "A group photo (or zoom screenshot) with other AI Shippers, showing the community.",
-    "A minimalist shot of my 'T-Shaped' philosophy sketched out in a notebook."
-  ];
+  const shippedSites = configData.projects
+    .filter((project) => {
+      const posted = new Date(project.date);
+      return posted >= dayStart && posted < dayEnd;
+    })
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+  const shippedTitles = shippedSites.map((site) => site.title);
+  const shipBlock =
+    shippedTitles.length > 0
+      ? `Shipped site${shippedTitles.length > 1 ? "s" : ""} today: ${shippedTitles.join(", ")}. Logged the public progress on X as part of the build-in-public record.`
+      : "No new site was posted this day; the focus was system work, planning, and preparing the next release wave.";
+
+  const dayTitle = `Day ${day}: ${isWeekend ? "Weekend Shipping + Systems" : "Workday Execution + Night Build"} (${dayLabel})`;
+  const content = `${workBlock} ${catSittingBlock} ${thinkTankBlock} ${shipBlock}`;
+  const retrospect = `${isWeekend ? "Weekend cadence emphasized long creative blocks and deeper experimentation." : "Workday cadence stayed strict: professional delivery first, challenge output second, then public documentation."} ${skateBlock}`;
 
   return {
     day,
-    title: `Day ${day}: ${[
-      "The Spark", "AI Integration", "The Flow State", "Scaling Systems", "Compliance & Code",
-      "The Studio Session", "Boardwalk Reflections", "Community Power", "Local Intelligence", "The Halfway Mark",
-      "Pushing Boundaries", "The Pivot", "Automation Mastery", "Security First", "Entrepreneurial Grit",
-      "The Creative Spark", "Technical Debt", "The Breakthrough", "System Architecture", "The Final Sprint",
-      "Refining the Vision", "User Experience", "Data Integrity", "The AI Exoskeleton", "Community Feedback",
-      "The Home Stretch", "Polishing the Gems", "The Legacy", "The Launchpad", "The New Beginning"
-    ][i] || `Progress Log ${day}`}`,
-    content: `This was a day of intense focus. I spent the morning refining the core logic of the project, ensuring that every function was optimized for performance. In the age of AI, we often forget that the underlying architecture still needs to be sound. I used Gemini to help me refactor a particularly messy piece of state management, and the result was a 30% reduction in code complexity.`,
-    retrospect: retrospects[i % retrospects.length],
-    quote: quotes[i % quotes.length],
-    imageIdea: imageIdeas[i % imageIdeas.length]
+    title: dayTitle,
+    content,
+    retrospect,
+    quote: QUOTES[i % QUOTES.length],
+    imageIdea: buildImageIdea(day, dayTitle, retrospect),
+    shippedTitles,
   };
 });
 
 export default function ArticlePage({ onBack }: ArticlePageProps) {
+  const { challenge } = configData;
+  const now = new Date();
+  const challengeStart = new Date(challenge.startDate);
+  const challengeEnd = new Date(challenge.endDate);
+  const msPerDay = 1000 * 60 * 60 * 24;
+  const totalChallengeDays = DAYS_CONTENT.length;
+  const visibleDayCount = Math.max(
+    0,
+    Math.min(
+      totalChallengeDays,
+      Math.ceil((Math.min(now.getTime(), challengeEnd.getTime()) - challengeStart.getTime()) / msPerDay)
+    )
+  );
+  const visibleDays = DAYS_CONTENT.slice(0, visibleDayCount);
+
+  const handleHoloMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    const el = event.currentTarget;
+    const rect = el.getBoundingClientRect();
+    const mx = ((event.clientX - rect.left) / rect.width) * 100;
+    const my = ((event.clientY - rect.top) / rect.height) * 100;
+    el.style.setProperty("--mx", `${Math.max(0, Math.min(100, mx)).toFixed(2)}%`);
+    el.style.setProperty("--my", `${Math.max(0, Math.min(100, my)).toFixed(2)}%`);
+  };
+
+  const handleHoloLeave = (event: React.MouseEvent<HTMLDivElement>) => {
+    const el = event.currentTarget;
+    el.style.setProperty("--mx", "50%");
+    el.style.setProperty("--my", "50%");
+  };
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -136,7 +220,15 @@ export default function ArticlePage({ onBack }: ArticlePageProps) {
 
       {/* Article Body */}
       <div className="space-y-24">
-        {DAYS_CONTENT.map((day, idx) => (
+        {visibleDays.length === 0 && (
+          <div className="google-card rounded-3xl border border-[#DADCE0] bg-white p-8 text-center">
+            <h2 className="text-2xl font-bold text-google-black mb-2">Journal unlocks at challenge start</h2>
+            <p className="text-google-gray">
+              Entries appear automatically as each challenge day passes.
+            </p>
+          </div>
+        )}
+        {visibleDays.map((day, idx) => (
           <motion.section 
             key={day.day}
             initial={{ opacity: 0, y: 30 }}
@@ -165,19 +257,82 @@ export default function ArticlePage({ onBack }: ArticlePageProps) {
                 <p>{day.content}</p>
               </div>
 
-              {/* Placeholder Image */}
+              <div className="flex flex-wrap gap-2">
+                {day.shippedTitles.length > 0 ? (
+                  day.shippedTitles.map((title) => (
+                    <span
+                      key={`${day.day}-${title}`}
+                      className="inline-flex items-center rounded-full border border-google-blue/25 bg-google-blue/10 px-3 py-1 text-xs font-medium text-google-blue"
+                    >
+                      {title}
+                    </span>
+                  ))
+                ) : (
+                  <span className="inline-flex items-center rounded-full border border-[#DADCE0] bg-[#F8F9FA] px-3 py-1 text-xs font-medium text-google-gray">
+                    System and planning day
+                  </span>
+                )}
+              </div>
+
+              {/* Day Image */}
               <div className="group relative">
-                <div className="aspect-video bg-gray-100 rounded-3xl overflow-hidden border border-gray-200 flex flex-col items-center justify-center text-center p-8 transition-all group-hover:bg-gray-50">
-                  <Camera className="w-12 h-12 text-gray-300 mb-4 group-hover:scale-110 transition-transform" />
-                  <p className="text-sm text-gray-400 font-medium max-w-sm italic">
-                    "{day.imageIdea}"
-                  </p>
-                  <div className="absolute bottom-4 right-4 px-3 py-1 bg-white/80 backdrop-blur-sm rounded-full text-[10px] font-bold text-google-gray border border-gray-100">
-                    PLACEHOLDER IMAGE
+                {DAY_IMAGES[day.day] ? (
+                  <motion.div
+                    initial={{ opacity: 0.88, y: 22, scale: 0.985, rotateX: 6 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
+                    viewport={{ once: false, margin: "-10% 0px -10% 0px" }}
+                    transition={{ duration: 0.65, ease: "easeOut" }}
+                    className="journal-image-shell journal-holo-shell aspect-video"
+                    onMouseMove={handleHoloMove}
+                    onMouseLeave={handleHoloLeave}
+                  >
+                    <img
+                      src={DAY_IMAGES[day.day]}
+                      alt={`Day ${day.day} journal visual`}
+                      className="journal-image-base"
+                      loading={idx < 2 ? "eager" : "lazy"}
+                    />
+                    <img
+                      src={DAY_IMAGES[day.day]}
+                      alt=""
+                      aria-hidden="true"
+                      className="journal-image-glitch journal-image-glitch-red"
+                      loading="lazy"
+                    />
+                    <img
+                      src={DAY_IMAGES[day.day]}
+                      alt=""
+                      aria-hidden="true"
+                      className="journal-image-glitch journal-image-glitch-cyan"
+                      loading="lazy"
+                    />
+                    <img
+                      src={avatarImage}
+                      alt=""
+                      aria-hidden="true"
+                      className="journal-avatar-datamosh"
+                      loading="lazy"
+                    />
+                    <div className="journal-image-vignette" />
+                    <div className="absolute bottom-4 right-4 px-3 py-1 bg-black/55 backdrop-blur-sm rounded-full text-[10px] font-bold text-white/90 border border-white/20">
+                      DAY {day.day} CAPTURE
+                    </div>
+                  </motion.div>
+                ) : (
+                  <div className="aspect-video bg-gray-100 rounded-3xl overflow-hidden border border-gray-200 flex flex-col items-center justify-center text-center p-8 transition-all group-hover:bg-gray-50">
+                    <Camera className="w-12 h-12 text-gray-300 mb-4 group-hover:scale-110 transition-transform" />
+                    <p className="text-sm text-gray-400 font-medium max-w-sm italic">
+                      "{day.imageIdea}"
+                    </p>
+                    <div className="absolute bottom-4 right-4 px-3 py-1 bg-white/80 backdrop-blur-sm rounded-full text-[10px] font-bold text-google-gray border border-gray-100">
+                      PLACEHOLDER IMAGE
+                    </div>
                   </div>
-                </div>
+                )}
                 <p className="mt-3 text-xs text-google-gray text-center italic">
-                  Caption: Idea for Day {day.day} visual — {day.imageIdea.split('—')[0]}
+                  {DAY_IMAGES[day.day]
+                    ? `Caption: Day ${day.day} field note visual`
+                    : `Caption: Idea for Day ${day.day} visual — ${day.imageIdea.split("—")[0]}`}
                 </p>
               </div>
 
@@ -221,6 +376,3 @@ export default function ArticlePage({ onBack }: ArticlePageProps) {
     </motion.div>
   );
 }
-
-// Missing import fix
-import { Calendar } from "lucide-react";

@@ -3,11 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <title>100 Websites in 30 Days by Neal Frazier</title>
+    <meta
+      name="description"
+      content="Live tracker for Neal Frazier's 100 Websites in 30 Days build sprint. Browse every shipped site, stats, links, and lessons in one place."
+    />
+    <link rel="canonical" href="https://100WebsitesIn30Days.nealfrazier.tech/" />
+    <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="100 Websites in 30 Days by Neal Frazier" />
+    <meta
+      property="og:description"
+      content="Live tracker for the 100 Websites in 30 Days challenge with shipped projects, progress, and public build notes."
+    />
+    <meta property="og:url" content="https://100WebsitesIn30Days.nealfrazier.tech/" />
+    <meta property="og:image" content="https://100WebsitesIn30Days.nealfrazier.tech/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="100 Websites in 30 Days by Neal Frazier" />
+    <meta
+      name="twitter:description"
+      content="Browse every shipped site and follow the build sprint in public."
+    />
+    <meta name="twitter:image" content="https://100WebsitesIn30Days.nealfrazier.tech/og-image.png" />
   </head>
   <body>
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <input name="bot-field" />
+      <input name="name" type="text" />
+      <input name="email" type="email" />
+      <input name="company" type="text" />
+      <textarea name="message"></textarea>
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

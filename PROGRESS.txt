@@ -1,0 +1,496 @@
+Start 03/24/2026
+
+#1 – The Con Archive
+URL: https://theconarchive.nealfrazier.tech/
+Description: A grifter wiki. Capturing historical grifters and cons throughout history.
+Posted: Tue, 24 Mar 2026 17:23:12 UTC
+X Post: https://x.com/NealFrazierTech/status/2036494051046727791
+Built with: Google AI Studio + Netlify
+
+#2 – Mundane Oracle
+URL: https://mundaneoracle.nealfrazier.tech/
+Description: The everyday app that makes your trivial decisions using absurdly dramatic cosmic reasoning. Made for the overthinker. Built without overthinking.
+Posted: Tue, 24 Mar 2026 22:34:13 UTC
+X Post: https://x.com/NealFrazierTech/status/2036572320492364125
+Built with: Google AI Studio + Netlify
+
+#3 – OneFocus
+URL: https://onefocus.nealfrazier.tech/
+Description: Hyper-minimalist daily focus application. Less is more. Focus on one task at a time, eliminate distractions, and boost your productivity.
+Posted: Tue, 24 Mar 2026 22:52:12 UTC
+X Post: https://x.com/NealFrazierTech/status/2036576847295553884
+Built with: Google AI Studio + Netlify
+
+#4 – DuckDuckDucky
+URL: https://duckduckducky.nealfrazier.tech/
+Description: Terminal-inspired React-based editor designed for security researchers and hardware enthusiasts. Provides Duck Scripts for inspiration.
+Posted: Thu, 26 Mar 2026 13:05:41 UTC
+X Post: https://x.com/NealFrazierTech/status/2037154018229633054
+Built with: Google AI Studio + Netlify
+
+#5 – Aether
+URL: https://aether.nealfrazier.tech/
+Description: Interactive digital consciousness experience — a highly designed, out-of-the-box web journey.
+Posted: Sat, 28 Mar 2026 01:23:27 UTC
+X Post: https://x.com/NealFrazierTech/status/2037702073236549770
+Built with: Google AI Studio + Netlify
+
+
+
+
+#6 – Lumina
+URL: https://lumina.757tech.pro/
+Description: Helps you design premium websites with ready-made sections, responsive previews, SEO controls, and exportable code.
+Posted: Sat, 28 Mar 2026 01:55:06 UTC
+X Post: https://x.com/NealFrazierTech/status/2037710038555385948
+Built with: Google AI Studio + Netlify
+
+#7 – SEO Trend Tool
+URL: https://seo-trend-tool.streamlit.app/
+Description: Lightweight keyword opportunity mining from Google Trends, optimized to run on Streamlit Cloud free tier.
+Posted: Sat, 28 Mar 2026 02:43:08 UTC
+X Post: https://x.com/NealFrazierTech/status/2037722125113467222
+Built with: Streamlit
+
+#8 – The Gazette Hub
+URL: https://thegazettehub.nealfrazier.tech/
+Description: High-end, modernized newspaper website template and brand management hub.
+Posted: Sat, 28 Mar 2026 22:26:18 UTC
+X Post: https://x.com/NealFrazierTech/status/2038019878322377182
+Built with: Google AI Studio + OpenAI + Netlify
+
+#9 – Conscious Cat Guardianship
+URL: https://cats.nealfrazier.tech/
+Description: Rescue-first cat care guide covering behavior, nutrition, breeds, and practical day-to-day feline well-being.
+Posted: Sat, 28 Mar 2026 23:14:10 UTC
+X Post: https://x.com/NealFrazierTech/status/2038031925416214603
+Built with: Google AI Studio + OpenAI + Netlify
+
+#10 – Winner Winner Chicken Dinner
+URL: https://winnerwinnerchickendinner.nealfrazier.tech/
+Description: Training-focused blackjack web app for faster card-counting skill development.
+Posted: Sun, 29 Mar 2026 04:55:32 UTC
+X Post: https://x.com/NealFrazierTech/status/2038117835092689180
+Built with: OpenAI + Netlify
+
+
+
+
+
+
+
+#11 – Hack The World
+URL: https://hacktheworld.nealfrazier.tech/
+Description: Hacker-styled Hacker News interface with immersive terminal visuals, threaded comments, and live top/new/ask/show/job feeds.
+Posted: Sun, 29 Mar 2026 21:23:57 UTC
+X Post: https://x.com/NealFrazierTech/status/2038366576378884367
+Built with: Netlify (HN API + custom)
+
+#12 – Melt The Machine
+URL: https://meltthemachine.nealfrazier.tech/
+Description: Anonymous ICE sighting reporting tool and comprehensive “Know Your Rights” resource hub. Protect your community.
+Posted: Sun, 29 Mar 2026 22:27:19 UTC
+X Post: https://x.com/NealFrazierTech/status/2038382524506767506
+Built with: Supabase + Google AI Studio + Netlify
+
+#13 – SF Arcade
+URL: https://sf-arcade.nealfrazier.tech/
+Description: Street Fighter Arcade — retro competitive arena with real-time multiplayer. Modes: Typing Battle, Code Clash, and Arcade Fight.
+Posted: Mon, 30 Mar 2026 02:40:07 UTC
+X Post: https://x.com/NealFrazierTech/status/2038446140912181532
+Built with: Google AI Studio + OpenAI + Netlify
+
+#14 – Thumb Journey
+URL: https://thumb-journey.nealfrazier.tech/
+Description: Mobile-first cinematic audio experience. Hold, motion, and parallax transform iconic speeches into tactile rituals.
+Posted: Tue, 31 Mar 2026 01:15:48 UTC
+X Post: https://x.com/NealFrazierTech/status/2038787313199690115
+Built with: Google AI Studio + OpenAI + Netlify
+
+#15 – Stoicism Archive
+URL: https://stoicism.nealfrazier.tech/
+Description: Comprehensive digital archive of Stoic philosophy featuring quotes, biographies, and spiritual exercises.
+Posted: Tue, 31 Mar 2026 01:30:46 UTC
+X Post: https://x.com/NealFrazierTech/status/2038791078820651392
+Built with: Google AI Studio + OpenAI + Netlify
+
+
+
+
+
+#16 – AudioCypher
+URL: https://audiocypher.757tech.pro/
+Description: High-tech cryptographic tool that uses audio files and volume levels as the entropy key to encrypt, decrypt, and hash files.
+Posted: Tue, 31 Mar 2026 02:39:29 UTC
+X Post: https://x.com/NealFrazierTech/status/2038808370996523227
+Built with: Google AI Studio + OpenAI + Netlify
+
+#17 – Cyber Turtle
+URL: https://cyberturtle.nealfrazier.tech/
+Description: Neon arcade web game with voice-powered attacks, synthwave vibes, and fast-paced browser action.
+Posted: Wed, 01 Apr 2026 23:16:49 UTC
+X Post: https://x.com/NealFrazierTech/status/2039482144016249092
+Built with: Google AI Studio + OpenAI + Netlify
+
+#18 – Nexus (Agentic API Explorer)
+URL: https://nexus.757tech.pro/
+Description: Agentic API explorer + IDE. API testing that works reliably in production.
+Posted: Thu, 02 Apr 2026 01:47:04 UTC
+X Post: https://x.com/NealFrazierTech/status/2039519953980678641
+Built with: Google AI Studio + OpenAI + Netlify
+
+#19 – AuraMap
+URL: https://auramap.757tech.pro/
+Description: AI-powered map experience that reveals historical + cultural “echoes” for any location on Earth.
+Posted: Thu, 02 Apr 2026 04:29:18 UTC
+X Post: https://x.com/NealFrazierTech/status/2039560783168708736
+Built with: Google AI Studio + OpenAI + Netlify
+
+#20 – PackageForge
+URL: https://packageforge.757tech.pro/
+Description: AI-powered package generator IDE. Build, iterate, and export production-ready package scaffolds across many languages.
+Posted: Sat, 04 Apr 2026 00:50:45 UTC
+X Post: https://x.com/NealFrazierTech/status/2040230557997510730
+Built with: Google AI Studio + OpenAI + Netlify
+
+
+
+
+
+
+#21 – Universal File Converter
+URL: https://universal-file-convertor.streamlit.app/
+Description: Production-ready universal file converter for Linux cloud environments (including Streamlit Cloud).
+Posted: Sat, 04 Apr 2026 15:42:27 UTC
+X Post: https://x.com/NealFrazierTech/status/2040454961448812701
+Built with: Streamlit
+
+#22 – SignalNest
+URL: https://signalnest.nealfrazier.tech/
+Description: Helps founders and creators capture sources, score signal quality, and generate rate-limited AI digests.
+Posted: Sat, 04 Apr 2026 16:48:15 UTC
+X Post: https://x.com/NealFrazierTech/status/2040471523488587916
+Built with: Google AI Studio + OpenAI + Netlify
+
+#23 – Simple Portfolio Template
+URL: https://simple-portfolio.nealfrazier.tech/
+Description: Portfolio template for anyone looking for a simple digital-themed config-based portfolio.
+Posted: Sat, 04 Apr 2026 17:16:23 UTC
+X Post: https://x.com/NealFrazierTech/status/2040478600785236122
+Built with: Hostinger + OpenAI + Netlify
+
+#24 – BrainWidth
+URL: https://brainwidth.757tech.pro/
+Description: AI-assisted cognitive load planner that helps organize tasks around mental energy and plan sustainable workdays.
+Posted: Sat, 04 Apr 2026 17:33:29 UTC
+X Post: https://x.com/NealFrazierTech/status/2040482906674475356
+Built with: Google AI Studio + OpenAI + Netlify
+
+#25 – SloppyJoes
+URL: https://sloppyjoes.nealfrazier.tech/
+Description: Chaotic, community-driven parody platform where people share weird AI-generated content, react with daily-limited votes, and browse a fully branded experience.
+Posted: Sat, 04 Apr 2026 18:21:28 UTC
+X Post: https://x.com/NealFrazierTech/status/2040494980578386275
+Built with: Google AI Studio + Netlify
+
+
+
+
+
+#26 – Procrastinator Pro
+URL: https://procrastinatorpro.nealfrazier.tech/
+Description: Satire productivity app with an AI Enabler, existential dread meter, and local-first task deferral tracker.
+Posted: Sat, 04 Apr 2026 20:11:02 UTC
+X Post: https://x.com/NealFrazierTech/status/2040522554348130366
+Built with: Google AI Studio + Netlify
+
+#27 – Datamosh Studio
+URL: https://datamoshstudio.757tech.pro/
+Description: Web-based video editor for real-time datamoshing, glitch effects, and quick WebM exports in your browser.
+Posted: Sat, 04 Apr 2026 20:37:14 UTC
+X Post: https://x.com/NealFrazierTech/status/2040529148456665518
+Built with: Google AI Studio + Netlify
+
+#28 – AuraAI (Front Desk Agent)
+URL: https://auraai.757tech.pro/
+Description: AI-powered front desk agent for businesses. Replace receptionist overhead with a 24/7 assistant at lower cost.
+Posted: Sun, 05 Apr 2026 03:03:13 UTC
+X Post: https://x.com/NealFrazierTech/status/2040626281029513338
+Built with: Google AI Studio + OpenAI + Netlify
+
+#29 – KitchenForge
+URL: https://kitchenforge.757tech.pro/
+Description: Helps chefs and entrepreneurs launch and scale delivery-first food brands across Hampton Roads, Virginia.
+Posted: Sun, 05 Apr 2026 17:01:26 UTC
+X Post: https://x.com/NealFrazierTech/status/2040837225814888752
+Built with: Hostinger + OpenAI + Netlify
+
+#30 – HostBuild Directory
+URL: https://hostandbuild.757tech.pro/
+Description: Helps you compare website builders, hosting providers, and cloud platforms for projects across the 757 Hampton Roads region.
+Posted: Sun, 05 Apr 2026 20:05:10 UTC
+X Post: https://x.com/NealFrazierTech/status/2040883463549542494
+Built with: OpenAI + Google AI Studio + Netlify
+
+
+
+
+
+#31 – I Got You
+URL: https://igotyou.757tech.pro/
+Description: Premium service provider sponsored by Tech Pro, delivering fast digital support, in-person assistance, and curated resources.
+Posted: Sun, 05 Apr 2026 20:27:11 UTC
+X Post: https://x.com/NealFrazierTech/status/2040889006288703758
+Built with: Google AI Studio + OpenAI + Netlify
+
+#32 – Aetheris AI Workforce Interfaces
+URL: https://aetheris-ai-workforce-interfaces.757tech.pro/
+Description: Next-generation GUI interfaces for orchestrating AI agent employees (Dev, Orchestrator, and Customer views).
+Posted: Sat, 11 Apr 2026 04:01:55 UTC
+X Post: https://x.com/NealFrazierTech/status/2042815383262937220
+Built with: Google AI Studio + OpenAI + Netlify
+
+#33 – AI Talk AI Go
+URL: https://ai-talk-ai-go.nealfrazier.tech/
+Description: Primitive AI assistant for the modern caveman. Talk to Oog, the world’s first LLM (Large Lithic Model).
+Posted: Sat, 11 Apr 2026 04:11:40 UTC
+X Post: https://x.com/NealFrazierTech/status/2042817836427464760
+Built with: Google AI Studio + OpenAI + Netlify
+
+#34 – BudScan AI
+URL: https://budscan-ai.nealfrazier.tech/
+Description: Advanced cannabis quality scanner using multi-stage AI visual analysis to detect PGR, mold, and quality.
+Posted: Sat, 11 Apr 2026 04:20:04 UTC
+X Post: https://x.com/NealFrazierTech/status/2042819950373445891
+Built with: Google AI Studio + OpenAI + Netlify
+
+#35 – BuildEstimate AI
+URL: https://buildestimate-ai.nealfrazier.tech/
+Description: Professional construction estimation tool for residential and commercial projects, powered by AI for deep ROI analysis and cost breakdowns.
+Posted: Sat, 11 Apr 2026 06:10:36 UTC
+X Post: https://x.com/NealFrazierTech/status/2042847766829748462
+Built with: Google AI Studio + OpenAI + Netlify
+
+
+
+
+
+#36 – CertPath
+URL: https://certpath-interactive-certification-roadmaps.nealfrazier.tech/
+Description: Canvas-based interactive roadmap for professional certifications across Web, AI, Cyber Security, and more.
+Posted: Sat, 11 Apr 2026 13:54:22 UTC
+X Post: https://x.com/NealFrazierTech/status/2042964476534673815
+Built with: Google AI Studio + OpenAI + Netlify
+
+#37 – DeepSearch AI
+URL: https://deepsearch-ai.nealfrazier.tech/
+Description: Google-inspired search engine that provides deep analysis, visual graphs, and keyword insights using Gemini AI and Google Search grounding.
+Posted: Sat, 11 Apr 2026 14:06:14 UTC
+X Post: https://x.com/NealFrazierTech/status/2042967461964710156
+Built with: Google AI Studio + OpenAI + Netlify
+
+#38 – Edge-Forge
+URL: https://edge-forge.nealfrazier.tech/
+Description: Build and run private AI workflows directly on your device with WebGPU. Targets teams who need local control, speed, and custom skills.
+Posted: Sat, 11 Apr 2026 14:16:50 UTC
+X Post: https://x.com/NealFrazierTech/status/2042970131593150904
+Built with: Google AI Studio + OpenAI + Netlify
+
+#39 – Grip & Grime Game of Skate
+URL: https://grip-and-grime-game-of-skate.nealfrazier.tech/
+Description: The ultimate gritty tracker for your Game of S.K.A.T.E. sessions. Track letters, time turns, and capture the clips.
+Posted: Sat, 11 Apr 2026 14:25:58 UTC
+X Post: https://x.com/NealFrazierTech/status/2042972429975216288
+Built with: Google AI Studio + OpenAI + Netlify
+
+#40 – Hampton Roads Lawn Care
+URL: https://hampton-roads-lawn-care.nealfrazier.tech/
+Description: 10-page SEO-optimized lawn care service website for Hampton Roads, Virginia.
+Posted: Sat, 11 Apr 2026 14:35:41 UTC
+X Post: https://x.com/NealFrazierTech/status/2042974875959140629
+Built with: Google AI Studio + OpenAI + Netlify
+
+#41 – Gorilla Funk Skateboards
+URL: https://gorilla-funk-skateboards.nealfrazier.tech/
+Description: High-energy platform for skateboard lessons and tips in Virginia Beach, featuring expert coaching and beginner-friendly guides.
+Posted: Sat, 11 Apr 2026 14:43:52 UTC
+X Post: https://x.com/NealFrazierTech/status/2042976935446257787
+Built with: Google AI Studio + OpenAI + Netlify
+
+
+
+
+
+
+#42 – JS Mastery Zero to Hero
+URL: https://js-mastery-zero-to-hero.nealfrazier.tech/
+Description: Interactive JavaScript learning platform with micro-steps, bento-grid dashboard, and AI-powered waitlist.
+Posted: Sat, 11 Apr 2026 14:55:50 UTC
+X Post: https://x.com/NealFrazierTech/status/2042979946226676020
+Built with: Google AI Studio + OpenAI + Netlify
+
+#43 – LinguaBot
+URL: https://linguabot.nealfrazier.tech/
+Description: Real-time conversational AI language learning partner.
+Posted: Sat, 11 Apr 2026 15:04:32 UTC
+X Post: https://x.com/NealFrazierTech/status/2042982133627547701
+Built with: Google AI Studio + OpenAI + Netlify
+
+#44 – Nexus 3D Editor
+URL: https://nexus-3d-editor.nealfrazier.tech/
+Description: Lightweight, powerful 3D model loader and editor inspired by Spline and Blender.
+Posted: Sat, 11 Apr 2026 15:12:59 UTC
+X Post: https://x.com/NealFrazierTech/status/2042984263792947655
+Built with: Google AI Studio + OpenAI + Netlify
+
+#45 – OmniPost
+URL: https://omnipost-social-media-manager.nealfrazier.tech/
+Description: Create, optimize, and manage posts for all your social media platforms with AI assistance and SEO tools.
+Posted: Sat, 11 Apr 2026 21:22:00 UTC
+X Post: https://x.com/NealFrazierTech/status/2043077129366053204
+Built with: Google AI Studio + OpenAI + Netlify
+
+#46 – Local Business Lead Scanner
+URL: https://local-business-lead-scanner.nealfrazier.tech/
+Description: Scan OpenStreetMap business data to find local leads with no website listed.
+Posted: Sat, 11 Apr 2026 21:32:25 UTC
+X Post: https://x.com/NealFrazierTech/status/2043079748822175746
+Built with: Google AI Studio + OpenAI + Netlify
+
+#47 – Gyro Spin Bottle
+URL: https://gyro-spin-bottle.nealfrazier.tech/
+Description: Fun simple spin-the-bottle game that uses your device’s gyroscope to spin a 2D glass bottle.
+Posted: Sat, 11 Apr 2026 22:32:42 UTC
+X Post: https://x.com/NealFrazierTech/status/2043094921167434159
+Built with: Google AI Studio + Netlify
+#48 – Origin Cacao
+URL: https://origin-cacao-the-oceanfront-fix.nealfrazier.tech/
+Description: Cacao Cafe concept – “Opening soon at the Virginia Beach oceanfront. Join the ORIGIN Cacao waitlist for first access and launch updates.”
+Posted: Sat, 11 Apr 2026 22:51:36 UTC
+X Post: https://x.com/NealFrazierTech/status/2043099675973095713
+Built with: Google AI Studio + OpenAI + Netlify
+
+#49 – PromptMaster
+URL: https://promptmaster.757tech.pro/
+Description: Comprehensive, free platform to master prompt engineering, LLM orchestration, and AI agent development from local setups to production tools.
+Posted: Sat, 11 Apr 2026 23:11:48 UTC
+X Post: https://x.com/NealFrazierTech/status/2043104760086049261
+Built with: Google AI Studio + OpenAI + Netlify
+
+#50 – Feral Tide Strategy
+URL: https://feraltidestrategy.757tech.pro/
+Description: Virginia Beach consulting site focused on offer design, AI-assisted operations, and disciplined growth systems.
+Posted: Sat, 11 Apr 2026 23:50:10 UTC
+X Post: https://x.com/NealFrazierTech/status/2043114417173233782
+Built with: OpenAI + Netlify
+
+#51 – Sand & Stems Virginia Beach Flower Delivery
+URL: https://sand-and-stems-virginia-beach-flower-delivery.nealfrazier.tech/
+Description: Premium floral delivery service directly to your spot on the Virginia Beach oceanfront. Beautiful blooms, beach vibes, and unforgettable moments.
+Posted: Sun, 12 Apr 2026 15:29:57 UTC
+X Post: https://x.com/NealFrazierTech/status/2043350921271251057
+Built with: Google AI Studio + OpenAI + Netlify
+
+
+
+
+
+#52 – Skate Archive Heaven
+URL: https://skate-archive-heaven.nealfrazier.tech/
+Description: Comprehensive archive of historical skaters, iconic brands, and legendary skate videos.
+Posted: Sun, 12 Apr 2026 17:05:15 UTC
+X Post: https://x.com/NealFrazierTech/status/2043374901713678768
+Built with: Google AI Studio + OpenAI + Netlify
+
+#53 – The Greene Strategist
+URL: https://the-greene-strategist.nealfrazier.tech/
+Description: Explore Robert Greene biography, key works, strategic philosophy, and curated official resources in one focused reference.
+Posted: Sun, 12 Apr 2026 17:06:55 UTC
+X Post: https://x.com/NealFrazierTech/status/2043375321475428642
+Built with: Ollama + Google AI Studio + OpenAI + Netlify
+
+#54 – Veganify AI
+URL: https://veganify-ai.nealfrazier.tech/
+Description: Transform any non-vegan dish into a delicious plant-based masterpiece using AI-powered image recognition and recipe generation.
+Posted: Sun, 12 Apr 2026 17:08:26 UTC
+X Post: https://x.com/NealFrazierTech/status/2043375704817930415
+Built with: Google AI Studio + Netlify
+
+#55 – Stripe Mastery Hub
+URL: https://stripe-mastery-hub.nealfrazier.tech/
+Description: The ultimate developer resource for Stripe integrations. AI-powered flow generation, 50+ framework support, real-world code snippets, and comprehensive guides for webhooks, subscriptions, and no-code tools.
+Posted: Sun, 12 Apr 2026 17:45:56 UTC
+X Post: https://x.com/NealFrazierTech/status/2043385141150757063
+Built with: Google AI Studio + OpenAI + Netlify
+
+#56 – V-EDGE Vegan Pizza
+URL: https://v-edge-vegan-pizza.nealfrazier.tech/
+Description: V-EDGE Vegan Pizza is coming soon to Virginia Beach. Preview signature pies, see rollout zones, and join the waitlist for first-access launch drops.
+Posted: Sun, 12 Apr 2026 17:54:30 UTC
+X Post: https://x.com/NealFrazierTech/status/2043387295529566526
+Built with: Google AI Studio + OpenAI + Netlify
+
+
+
+
+#57 – SonicVision AI
+URL: https://sonicvision-ai.nealfrazier.tech/
+Description: An advanced 3D audio visualizer with AI-powered captions and video export capabilities. Turn any sound into a stunning visual experience.
+Posted: Sun, 12 Apr 2026 18:57:34 UTC
+X Post: https://x.com/NealFrazierTech/status/2043403168168440085
+Built with: Google AI Studio + OpenAI + Netlify
+
+#58 – Unthink AI
+URL: https://unthink-ai.757tech.pro/
+Description: The world’s first decision-making AI for trivial dilemmas. Built by Tech Pro and Google-inspired — because sometimes you just need an AI to overthink the small stuff for you.
+Posted: Sun, 12 Apr 2026 18:59:38 UTC
+X Post: https://x.com/NealFrazierTech/status/2043403687284932735
+Built with: Google AI Studio + OpenAI + Netlify
+
+#59 – SignalBridge AI
+URL: https://signalbridge-ai.757tech.pro/
+Description: Connect your private Signal messages to local AI agents, custom backends, and complex orchestrators. Secure, end-to-end encrypted, and entirely under your control.
+Posted: Sun, 12 Apr 2026 19:02:04 UTC
+X Post: https://x.com/NealFrazierTech/status/2043404300299194717
+Built with: Google AI Studio + OpenAI + Netlify
+
+#60 – VoltVault
+URL: https://voltvault-electricians-digital-panel-and-tools.nealfrazier.tech/
+Description: A professional tool for electricians to manage digital breaker panels, map circuits, and perform electrical calculations on the fly.
+Posted: Sun, 12 Apr 2026 19:15:03 UTC
+X Post: https://x.com/NealFrazierTech/status/2043407569381724251
+Built with: Google AI Studio + OpenAI + Netlify
+
+#61 – VisionLink (Face & Hand Control)
+URL: https://vision-link-face-and-hand-control.nealfrazier.tech/
+Description: An interactive vision-based application for facial vector mapping and hand tracking with gesture-controlled zones.
+Posted: Sun, 12 Apr 2026 19:16:30 UTC
+X Post: https://x.com/NealFrazierTech/status/2043407934621704217
+Built with: Google AI Studio + OpenAI + Netlify
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

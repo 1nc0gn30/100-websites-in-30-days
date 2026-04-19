@@ -9,187 +9,1466 @@
     {
       "id": 1,
       "title": "The Con Archive",
-      "date": "2026-03-24T10:00:00Z",
+      "date": "2026-03-24T17:23:12.000Z",
       "url": "https://theconarchive.nealfrazier.tech",
-      "description": "A digital archive for convention enthusiasts and collectors.",
-      "tags": ["archive", "community", "web"],
+      "description": "A grifter wiki. Capturing historical grifters and cons throughout history.",
+      "tags": [
+        "google-ai-studio",
+        "netlify"
+      ],
       "thumbnail": "https://theconarchive.nealfrazier.tech/og-image.png"
     },
     {
       "id": 2,
       "title": "Mundane Oracle",
-      "date": "2026-03-24T14:30:00Z",
+      "date": "2026-03-24T22:34:13.000Z",
       "url": "https://mundaneoracle.nealfrazier.tech",
-      "description": "An AI-powered oracle for the everyday and the ordinary.",
-      "tags": ["ai", "oracle", "fun"],
+      "description": "The everyday app that makes your trivial decisions using absurdly dramatic cosmic reasoning. Made for the overthinker. Built without overthinking.",
+      "tags": [
+        "google-ai-studio",
+        "netlify"
+      ],
       "thumbnail": "https://mundaneoracle.nealfrazier.tech/og-image.png"
     },
     {
       "id": 3,
-      "title": "One Focus",
-      "date": "2026-03-25T09:00:00Z",
+      "title": "OneFocus",
+      "date": "2026-03-24T22:52:12.000Z",
       "url": "https://onefocus.nealfrazier.tech",
-      "description": "A minimalist productivity tool to help you stay on track.",
-      "tags": ["productivity", "minimalist", "tool"],
+      "description": "Hyper-minimalist daily focus application. Less is more. Focus on one task at a time, eliminate distractions, and boost your productivity.",
+      "tags": [
+        "google-ai-studio",
+        "netlify"
+      ],
       "thumbnail": "https://onefocus.nealfrazier.tech/og-image.png"
     },
     {
       "id": 4,
-      "title": "Duck Duck Ducky",
-      "date": "2026-03-25T13:00:00Z",
+      "title": "DuckDuckDucky",
+      "date": "2026-03-26T13:05:41.000Z",
       "url": "https://duckduckducky.nealfrazier.tech",
-      "description": "A playful web experience featuring everyone's favorite rubber duck.",
-      "tags": ["playful", "interactive", "web"],
+      "description": "Terminal-inspired React-based editor designed for security researchers and hardware enthusiasts. Provides Duck Scripts for inspiration.",
+      "tags": [
+        "google-ai-studio",
+        "netlify"
+      ],
       "thumbnail": "https://duckduckducky.nealfrazier.tech/og-image.png"
     },
     {
       "id": 5,
       "title": "Aether",
-      "date": "2026-03-26T11:00:00Z",
+      "date": "2026-03-28T01:23:27.000Z",
       "url": "https://aether.nealfrazier.tech",
-      "description": "A conceptual space for digital exploration and discovery.",
-      "tags": ["exploration", "digital", "space"],
+      "description": "Interactive digital consciousness experience — a highly designed, out-of-the-box web journey.",
+      "tags": [
+        "google-ai-studio",
+        "netlify"
+      ],
       "thumbnail": "https://aether.nealfrazier.tech/og-image.png"
     },
     {
       "id": 6,
       "title": "Lumina",
-      "date": "2026-03-26T16:00:00Z",
+      "date": "2026-03-28T01:55:06.000Z",
       "url": "https://lumina.757tech.pro",
-      "description": "Illuminating the path for tech professionals in the 757 area.",
-      "tags": ["tech", "community", "757"],
+      "description": "Helps you design premium websites with ready-made sections, responsive previews, SEO controls, and exportable code.",
+      "tags": [
+        "google-ai-studio",
+        "netlify"
+      ],
       "thumbnail": "https://lumina.757tech.pro/og-image.png"
     },
     {
       "id": 7,
       "title": "SEO Trend Tool",
-      "date": "2026-03-27T10:00:00Z",
+      "date": "2026-03-28T02:43:08.000Z",
       "url": "https://seo-trend-tool.streamlit.app",
-      "description": "A powerful SEO analysis tool built with Streamlit.",
-      "tags": ["seo", "analytics", "streamlit"],
-      "thumbnail": "https://api.microlink.io?url=https://seo-trend-tool.streamlit.app&screenshot=true&embed=screenshot.url"
+      "description": "Lightweight keyword opportunity mining from Google Trends, optimized to run on Streamlit Cloud free tier.",
+      "tags": [
+        "streamlit"
+      ],
+      "thumbnail": "https://api.microlink.io?url=https%3A%2F%2Fseo-trend-tool.streamlit.app&screenshot=true&embed=screenshot.url"
     },
     {
       "id": 8,
       "title": "The Gazette Hub",
-      "date": "2026-03-27T15:00:00Z",
+      "date": "2026-03-28T22:26:18.000Z",
       "url": "https://thegazettehub.nealfrazier.tech",
-      "description": "A centralized hub for news and community updates.",
-      "tags": ["news", "hub", "community"],
+      "description": "High-end, modernized newspaper website template and brand management hub.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
       "thumbnail": "https://thegazettehub.nealfrazier.tech/og-image.png"
     },
     {
       "id": 9,
-      "title": "Cats App",
-      "date": "2026-03-28T09:00:00Z",
+      "title": "Conscious Cat Guardianship",
+      "date": "2026-03-28T23:14:10.000Z",
       "url": "https://cats.nealfrazier.tech",
-      "description": "Everything you need for your feline friends in one place.",
-      "tags": ["cats", "pets", "app"],
+      "description": "Rescue-first cat care guide covering behavior, nutrition, breeds, and practical day-to-day feline well-being.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
       "thumbnail": "https://cats.nealfrazier.tech/og-image.png"
     },
     {
       "id": 10,
       "title": "Winner Winner Chicken Dinner",
-      "date": "2026-03-28T14:00:00Z",
+      "date": "2026-03-29T04:55:32.000Z",
       "url": "https://winnerwinnerchickendinner.nealfrazier.tech",
-      "description": "A fun game-inspired landing page for winners.",
-      "tags": ["gaming", "fun", "landing"],
+      "description": "Training-focused blackjack web app for faster card-counting skill development.",
+      "tags": [
+        "openai",
+        "netlify"
+      ],
       "thumbnail": "https://winnerwinnerchickendinner.nealfrazier.tech/og-image.png"
     },
     {
       "id": 11,
       "title": "Hack The World",
-      "date": "2026-03-29T11:00:00Z",
+      "date": "2026-03-29T21:23:57.000Z",
       "url": "https://hacktheworld.nealfrazier.tech",
-      "description": "Exploring the boundaries of cybersecurity and ethical hacking.",
-      "tags": ["security", "hacking", "tech"],
+      "description": "Hacker-styled Hacker News interface with immersive terminal visuals, threaded comments, and live top/new/ask/show/job feeds.",
+      "tags": [
+        "netlify-hn-api",
+        "custom"
+      ],
       "thumbnail": "https://hacktheworld.nealfrazier.tech/og-image.png"
     },
     {
       "id": 12,
       "title": "Melt The Machine",
-      "date": "2026-03-29T16:00:00Z",
+      "date": "2026-03-29T22:27:19.000Z",
       "url": "https://meltthemachine.nealfrazier.tech",
-      "description": "Pushing hardware to its limits with high-performance code.",
-      "tags": ["performance", "hardware", "code"],
+      "description": "Anonymous ICE sighting reporting tool and comprehensive “Know Your Rights” resource hub. Protect your community.",
+      "tags": [
+        "supabase",
+        "google-ai-studio",
+        "netlify"
+      ],
       "thumbnail": "https://meltthemachine.nealfrazier.tech/og-image.png"
     },
     {
       "id": 13,
       "title": "SF Arcade",
-      "date": "2026-03-30T10:00:00Z",
+      "date": "2026-03-30T02:40:07.000Z",
       "url": "https://sf-arcade.nealfrazier.tech",
-      "description": "A retro-inspired arcade experience for the modern web.",
-      "tags": ["arcade", "retro", "gaming"],
+      "description": "Street Fighter Arcade — retro competitive arena with real-time multiplayer. Modes: Typing Battle, Code Clash, and Arcade Fight.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
       "thumbnail": "https://sf-arcade.nealfrazier.tech/og-image.png"
     },
     {
       "id": 14,
       "title": "Thumb Journey",
-      "date": "2026-03-30T15:00:00Z",
+      "date": "2026-03-31T01:15:48.000Z",
       "url": "https://thumb-journey.nealfrazier.tech",
-      "description": "A visual journey through the lens of mobile photography.",
-      "tags": ["photography", "mobile", "journey"],
+      "description": "Mobile-first cinematic audio experience. Hold, motion, and parallax transform iconic speeches into tactile rituals.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
       "thumbnail": "https://thumb-journey.nealfrazier.tech/og-image.png"
     },
     {
       "id": 15,
-      "title": "Stoicism",
-      "date": "2026-03-31T09:00:00Z",
+      "title": "Stoicism Archive",
+      "date": "2026-03-31T01:30:46.000Z",
       "url": "https://stoicism.nealfrazier.tech",
-      "description": "Daily wisdom and reflections from the Stoic masters.",
-      "tags": ["philosophy", "stoicism", "wisdom"],
+      "description": "Comprehensive digital archive of Stoic philosophy featuring quotes, biographies, and spiritual exercises.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
       "thumbnail": "https://stoicism.nealfrazier.tech/og-image.png"
     },
     {
       "id": 16,
-      "title": "Audio Cypher",
-      "date": "2026-03-31T14:00:00Z",
+      "title": "AudioCypher",
+      "date": "2026-03-31T02:39:29.000Z",
       "url": "https://audiocypher.757tech.pro",
-      "description": "A collaborative platform for audio creators and producers.",
-      "tags": ["audio", "music", "757"],
+      "description": "High-tech cryptographic tool that uses audio files and volume levels as the entropy key to encrypt, decrypt, and hash files.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
       "thumbnail": "https://audiocypher.757tech.pro/og-image.png"
     },
     {
       "id": 17,
       "title": "Cyber Turtle",
-      "date": "2026-04-01T11:00:00Z",
+      "date": "2026-04-01T23:16:49.000Z",
       "url": "https://cyberturtle.nealfrazier.tech",
-      "description": "The slowest turtle in the fastest digital world.",
-      "tags": ["cyber", "fun", "tech"],
+      "description": "Neon arcade web game with voice-powered attacks, synthwave vibes, and fast-paced browser action.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
       "thumbnail": "https://cyberturtle.nealfrazier.tech/og-image.png"
     },
     {
       "id": 18,
-      "title": "Nexus",
-      "date": "2026-04-01T16:00:00Z",
+      "title": "Nexus (Agentic API Explorer)",
+      "date": "2026-04-02T01:47:04.000Z",
       "url": "https://nexus.757tech.pro",
-      "description": "Connecting the dots in the 757 tech ecosystem.",
-      "tags": ["nexus", "tech", "757"],
+      "description": "Agentic API explorer + IDE. API testing that works reliably in production.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
       "thumbnail": "https://nexus.757tech.pro/og-image.png"
     },
     {
       "id": 19,
-      "title": "Aura Map",
-      "date": "2026-04-02T10:00:00Z",
+      "title": "AuraMap",
+      "date": "2026-04-02T04:29:18.000Z",
       "url": "https://auramap.757tech.pro",
-      "description": "Visualizing the energy and vibe of the local tech scene.",
-      "tags": ["aura", "map", "757"],
+      "description": "AI-powered map experience that reveals historical + cultural “echoes” for any location on Earth.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
       "thumbnail": "https://auramap.757tech.pro/og-image.png"
+    },
+    {
+      "id": 20,
+      "title": "PackageForge",
+      "date": "2026-04-04T00:50:45.000Z",
+      "url": "https://packageforge.757tech.pro",
+      "description": "AI-powered package generator IDE. Build, iterate, and export production-ready package scaffolds across many languages.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://packageforge.757tech.pro/og-image.png"
+    },
+    {
+      "id": 21,
+      "title": "Universal File Converter",
+      "date": "2026-04-04T15:42:27.000Z",
+      "url": "https://universal-file-convertor.streamlit.app",
+      "description": "Production-ready universal file converter for Linux cloud environments (including Streamlit Cloud).",
+      "tags": [
+        "streamlit"
+      ],
+      "thumbnail": "https://api.microlink.io?url=https%3A%2F%2Funiversal-file-convertor.streamlit.app&screenshot=true&embed=screenshot.url"
+    },
+    {
+      "id": 22,
+      "title": "SignalNest",
+      "date": "2026-04-04T16:48:15.000Z",
+      "url": "https://signalnest.nealfrazier.tech",
+      "description": "Helps founders and creators capture sources, score signal quality, and generate rate-limited AI digests.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://signalnest.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 23,
+      "title": "Simple Portfolio Template",
+      "date": "2026-04-04T17:16:23.000Z",
+      "url": "https://simple-portfolio.nealfrazier.tech",
+      "description": "Portfolio template for anyone looking for a simple digital-themed config-based portfolio.",
+      "tags": [
+        "hostinger",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://simple-portfolio.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 24,
+      "title": "BrainWidth",
+      "date": "2026-04-04T17:33:29.000Z",
+      "url": "https://brainwidth.757tech.pro",
+      "description": "AI-assisted cognitive load planner that helps organize tasks around mental energy and plan sustainable workdays.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://brainwidth.757tech.pro/og-image.png"
+    },
+    {
+      "id": 25,
+      "title": "SloppyJoes",
+      "date": "2026-04-04T18:21:28.000Z",
+      "url": "https://sloppyjoes.nealfrazier.tech",
+      "description": "Chaotic, community-driven parody platform where people share weird AI-generated content, react with daily-limited votes, and browse a fully branded experience.",
+      "tags": [
+        "google-ai-studio",
+        "netlify"
+      ],
+      "thumbnail": "https://sloppyjoes.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 26,
+      "title": "Procrastinator Pro",
+      "date": "2026-04-04T20:11:02.000Z",
+      "url": "https://procrastinatorpro.nealfrazier.tech",
+      "description": "Satire productivity app with an AI Enabler, existential dread meter, and local-first task deferral tracker.",
+      "tags": [
+        "google-ai-studio",
+        "netlify"
+      ],
+      "thumbnail": "https://procrastinatorpro.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 27,
+      "title": "Datamosh Studio",
+      "date": "2026-04-04T20:37:14.000Z",
+      "url": "https://datamoshstudio.757tech.pro",
+      "description": "Web-based video editor for real-time datamoshing, glitch effects, and quick WebM exports in your browser.",
+      "tags": [
+        "google-ai-studio",
+        "netlify"
+      ],
+      "thumbnail": "https://datamoshstudio.757tech.pro/og-image.png"
+    },
+    {
+      "id": 28,
+      "title": "AuraAI (Front Desk Agent)",
+      "date": "2026-04-05T03:03:13.000Z",
+      "url": "https://auraai.757tech.pro",
+      "description": "AI-powered front desk agent for businesses. Replace receptionist overhead with a 24/7 assistant at lower cost.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://auraai.757tech.pro/og-image.png"
+    },
+    {
+      "id": 29,
+      "title": "KitchenForge",
+      "date": "2026-04-05T17:01:26.000Z",
+      "url": "https://kitchenforge.757tech.pro",
+      "description": "Helps chefs and entrepreneurs launch and scale delivery-first food brands across Hampton Roads, Virginia.",
+      "tags": [
+        "hostinger",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://kitchenforge.757tech.pro/og-image.png"
+    },
+    {
+      "id": 30,
+      "title": "HostBuild Directory",
+      "date": "2026-04-05T20:05:10.000Z",
+      "url": "https://hostandbuild.757tech.pro",
+      "description": "Helps you compare website builders, hosting providers, and cloud platforms for projects across the 757 Hampton Roads region.",
+      "tags": [
+        "openai",
+        "google-ai-studio",
+        "netlify"
+      ],
+      "thumbnail": "https://hostandbuild.757tech.pro/og-image.png"
+    },
+    {
+      "id": 31,
+      "title": "I Got You",
+      "date": "2026-04-05T20:27:11.000Z",
+      "url": "https://igotyou.757tech.pro",
+      "description": "Premium service provider sponsored by Tech Pro, delivering fast digital support, in-person assistance, and curated resources.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://igotyou.757tech.pro/og-image.png"
+    },
+    {
+      "id": 32,
+      "title": "Aetheris AI Workforce Interfaces",
+      "date": "2026-04-11T04:01:55.000Z",
+      "url": "https://aetheris-ai-workforce-interfaces.757tech.pro",
+      "description": "Next-generation GUI interfaces for orchestrating AI agent employees (Dev, Orchestrator, and Customer views).",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://aetheris-ai-workforce-interfaces.757tech.pro/og-image.png"
+    },
+    {
+      "id": 33,
+      "title": "AI Talk AI Go",
+      "date": "2026-04-11T04:11:40.000Z",
+      "url": "https://ai-talk-ai-go.nealfrazier.tech",
+      "description": "Primitive AI assistant for the modern caveman. Talk to Oog, the world’s first LLM (Large Lithic Model).",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://ai-talk-ai-go.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 34,
+      "title": "BudScan AI",
+      "date": "2026-04-11T04:20:04.000Z",
+      "url": "https://budscan-ai.nealfrazier.tech",
+      "description": "Advanced cannabis quality scanner using multi-stage AI visual analysis to detect PGR, mold, and quality.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://budscan-ai.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 35,
+      "title": "BuildEstimate AI",
+      "date": "2026-04-11T06:10:36.000Z",
+      "url": "https://buildestimate-ai.nealfrazier.tech",
+      "description": "Professional construction estimation tool for residential and commercial projects, powered by AI for deep ROI analysis and cost breakdowns.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://buildestimate-ai.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 36,
+      "title": "CertPath",
+      "date": "2026-04-11T13:54:22.000Z",
+      "url": "https://certpath-interactive-certification-roadmaps.nealfrazier.tech",
+      "description": "Canvas-based interactive roadmap for professional certifications across Web, AI, Cyber Security, and more.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://certpath-interactive-certification-roadmaps.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 37,
+      "title": "DeepSearch AI",
+      "date": "2026-04-11T14:06:14.000Z",
+      "url": "https://deepsearch-ai.nealfrazier.tech",
+      "description": "Google-inspired search engine that provides deep analysis, visual graphs, and keyword insights using Gemini AI and Google Search grounding.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://deepsearch-ai.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 38,
+      "title": "Edge-Forge",
+      "date": "2026-04-11T14:16:50.000Z",
+      "url": "https://edge-forge.nealfrazier.tech",
+      "description": "Build and run private AI workflows directly on your device with WebGPU. Targets teams who need local control, speed, and custom skills.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://edge-forge.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 39,
+      "title": "Grip & Grime Game of Skate",
+      "date": "2026-04-11T14:25:58.000Z",
+      "url": "https://grip-and-grime-game-of-skate.nealfrazier.tech",
+      "description": "The ultimate gritty tracker for your Game of S.K.A.T.E. sessions. Track letters, time turns, and capture the clips.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://grip-and-grime-game-of-skate.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 40,
+      "title": "Hampton Roads Lawn Care",
+      "date": "2026-04-11T14:35:41.000Z",
+      "url": "https://hampton-roads-lawn-care.nealfrazier.tech",
+      "description": "10-page SEO-optimized lawn care service website for Hampton Roads, Virginia.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://hampton-roads-lawn-care.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 41,
+      "title": "Gorilla Funk Skateboards",
+      "date": "2026-04-11T14:43:52.000Z",
+      "url": "https://gorilla-funk-skateboards.nealfrazier.tech",
+      "description": "High-energy platform for skateboard lessons and tips in Virginia Beach, featuring expert coaching and beginner-friendly guides.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://gorilla-funk-skateboards.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 42,
+      "title": "JS Mastery Zero to Hero",
+      "date": "2026-04-11T14:55:50.000Z",
+      "url": "https://js-mastery-zero-to-hero.nealfrazier.tech",
+      "description": "Interactive JavaScript learning platform with micro-steps, bento-grid dashboard, and AI-powered waitlist.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://js-mastery-zero-to-hero.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 43,
+      "title": "LinguaBot",
+      "date": "2026-04-11T15:04:32.000Z",
+      "url": "https://linguabot.nealfrazier.tech",
+      "description": "Real-time conversational AI language learning partner.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://linguabot.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 44,
+      "title": "Nexus 3D Editor",
+      "date": "2026-04-11T15:12:59.000Z",
+      "url": "https://nexus-3d-editor.nealfrazier.tech",
+      "description": "Lightweight, powerful 3D model loader and editor inspired by Spline and Blender.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://nexus-3d-editor.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 45,
+      "title": "OmniPost",
+      "date": "2026-04-11T21:22:00.000Z",
+      "url": "https://omnipost-social-media-manager.nealfrazier.tech",
+      "description": "Create, optimize, and manage posts for all your social media platforms with AI assistance and SEO tools.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://omnipost-social-media-manager.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 46,
+      "title": "Local Business Lead Scanner",
+      "date": "2026-04-11T21:32:25.000Z",
+      "url": "https://local-business-lead-scanner.nealfrazier.tech",
+      "description": "Scan OpenStreetMap business data to find local leads with no website listed.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://local-business-lead-scanner.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 47,
+      "title": "Gyro Spin Bottle",
+      "date": "2026-04-11T22:32:42.000Z",
+      "url": "https://gyro-spin-bottle.nealfrazier.tech",
+      "description": "Fun simple spin-the-bottle game that uses your device’s gyroscope to spin a 2D glass bottle.",
+      "tags": [
+        "google-ai-studio",
+        "netlify"
+      ],
+      "thumbnail": "https://gyro-spin-bottle.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 48,
+      "title": "Origin Cacao",
+      "date": "2026-04-11T22:51:36.000Z",
+      "url": "https://origin-cacao-the-oceanfront-fix.nealfrazier.tech",
+      "description": "Cacao Cafe concept – “Opening soon at the Virginia Beach oceanfront. Join the ORIGIN Cacao waitlist for first access and launch updates.”",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://origin-cacao-the-oceanfront-fix.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 49,
+      "title": "PromptMaster",
+      "date": "2026-04-11T23:11:48.000Z",
+      "url": "https://promptmaster.757tech.pro",
+      "description": "Comprehensive, free platform to master prompt engineering, LLM orchestration, and AI agent development from local setups to production tools.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://promptmaster.757tech.pro/og-image.png"
+    },
+    {
+      "id": 50,
+      "title": "Feral Tide Strategy",
+      "date": "2026-04-11T23:50:10.000Z",
+      "url": "https://feraltidestrategy.757tech.pro",
+      "description": "Virginia Beach consulting site focused on offer design, AI-assisted operations, and disciplined growth systems.",
+      "tags": [
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://feraltidestrategy.757tech.pro/og-image.png"
+    },
+    {
+      "id": 51,
+      "title": "Sand & Stems Virginia Beach Flower Delivery",
+      "date": "2026-04-12T15:29:57.000Z",
+      "url": "https://sand-and-stems-virginia-beach-flower-delivery.nealfrazier.tech",
+      "description": "Premium floral delivery service directly to your spot on the Virginia Beach oceanfront. Beautiful blooms, beach vibes, and unforgettable moments.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://sand-and-stems-virginia-beach-flower-delivery.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 52,
+      "title": "Skate Archive Heaven",
+      "date": "2026-04-12T17:05:15.000Z",
+      "url": "https://skate-archive-heaven.nealfrazier.tech",
+      "description": "Comprehensive archive of historical skaters, iconic brands, and legendary skate videos.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://skate-archive-heaven.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 53,
+      "title": "The Greene Strategist",
+      "date": "2026-04-12T17:06:55.000Z",
+      "url": "https://the-greene-strategist.nealfrazier.tech",
+      "description": "Explore Robert Greene biography, key works, strategic philosophy, and curated official resources in one focused reference.",
+      "tags": [
+        "ollama",
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://the-greene-strategist.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 54,
+      "title": "Veganify AI",
+      "date": "2026-04-12T17:08:26.000Z",
+      "url": "https://veganify-ai.nealfrazier.tech",
+      "description": "Transform any non-vegan dish into a delicious plant-based masterpiece using AI-powered image recognition and recipe generation.",
+      "tags": [
+        "google-ai-studio",
+        "netlify"
+      ],
+      "thumbnail": "https://veganify-ai.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 55,
+      "title": "Stripe Mastery Hub",
+      "date": "2026-04-12T17:45:56.000Z",
+      "url": "https://stripe-mastery-hub.nealfrazier.tech",
+      "description": "The ultimate developer resource for Stripe integrations. AI-powered flow generation, 50+ framework support, real-world code snippets, and comprehensive guides for webhooks, subscriptions, and no-code tools.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://stripe-mastery-hub.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 56,
+      "title": "V-EDGE Vegan Pizza",
+      "date": "2026-04-12T17:54:30.000Z",
+      "url": "https://v-edge-vegan-pizza.nealfrazier.tech",
+      "description": "V-EDGE Vegan Pizza is coming soon to Virginia Beach. Preview signature pies, see rollout zones, and join the waitlist for first-access launch drops.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://v-edge-vegan-pizza.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 57,
+      "title": "SonicVision AI",
+      "date": "2026-04-12T18:57:34.000Z",
+      "url": "https://sonicvision-ai.nealfrazier.tech",
+      "description": "An advanced 3D audio visualizer with AI-powered captions and video export capabilities. Turn any sound into a stunning visual experience.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://sonicvision-ai.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 58,
+      "title": "Unthink AI",
+      "date": "2026-04-12T18:59:38.000Z",
+      "url": "https://unthink-ai.757tech.pro",
+      "description": "The world’s first decision-making AI for trivial dilemmas. Built by Tech Pro and Google-inspired — because sometimes you just need an AI to overthink the small stuff for you.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://unthink-ai.757tech.pro/og-image.png"
+    },
+    {
+      "id": 59,
+      "title": "SignalBridge AI",
+      "date": "2026-04-12T19:02:04.000Z",
+      "url": "https://signalbridge-ai.757tech.pro",
+      "description": "Connect your private Signal messages to local AI agents, custom backends, and complex orchestrators. Secure, end-to-end encrypted, and entirely under your control.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://signalbridge-ai.757tech.pro/og-image.png"
+    },
+    {
+      "id": 60,
+      "title": "VoltVault",
+      "date": "2026-04-12T19:15:03.000Z",
+      "url": "https://voltvault-electricians-digital-panel-and-tools.nealfrazier.tech",
+      "description": "A professional tool for electricians to manage digital breaker panels, map circuits, and perform electrical calculations on the fly.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://voltvault-electricians-digital-panel-and-tools.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 61,
+      "title": "VisionLink (Face & Hand Control)",
+      "date": "2026-04-12T19:16:30.000Z",
+      "url": "https://vision-link-face-and-hand-control.nealfrazier.tech",
+      "description": "An interactive vision-based application for facial vector mapping and hand tracking with gesture-controlled zones.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://vision-link-face-and-hand-control.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 62,
+      "title": "Boom Pow",
+      "date": "2026-04-14T06:14:39.000Z",
+      "url": "https://boompow.online",
+      "description": "Boom Pow is a vegan fast food ghost kitchen serving crispy sandwiches, wraps, fries, and shakes at the Virginia Beach Oceanfront.",
+      "tags": [
+        "openclaw",
+        "ollama",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://boompow.online/og-image.png"
+    },
+    {
+      "id": 63,
+      "title": "Adytum Alchemist Guide",
+      "date": "2026-04-19T17:03:52.000Z",
+      "url": "https://adytum-alchemist-guide.nealfrazier.tech/",
+      "description": "Unlock the secrets of BOTA Tarot through AI. Adytum Alchemist Guide blends occult symbolism with modern AI chemistry to map Key 0 to Key 21.",
+      "tags": [
+        "google-ai-studio",
+        "ollama",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://adytum-alchemist-guide.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 64,
+      "title": "AI AgentUI",
+      "date": "2026-04-19T17:05:13.000Z",
+      "url": "https://ai-agentui.757tech.pro/",
+      "description": "Stop building AI chat interfaces from scratch. Get 50+ plug-and-play React/HTML components to ship your AI agent faster. Copy, paste, and deploy.",
+      "tags": [
+        "google-ai-studio",
+        "ollama",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://ai-agentui.757tech.pro/og-image.png"
+    },
+    {
+      "id": 65,
+      "title": "Avatar Studio",
+      "date": "2026-04-19T17:06:36.000Z",
+      "url": "https://avatar-studio.757tech.pro/",
+      "description": "Stop hunting for profile pics. Avatar Studio lets you generate custom, high-quality avatars instantly using the DiceBear API. Perfect for devs and creators.",
+      "tags": [
+        "google-ai-studio",
+        "ollama",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://avatar-studio.757tech.pro/og-image.png"
+    },
+    {
+      "id": 66,
+      "title": "Badge3D",
+      "date": "2026-04-19T17:08:46.000Z",
+      "url": "https://t.co/1ylaesScEz",
+      "description": "Stop struggling with complex 3D software. Turn any 2D logo into a professional 3D coin or badge instantly with Badge3D. Perfect for branding, game assets, and social profiles.",
+      "tags": [
+        "google-ai-studio",
+        "ollama",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://api.microlink.io?url=https%3A%2F%2Ft.co%2F1ylaesScEz&screenshot=true&embed=screenshot.url"
+    },
+    {
+      "id": 67,
+      "title": "Crypto Tracker Agent",
+      "date": "2026-04-19T17:10:13.000Z",
+      "url": "https://t.co/RmumEY1lTq",
+      "description": "Stop guessing market direction. Get Relational Market Intelligence with Crypto Tracker Agent. Track divergence pairs, rolling correlations, and live price structures in one place.",
+      "tags": [
+        "google-ai-studio",
+        "ollama",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://api.microlink.io?url=https%3A%2F%2Ft.co%2FRmumEY1lTq&screenshot=true&embed=screenshot.url"
+    },
+    {
+      "id": 68,
+      "title": "Echo Shrine",
+      "date": "2026-04-19T17:11:25.000Z",
+      "url": "https://echo-shrine.nealfrazier.tech/",
+      "description": "Stop losing your best ideas to digital noise. Echo Shrine is a cinematic memory palace for founders and artists blending dark UI with high-recall storytelling.",
+      "tags": [
+        "google-ai-studio",
+        "ollama",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://echo-shrine.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 69,
+      "title": "EnvGuard Pro",
+      "date": "2026-04-19T17:13:14.000Z",
+      "url": "https://envguard-pro.757tech.pro/",
+      "description": "Stop leaking secrets in your CI/CD. EnvGuard Pro brings enterprise-grade environment variable security, automated rotation, and AI honeypots to your stack.",
+      "tags": [
+        "google-ai-studio",
+        "ollama",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://envguard-pro.757tech.pro/og-image.png"
+    },
+    {
+      "id": 70,
+      "title": "Hacker Portfolio V2",
+      "date": "2026-04-19T17:19:10.000Z",
+      "url": "https://t.co/MS1pVJxJyb",
+      "description": "Launch: Hacker Portfolio V2. A Neo-Cyberpunk terminal with matrix effects & command simulation. Solve the boring portfolio problem with an immersive dev experience.",
+      "tags": [
+        "google-ai-studio",
+        "ollama",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://api.microlink.io?url=https%3A%2F%2Ft.co%2FMS1pVJxJyb&screenshot=true&embed=screenshot.url"
+    },
+    {
+      "id": 71,
+      "title": "Neon Pulse",
+      "date": "2026-04-19T17:21:16.000Z",
+      "url": "https://t.co/kN0mFtVFWY",
+      "description": "Enter the data stream. Neon Pulse is live: a high-octane arcade experience. Dodge glitches, collect sync nodes, and master the 2026 grid. Mobile-first and fast.",
+      "tags": [
+        "ollama",
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://api.microlink.io?url=https%3A%2F%2Ft.co%2FkN0mFtVFWY&screenshot=true&embed=screenshot.url"
+    },
+    {
+      "id": 72,
+      "title": "nona",
+      "date": "2026-04-19T17:22:11.000Z",
+      "url": "https://nona.757tech.pro/",
+      "description": "Stop choosing between speed and quality. nona delivers high-edge tech services with a bold, cartoon aesthetic. Fast production, premium results.",
+      "tags": [
+        "ollama",
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://nona.757tech.pro/og-image.png"
+    },
+    {
+      "id": 73,
+      "title": "Off-Grid AI Guide",
+      "date": "2026-04-19T17:23:57.000Z",
+      "url": "https://t.co/myzpy5mqnw",
+      "description": "Master the wilderness with the power of local AI. From solar setups to survival tactics, get the ultimate off-grid guide by Neal Frazier. Stop relying on the cloud when you're off the map.",
+      "tags": [
+        "ollama",
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://api.microlink.io?url=https%3A%2F%2Ft.co%2Fmyzpy5mqnw&screenshot=true&embed=screenshot.url"
+    },
+    {
+      "id": 74,
+      "title": "ONE SHOT",
+      "date": "2026-04-19T17:31:20.000Z",
+      "url": "https://t.co/fR9xIkV7gE",
+      "description": "Stop guessing. Start executing. ONE SHOT is the definitive directory for high-precision AI prompts and Codex. Tactical minimalist design for maximum output.",
+      "tags": [
+        "ollama",
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://api.microlink.io?url=https%3A%2F%2Ft.co%2FfR9xIkV7gE&screenshot=true&embed=screenshot.url"
+    },
+    {
+      "id": 75,
+      "title": "Paws & Paths Virginia Beach",
+      "date": "2026-04-19T17:32:21.000Z",
+      "url": "https://paws-paths.nealfrazier.tech/",
+      "description": "Stop stressing over dog walks and messy yards. Paws & Paths Virginia Beach is live! Reliable dog walking and pet waste removal for busy pet owners.",
+      "tags": [
+        "ollama",
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://paws-paths.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 76,
+      "title": "WWHFD (What Would Henry Ford Do)",
+      "date": "2026-04-19T17:33:21.000Z",
+      "url": "https://wwhfd.nealfrazier.tech/",
+      "description": "Stop guessing about automation. WWHFD explores the evolution of efficiency from Pyramids to AI. Solve the mystery of scalable innovation.",
+      "tags": [
+        "ollama",
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://wwhfd.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 77,
+      "title": "Zen Breathing Companion",
+      "date": "2026-04-19T17:34:15.000Z",
+      "url": "https://t.co/PkZfReMmiP",
+      "description": "Stop the digital noise. Zen Breathing Companion is a minimalist, atmospheric timer designed to reduce stress and improve focus through guided breathing. Perfect for quick resets. Try…",
+      "tags": [
+        "ollama",
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://api.microlink.io?url=https%3A%2F%2Ft.co%2FPkZfReMmiP&screenshot=true&embed=screenshot.url"
     }
   ],
   "socialPosts": [
     {
       "platform": "X",
-      "url": "#",
-      "content": "Day 1 of 100! Launched 'The Con Archive' and 'Mundane Oracle'. The journey begins! #100Websites #BuildInPublic",
-      "date": "2026-03-24T18:00:00Z"
+      "url": "https://x.com/NealFrazierTech/status/2045918917533515822",
+      "content": "#77 Zen Breathing Companion — Stop the digital noise. Zen Breathing Companion is a minimalist, atmospheric timer designed to reduce stress and improve focus through guided breathing. Perfect for quick resets. Try…",
+      "date": "2026-04-19T17:34:15.000Z"
     },
     {
       "platform": "X",
-      "url": "#",
-      "content": "Just hit 19 projects in 10 days! The momentum is real. #100Websites #AI",
-      "date": "2026-04-02T18:00:00Z"
+      "url": "https://x.com/NealFrazierTech/status/2045918687748632965",
+      "content": "#76 WWHFD (What Would Henry Ford Do) — Stop guessing about automation. WWHFD explores the evolution of efficiency from Pyramids to AI. Solve the mystery of scalable innovation.",
+      "date": "2026-04-19T17:33:21.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2045918437562777806",
+      "content": "#75 Paws & Paths Virginia Beach — Stop stressing over dog walks and messy yards. Paws & Paths Virginia Beach is live! Reliable dog walking and pet waste removal for busy pet owners.",
+      "date": "2026-04-19T17:32:21.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2045918180904747113",
+      "content": "#74 ONE SHOT — Stop guessing. Start executing. ONE SHOT is the definitive directory for high-precision AI prompts and Codex. Tactical minimalist design for maximum output.",
+      "date": "2026-04-19T17:31:20.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2045916323968864567",
+      "content": "#73 Off-Grid AI Guide — Master the wilderness with the power of local AI. From solar setups to survival tactics, get the ultimate off-grid guide by Neal Frazier. Stop relying on the cloud when you're off the map.",
+      "date": "2026-04-19T17:23:57.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2045915877065830620",
+      "content": "#72 nona — Stop choosing between speed and quality. nona delivers high-edge tech services with a bold, cartoon aesthetic. Fast production, premium results.",
+      "date": "2026-04-19T17:22:11.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2045915646903427338",
+      "content": "#71 Neon Pulse — Enter the data stream. Neon Pulse is live: a high-octane arcade experience. Dodge glitches, collect sync nodes, and master the 2026 grid. Mobile-first and fast.",
+      "date": "2026-04-19T17:21:16.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2045915120778576055",
+      "content": "#70 Hacker Portfolio V2 — Launch: Hacker Portfolio V2. A Neo-Cyberpunk terminal with matrix effects & command simulation. Solve the boring portfolio problem with an immersive dev experience.",
+      "date": "2026-04-19T17:19:10.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2045913626603585829",
+      "content": "#69 EnvGuard Pro — Stop leaking secrets in your CI/CD. EnvGuard Pro brings enterprise-grade environment variable security, automated rotation, and AI honeypots to your stack.",
+      "date": "2026-04-19T17:13:14.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2045913169403523140",
+      "content": "#68 Echo Shrine — Stop losing your best ideas to digital noise. Echo Shrine is a cinematic memory palace for founders and artists blending dark UI with high-recall storytelling.",
+      "date": "2026-04-19T17:11:25.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2045912866046263702",
+      "content": "#67 Crypto Tracker Agent — Stop guessing market direction. Get Relational Market Intelligence with Crypto Tracker Agent. Track divergence pairs, rolling correlations, and live price structures in one place.",
+      "date": "2026-04-19T17:10:13.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2045912503448682517",
+      "content": "#66 Badge3D — Stop struggling with complex 3D software. Turn any 2D logo into a professional 3D coin or badge instantly with Badge3D. Perfect for branding, game assets, and social profiles.",
+      "date": "2026-04-19T17:08:46.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2045911955597332685",
+      "content": "#65 Avatar Studio — Stop hunting for profile pics. Avatar Studio lets you generate custom, high-quality avatars instantly using the DiceBear API. Perfect for devs and creators.",
+      "date": "2026-04-19T17:06:36.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2045911608212304024",
+      "content": "#64 AI AgentUI — Stop building AI chat interfaces from scratch. Get 50+ plug-and-play React/HTML components to ship your AI agent faster. Copy, paste, and deploy.",
+      "date": "2026-04-19T17:05:13.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2045911269954240806",
+      "content": "#63 Adytum Alchemist Guide — Unlock the secrets of BOTA Tarot through AI. Adytum Alchemist Guide blends occult symbolism with modern AI chemistry to map Key 0 to Key 21.",
+      "date": "2026-04-19T17:03:52.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2043935950451990938",
+      "content": "#62 Boom Pow — Boom Pow is a vegan fast food ghost kitchen serving crispy sandwiches, wraps, fries, and shakes at the Virginia Beach Oceanfront.",
+      "date": "2026-04-14T06:14:39.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2043407934621704217",
+      "content": "#61 VisionLink (Face & Hand Control) — An interactive vision-based application for facial vector mapping and hand tracking with gesture-controlled zones.",
+      "date": "2026-04-12T19:16:30.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2043407569381724251",
+      "content": "#60 VoltVault — A professional tool for electricians to manage digital breaker panels, map circuits, and perform electrical calculations on the fly.",
+      "date": "2026-04-12T19:15:03.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2043404300299194717",
+      "content": "#59 SignalBridge AI — Connect your private Signal messages to local AI agents, custom backends, and complex orchestrators. Secure, end-to-end encrypted, and entirely under your control.",
+      "date": "2026-04-12T19:02:04.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2043403687284932735",
+      "content": "#58 Unthink AI — The world’s first decision-making AI for trivial dilemmas. Built by Tech Pro and Google-inspired — because sometimes you just need an AI to overthink the small stuff for you.",
+      "date": "2026-04-12T18:59:38.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2043403168168440085",
+      "content": "#57 SonicVision AI — An advanced 3D audio visualizer with AI-powered captions and video export capabilities. Turn any sound into a stunning visual experience.",
+      "date": "2026-04-12T18:57:34.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2043387295529566526",
+      "content": "#56 V-EDGE Vegan Pizza — V-EDGE Vegan Pizza is coming soon to Virginia Beach. Preview signature pies, see rollout zones, and join the waitlist for first-access launch drops.",
+      "date": "2026-04-12T17:54:30.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2043385141150757063",
+      "content": "#55 Stripe Mastery Hub — The ultimate developer resource for Stripe integrations. AI-powered flow generation, 50+ framework support, real-world code snippets, and comprehensive guides for webhooks, subscriptions, and no-code tools.",
+      "date": "2026-04-12T17:45:56.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2043375704817930415",
+      "content": "#54 Veganify AI — Transform any non-vegan dish into a delicious plant-based masterpiece using AI-powered image recognition and recipe generation.",
+      "date": "2026-04-12T17:08:26.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2043375321475428642",
+      "content": "#53 The Greene Strategist — Explore Robert Greene biography, key works, strategic philosophy, and curated official resources in one focused reference.",
+      "date": "2026-04-12T17:06:55.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2043374901713678768",
+      "content": "#52 Skate Archive Heaven — Comprehensive archive of historical skaters, iconic brands, and legendary skate videos.",
+      "date": "2026-04-12T17:05:15.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2043350921271251057",
+      "content": "#51 Sand & Stems Virginia Beach Flower Delivery — Premium floral delivery service directly to your spot on the Virginia Beach oceanfront. Beautiful blooms, beach vibes, and unforgettable moments.",
+      "date": "2026-04-12T15:29:57.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2043114417173233782",
+      "content": "#50 Feral Tide Strategy — Virginia Beach consulting site focused on offer design, AI-assisted operations, and disciplined growth systems.",
+      "date": "2026-04-11T23:50:10.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2043104760086049261",
+      "content": "#49 PromptMaster — Comprehensive, free platform to master prompt engineering, LLM orchestration, and AI agent development from local setups to production tools.",
+      "date": "2026-04-11T23:11:48.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2043099675973095713",
+      "content": "#48 Origin Cacao — Cacao Cafe concept – “Opening soon at the Virginia Beach oceanfront. Join the ORIGIN Cacao waitlist for first access and launch updates.”",
+      "date": "2026-04-11T22:51:36.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2043094921167434159",
+      "content": "#47 Gyro Spin Bottle — Fun simple spin-the-bottle game that uses your device’s gyroscope to spin a 2D glass bottle.",
+      "date": "2026-04-11T22:32:42.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2043079748822175746",
+      "content": "#46 Local Business Lead Scanner — Scan OpenStreetMap business data to find local leads with no website listed.",
+      "date": "2026-04-11T21:32:25.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2043077129366053204",
+      "content": "#45 OmniPost — Create, optimize, and manage posts for all your social media platforms with AI assistance and SEO tools.",
+      "date": "2026-04-11T21:22:00.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2042984263792947655",
+      "content": "#44 Nexus 3D Editor — Lightweight, powerful 3D model loader and editor inspired by Spline and Blender.",
+      "date": "2026-04-11T15:12:59.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2042982133627547701",
+      "content": "#43 LinguaBot — Real-time conversational AI language learning partner.",
+      "date": "2026-04-11T15:04:32.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2042979946226676020",
+      "content": "#42 JS Mastery Zero to Hero — Interactive JavaScript learning platform with micro-steps, bento-grid dashboard, and AI-powered waitlist.",
+      "date": "2026-04-11T14:55:50.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2042976935446257787",
+      "content": "#41 Gorilla Funk Skateboards — High-energy platform for skateboard lessons and tips in Virginia Beach, featuring expert coaching and beginner-friendly guides.",
+      "date": "2026-04-11T14:43:52.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2042974875959140629",
+      "content": "#40 Hampton Roads Lawn Care — 10-page SEO-optimized lawn care service website for Hampton Roads, Virginia.",
+      "date": "2026-04-11T14:35:41.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2042972429975216288",
+      "content": "#39 Grip & Grime Game of Skate — The ultimate gritty tracker for your Game of S.K.A.T.E. sessions. Track letters, time turns, and capture the clips.",
+      "date": "2026-04-11T14:25:58.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2042970131593150904",
+      "content": "#38 Edge-Forge — Build and run private AI workflows directly on your device with WebGPU. Targets teams who need local control, speed, and custom skills.",
+      "date": "2026-04-11T14:16:50.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2042967461964710156",
+      "content": "#37 DeepSearch AI — Google-inspired search engine that provides deep analysis, visual graphs, and keyword insights using Gemini AI and Google Search grounding.",
+      "date": "2026-04-11T14:06:14.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2042964476534673815",
+      "content": "#36 CertPath — Canvas-based interactive roadmap for professional certifications across Web, AI, Cyber Security, and more.",
+      "date": "2026-04-11T13:54:22.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2042847766829748462",
+      "content": "#35 BuildEstimate AI — Professional construction estimation tool for residential and commercial projects, powered by AI for deep ROI analysis and cost breakdowns.",
+      "date": "2026-04-11T06:10:36.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2042819950373445891",
+      "content": "#34 BudScan AI — Advanced cannabis quality scanner using multi-stage AI visual analysis to detect PGR, mold, and quality.",
+      "date": "2026-04-11T04:20:04.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2042817836427464760",
+      "content": "#33 AI Talk AI Go — Primitive AI assistant for the modern caveman. Talk to Oog, the world’s first LLM (Large Lithic Model).",
+      "date": "2026-04-11T04:11:40.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2042815383262937220",
+      "content": "#32 Aetheris AI Workforce Interfaces — Next-generation GUI interfaces for orchestrating AI agent employees (Dev, Orchestrator, and Customer views).",
+      "date": "2026-04-11T04:01:55.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2040889006288703758",
+      "content": "#31 I Got You — Premium service provider sponsored by Tech Pro, delivering fast digital support, in-person assistance, and curated resources.",
+      "date": "2026-04-05T20:27:11.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2040883463549542494",
+      "content": "#30 HostBuild Directory — Helps you compare website builders, hosting providers, and cloud platforms for projects across the 757 Hampton Roads region.",
+      "date": "2026-04-05T20:05:10.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2040837225814888752",
+      "content": "#29 KitchenForge — Helps chefs and entrepreneurs launch and scale delivery-first food brands across Hampton Roads, Virginia.",
+      "date": "2026-04-05T17:01:26.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2040626281029513338",
+      "content": "#28 AuraAI (Front Desk Agent) — AI-powered front desk agent for businesses. Replace receptionist overhead with a 24/7 assistant at lower cost.",
+      "date": "2026-04-05T03:03:13.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2040529148456665518",
+      "content": "#27 Datamosh Studio — Web-based video editor for real-time datamoshing, glitch effects, and quick WebM exports in your browser.",
+      "date": "2026-04-04T20:37:14.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2040522554348130366",
+      "content": "#26 Procrastinator Pro — Satire productivity app with an AI Enabler, existential dread meter, and local-first task deferral tracker.",
+      "date": "2026-04-04T20:11:02.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2040494980578386275",
+      "content": "#25 SloppyJoes — Chaotic, community-driven parody platform where people share weird AI-generated content, react with daily-limited votes, and browse a fully branded experience.",
+      "date": "2026-04-04T18:21:28.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2040482906674475356",
+      "content": "#24 BrainWidth — AI-assisted cognitive load planner that helps organize tasks around mental energy and plan sustainable workdays.",
+      "date": "2026-04-04T17:33:29.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2040478600785236122",
+      "content": "#23 Simple Portfolio Template — Portfolio template for anyone looking for a simple digital-themed config-based portfolio.",
+      "date": "2026-04-04T17:16:23.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2040471523488587916",
+      "content": "#22 SignalNest — Helps founders and creators capture sources, score signal quality, and generate rate-limited AI digests.",
+      "date": "2026-04-04T16:48:15.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2040454961448812701",
+      "content": "#21 Universal File Converter — Production-ready universal file converter for Linux cloud environments (including Streamlit Cloud).",
+      "date": "2026-04-04T15:42:27.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2040230557997510730",
+      "content": "#20 PackageForge — AI-powered package generator IDE. Build, iterate, and export production-ready package scaffolds across many languages.",
+      "date": "2026-04-04T00:50:45.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2039560783168708736",
+      "content": "#19 AuraMap — AI-powered map experience that reveals historical + cultural “echoes” for any location on Earth.",
+      "date": "2026-04-02T04:29:18.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2039519953980678641",
+      "content": "#18 Nexus (Agentic API Explorer) — Agentic API explorer + IDE. API testing that works reliably in production.",
+      "date": "2026-04-02T01:47:04.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2039482144016249092",
+      "content": "#17 Cyber Turtle — Neon arcade web game with voice-powered attacks, synthwave vibes, and fast-paced browser action.",
+      "date": "2026-04-01T23:16:49.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2038808370996523227",
+      "content": "#16 AudioCypher — High-tech cryptographic tool that uses audio files and volume levels as the entropy key to encrypt, decrypt, and hash files.",
+      "date": "2026-03-31T02:39:29.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2038791078820651392",
+      "content": "#15 Stoicism Archive — Comprehensive digital archive of Stoic philosophy featuring quotes, biographies, and spiritual exercises.",
+      "date": "2026-03-31T01:30:46.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2038787313199690115",
+      "content": "#14 Thumb Journey — Mobile-first cinematic audio experience. Hold, motion, and parallax transform iconic speeches into tactile rituals.",
+      "date": "2026-03-31T01:15:48.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2038446140912181532",
+      "content": "#13 SF Arcade — Street Fighter Arcade — retro competitive arena with real-time multiplayer. Modes: Typing Battle, Code Clash, and Arcade Fight.",
+      "date": "2026-03-30T02:40:07.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2038382524506767506",
+      "content": "#12 Melt The Machine — Anonymous ICE sighting reporting tool and comprehensive “Know Your Rights” resource hub. Protect your community.",
+      "date": "2026-03-29T22:27:19.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2038366576378884367",
+      "content": "#11 Hack The World — Hacker-styled Hacker News interface with immersive terminal visuals, threaded comments, and live top/new/ask/show/job feeds.",
+      "date": "2026-03-29T21:23:57.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2038117835092689180",
+      "content": "#10 Winner Winner Chicken Dinner — Training-focused blackjack web app for faster card-counting skill development.",
+      "date": "2026-03-29T04:55:32.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2038031925416214603",
+      "content": "#9 Conscious Cat Guardianship — Rescue-first cat care guide covering behavior, nutrition, breeds, and practical day-to-day feline well-being.",
+      "date": "2026-03-28T23:14:10.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2038019878322377182",
+      "content": "#8 The Gazette Hub — High-end, modernized newspaper website template and brand management hub.",
+      "date": "2026-03-28T22:26:18.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2037722125113467222",
+      "content": "#7 SEO Trend Tool — Lightweight keyword opportunity mining from Google Trends, optimized to run on Streamlit Cloud free tier.",
+      "date": "2026-03-28T02:43:08.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2037710038555385948",
+      "content": "#6 Lumina — Helps you design premium websites with ready-made sections, responsive previews, SEO controls, and exportable code.",
+      "date": "2026-03-28T01:55:06.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2037702073236549770",
+      "content": "#5 Aether — Interactive digital consciousness experience — a highly designed, out-of-the-box web journey.",
+      "date": "2026-03-28T01:23:27.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2037154018229633054",
+      "content": "#4 DuckDuckDucky — Terminal-inspired React-based editor designed for security researchers and hardware enthusiasts. Provides Duck Scripts for inspiration.",
+      "date": "2026-03-26T13:05:41.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2036576847295553884",
+      "content": "#3 OneFocus — Hyper-minimalist daily focus application. Less is more. Focus on one task at a time, eliminate distractions, and boost your productivity.",
+      "date": "2026-03-24T22:52:12.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2036572320492364125",
+      "content": "#2 Mundane Oracle — The everyday app that makes your trivial decisions using absurdly dramatic cosmic reasoning. Made for the overthinker. Built without overthinking.",
+      "date": "2026-03-24T22:34:13.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2036494051046727791",
+      "content": "#1 The Con Archive — A grifter wiki. Capturing historical grifters and cons throughout history.",
+      "date": "2026-03-24T17:23:12.000Z"
     }
   ]
 }
