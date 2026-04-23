@@ -1005,9 +1005,455 @@
         "netlify"
       ],
       "thumbnail": "https://api.microlink.io?url=https%3A%2F%2Ft.co%2FPkZfReMmiP&screenshot=true&embed=screenshot.url"
+    },
+    {
+      "id": 78,
+      "title": "100WebsitesIn30Days",
+      "date": "2026-04-19T22:50:15.000Z",
+      "url": "https://100websitesin30days.nealfrazier.tech/",
+      "description": "This website showcases the challenge #100WebsitesIn30Days and my progress along its journey. Includes all drops, timeline articles, resources, and a passage way to join the challenge yourself!!",
+      "tags": [
+        "netlify",
+        "google-ai-studio",
+        "openai",
+        "ollama"
+      ],
+      "thumbnail": "https://100websitesin30days.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 79,
+      "title": "Neal Frazier Tech (Bliki)",
+      "date": "2026-04-20T01:10:23.000Z",
+      "url": "https://www.nealfrazier.tech",
+      "description": "I have revamped Neal Frazier Tech. This is now a Bliki website which I would like to say thank you @ChaiWithJai for the major influence and guidance on making this shift. This is an ongoing project and is another #buildinpublic project. The old sites url is https://t.co/dsKWMKsMec",
+      "tags": [
+        "netlify",
+        "google-ai-studio",
+        "openai",
+        "ollama"
+      ],
+      "thumbnail": "https://www.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 80,
+      "title": "Python 30",
+      "date": "2026-04-21T02:22:35.000Z",
+      "url": "https://python-30.nealfrazier.tech/",
+      "description": "A free interactive guide to mastering Python in 30 days with a personalized AI tutor.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify",
+        "ollama"
+      ],
+      "thumbnail": "https://python-30.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 81,
+      "title": "Python Math",
+      "date": "2026-04-21T02:39:14.000Z",
+      "url": "https://python-math.nealfrazier.tech/",
+      "description": "Learn math through Python with daily interactive lessons and challenges.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify",
+        "ollama"
+      ],
+      "thumbnail": "https://python-math.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 82,
+      "title": "AI Mastery",
+      "date": "2026-04-21T02:44:49.000Z",
+      "url": "https://ai-mastery.nealfrazier.tech/",
+      "description": "A comprehensive 30-day curriculum to master AI tools, prompt engineering, agents, and security. Start your journey to becoming an AI expert today.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "ollama",
+        "netlify"
+      ],
+      "thumbnail": "https://ai-mastery.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 83,
+      "title": "AI University",
+      "date": "2026-04-21T02:50:00.000Z",
+      "url": "https://ai-university.nealfrazier.tech/",
+      "description": "Von Neumann University offers higher learning for higher intelligence. A prestigious university for AI employees, specializing in NLP, Tool Use, and Alignment.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "ollama",
+        "netlify"
+      ],
+      "thumbnail": "https://ai-university.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 84,
+      "title": "C in 30",
+      "date": "2026-04-21T02:54:44.000Z",
+      "url": "https://c-in-30.nealfrazier.tech/",
+      "description": "A practical 30-day C programming course with daily exercises, guided projects, and fundamentals for modern systems programming.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify",
+        "ollama"
+      ],
+      "thumbnail": "https://c-in-30.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 85,
+      "title": "Forge Fracture",
+      "date": "2026-04-21T03:04:12.000Z",
+      "url": "https://forge-fracture.nealfrazier.tech/",
+      "description": "A high-fidelity social hub for radical digital creatives. Architect monoliths, induce creative entropy, and evolve the neural mesh.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "ollama",
+        "netlify"
+      ],
+      "thumbnail": "https://forge-fracture.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 86,
+      "title": "IdleKey",
+      "date": "2026-04-21T03:32:07.000Z",
+      "url": "https://idlekey.nealfrazier.tech/",
+      "description": "Tired of the AI hype? Monetize your apathy. Sell your unused AI free-tier API quotas and get paid for doing absolutely nothing.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "ollama",
+        "netlify"
+      ],
+      "thumbnail": "https://idlekey.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 87,
+      "title": "30 Days Linux Fundamentals",
+      "date": "2026-04-22T01:13:45.000Z",
+      "url": "https://30-days-linux-fundamentals.nealfrazier.tech/",
+      "description": "This was a special one. Converted one of my first repos I made a couple years ago into an immersive Astro js framework. Start Learning Linux today!!",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://30-days-linux-fundamentals.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 88,
+      "title": "Nova OS Analytics",
+      "date": "2026-04-22T03:04:33.000Z",
+      "url": "https://nova-os-analytics.nealfrazier.tech/",
+      "description": "Explore a public-ready analytics product shell with reusable templates, AI-powered dashboard generation, and deployment-safe UX patterns.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "ollama",
+        "netlify"
+      ],
+      "thumbnail": "https://nova-os-analytics.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 89,
+      "title": "BlockFans",
+      "date": "2026-04-22T03:17:55.000Z",
+      "url": "https://blockfans.nealfrazier.tech/",
+      "description": "Join the BlockFans waitlist for early access to a Web3 creator network with direct fan support, wallet-based identity, and on-chain subscriptions.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://blockfans.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 90,
+      "title": "PowerShell 30",
+      "date": "2026-04-22T03:23:28.000Z",
+      "url": "https://learn-powershell-in-30-days.nealfrazier.tech/",
+      "description": "A practical, day-by-day learning path to build real PowerShell skills in 30 days.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://learn-powershell-in-30-days.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 91,
+      "title": "CISA GRC Study Portal",
+      "date": "2026-04-22T03:25:59.000Z",
+      "url": "https://cisa-grc-study-portal.nealfrazier.tech/",
+      "description": "An interactive study portal for CISA and GRC preparation with practice content and exam-focused guidance.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://cisa-grc-study-portal.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 92,
+      "title": "Yell Space",
+      "date": "2026-04-22T03:37:07.000Z",
+      "url": "https://yell-space.nealfrazier.tech/",
+      "description": "A voice-based stress release app that helps people vent safely and reflect with AI-powered analysis.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://yell-space.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 93,
+      "title": "Prepped Pigeon",
+      "date": "2026-04-23T01:17:44.000Z",
+      "url": "https://prepped-pigeon.nealfrazier.tech/",
+      "description": "Find and reserve parking spots, valet services, and venue reservations in Virginia Beach.",
+      "tags": [
+        "google-ai-studio",
+        "netlify",
+        "openai"
+      ],
+      "thumbnail": "https://prepped-pigeon.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 94,
+      "title": "NFC Link Hub",
+      "date": "2026-04-23T01:30:23.000Z",
+      "url": "https://nfc-link-hub.nealfrazier.tech/",
+      "description": "A social profile link aggregator with integrated NFC tools for physical sharing and tag writing.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "ollama",
+        "netlify",
+        "supabase"
+      ],
+      "thumbnail": "https://nfc-link-hub.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 95,
+      "title": "JusticeWatch",
+      "date": "2026-04-23T01:39:57.000Z",
+      "url": "https://justicewatch.nealfrazier.tech/",
+      "description": "Join the JusticeWatch waitlist to unlock a 2026 incident briefing map with source-linked, area-specific case details.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://justicewatch.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 96,
+      "title": "Tidepoint Strategic",
+      "date": "2026-04-23T01:48:45.000Z",
+      "url": "https://tidepoint.757tech.pro/",
+      "description": "Tidepoint Strategic is a Hampton Roads think tank helping teams ship faster through AI-augmented strategy, tactical foresight, and execution support.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://tidepoint.757tech.pro/og-image.png"
+    },
+    {
+      "id": 97,
+      "title": "Pied Piper",
+      "date": "2026-04-23T01:53:20.000Z",
+      "url": "https://piedpiper.nealfrazier.tech/",
+      "description": "Pied Piper: The next generation of decentralized lossless compression. Built on the revolutionary Middle-Out engine by Richard Hendricks.",
+      "tags": [
+        "google-ai-studio",
+        "netlify"
+      ],
+      "thumbnail": "https://piedpiper.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 98,
+      "title": "Bullseye",
+      "date": "2026-04-23T02:27:22.000Z",
+      "url": "https://bullseye.nealfrazier.tech/",
+      "description": "The lead generation platform for recruiters tired of wasting time on LinkedIn spam. We guarantee you message the right people.",
+      "tags": [
+        "google-ai-studio",
+        "netlify"
+      ],
+      "thumbnail": "https://bullseye.nealfrazier.tech/og-image.png"
+    },
+    {
+      "id": 99,
+      "title": "MigrateX",
+      "date": "2026-04-23T02:44:25.000Z",
+      "url": "https://migratex.757tech.pro/",
+      "description": "X is phasing out Communities, but your people aren't going anywhere. Use MigrateX to keep your network together.",
+      "tags": [
+        "google-ai-studio",
+        "netlify"
+      ],
+      "thumbnail": "https://migratex.757tech.pro/og-image.png"
+    },
+    {
+      "id": 100,
+      "title": "Riff Raff",
+      "date": "2026-04-23T03:33:10.000Z",
+      "url": "https://riffraff.nealfrazier.tech/",
+      "description": "Master the art of Riff Raff metaphors. Explore the Neon Icon dictionary of 1,000+ absurd luxury references or generate your own 'Rap Game' personas.",
+      "tags": [
+        "google-ai-studio",
+        "openai",
+        "netlify"
+      ],
+      "thumbnail": "https://riffraff.nealfrazier.tech/og-image.png"
     }
   ],
   "socialPosts": [
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2047156800038846592",
+      "content": "#100 Riff Raff — Master the art of Riff Raff metaphors. Explore the Neon Icon dictionary of 1,000+ absurd luxury references or generate your own 'Rap Game' personas.",
+      "date": "2026-04-23T03:33:10.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2047144534627271052",
+      "content": "#99 MigrateX — X is phasing out Communities, but your people aren't going anywhere. Use MigrateX to keep your network together.",
+      "date": "2026-04-23T02:44:25.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2047140241396429283",
+      "content": "#98 Bullseye — The lead generation platform for recruiters tired of wasting time on LinkedIn spam. We guarantee you message the right people.",
+      "date": "2026-04-23T02:27:22.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2047131679081312355",
+      "content": "#97 Pied Piper — Pied Piper: The next generation of decentralized lossless compression. Built on the revolutionary Middle-Out engine by Richard Hendricks.",
+      "date": "2026-04-23T01:53:20.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2047130522875273549",
+      "content": "#96 Tidepoint Strategic — Tidepoint Strategic is a Hampton Roads think tank helping teams ship faster through AI-augmented strategy, tactical foresight, and execution support.",
+      "date": "2026-04-23T01:48:45.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2047128307817153011",
+      "content": "#95 JusticeWatch — Join the JusticeWatch waitlist to unlock a 2026 incident briefing map with source-linked, area-specific case details.",
+      "date": "2026-04-23T01:39:57.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2047125903109419208",
+      "content": "#94 NFC Link Hub — A social profile link aggregator with integrated NFC tools for physical sharing and tag writing.",
+      "date": "2026-04-23T01:30:23.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2047122717791441097",
+      "content": "#93 Prepped Pigeon — Find and reserve parking spots, valet services, and venue reservations in Virginia Beach.",
+      "date": "2026-04-23T01:17:44.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2046795406441357331",
+      "content": "#92 Yell Space — A voice-based stress release app that helps people vent safely and reflect with AI-powered analysis.",
+      "date": "2026-04-22T03:37:07.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2046792605862670445",
+      "content": "#91 CISA GRC Study Portal — An interactive study portal for CISA and GRC preparation with practice content and exam-focused guidance.",
+      "date": "2026-04-22T03:25:59.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2046791972036260102",
+      "content": "#90 PowerShell 30 — A practical, day-by-day learning path to build real PowerShell skills in 30 days.",
+      "date": "2026-04-22T03:23:28.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2046790575312052419",
+      "content": "#89 BlockFans — Join the BlockFans waitlist for early access to a Web3 creator network with direct fan support, wallet-based identity, and on-chain subscriptions.",
+      "date": "2026-04-22T03:17:55.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2046787213573107795",
+      "content": "#88 Nova OS Analytics — Explore a public-ready analytics product shell with reusable templates, AI-powered dashboard generation, and deployment-safe UX patterns.",
+      "date": "2026-04-22T03:04:33.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2046759328741282164",
+      "content": "#87 30 Days Linux Fundamentals — This was a special one. Converted one of my first repos I made a couple years ago into an immersive Astro js framework. Start Learning Linux today!!",
+      "date": "2026-04-22T01:13:45.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2046431763619049826",
+      "content": "#86 IdleKey — Tired of the AI hype? Monetize your apathy. Sell your unused AI free-tier API quotas and get paid for doing absolutely nothing.",
+      "date": "2026-04-21T03:32:07.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2046424735932637487",
+      "content": "#85 Forge Fracture — A high-fidelity social hub for radical digital creatives. Architect monoliths, induce creative entropy, and evolve the neural mesh.",
+      "date": "2026-04-21T03:04:12.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2046422354738201078",
+      "content": "#84 C in 30 — A practical 30-day C programming course with daily exercises, guided projects, and fundamentals for modern systems programming.",
+      "date": "2026-04-21T02:54:44.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2046421162557620378",
+      "content": "#83 AI University — Von Neumann University offers higher learning for higher intelligence. A prestigious university for AI employees, specializing in NLP, Tool Use, and Alignment.",
+      "date": "2026-04-21T02:50:00.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2046419857046925535",
+      "content": "#82 AI Mastery — A comprehensive 30-day curriculum to master AI tools, prompt engineering, agents, and security. Start your journey to becoming an AI expert today.",
+      "date": "2026-04-21T02:44:49.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2046418455105077535",
+      "content": "#81 Python Math — Learn math through Python with daily interactive lessons and challenges.",
+      "date": "2026-04-21T02:39:14.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2046414264794038615",
+      "content": "#80 Python 30 — A free interactive guide to mastering Python in 30 days with a personalized AI tutor.",
+      "date": "2026-04-21T02:22:35.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2046033703986413986",
+      "content": "#79 Neal Frazier Tech (Bliki) — I have revamped Neal Frazier Tech. This is now a Bliki website which I would like to say thank you @ChaiWithJai for the major influence and guidance on making this shift. This is an ongoing project and is another #buildinpublic project. The old sites url is https://t.co/dsKWMKsMec",
+      "date": "2026-04-20T01:10:23.000Z"
+    },
+    {
+      "platform": "X",
+      "url": "https://x.com/NealFrazierTech/status/2045998440115577124",
+      "content": "#78 100WebsitesIn30Days — This website showcases the challenge #100WebsitesIn30Days and my progress along its journey. Includes all drops, timeline articles, resources, and a passage way to join the challenge yourself!!",
+      "date": "2026-04-19T22:50:15.000Z"
+    },
     {
       "platform": "X",
       "url": "https://x.com/NealFrazierTech/status/2045918917533515822",

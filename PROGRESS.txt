@@ -310,16 +310,17 @@ Posted: Sat, 11 Apr 2026 14:35:41 UTC
 X Post: https://x.com/NealFrazierTech/status/2042974875959140629
 Built with: Google AI Studio + OpenAI + Netlify
 
+
+
+
+
+
 #41 – Gorilla Funk Skateboards
 URL: https://gorilla-funk-skateboards.nealfrazier.tech/
 Description: High-energy platform for skateboard lessons and tips in Virginia Beach, featuring expert coaching and beginner-friendly guides.
 Posted: Sat, 11 Apr 2026 14:43:52 UTC
 X Post: https://x.com/NealFrazierTech/status/2042976935446257787
 Built with: Google AI Studio + OpenAI + Netlify
-
-
-
-
 
 
 #42 – JS Mastery Zero to Hero
@@ -349,6 +350,11 @@ Description: Create, optimize, and manage posts for all your social media platfo
 Posted: Sat, 11 Apr 2026 21:22:00 UTC
 X Post: https://x.com/NealFrazierTech/status/2043077129366053204
 Built with: Google AI Studio + OpenAI + Netlify
+
+
+
+
+
 
 #46 – Local Business Lead Scanner
 URL: https://local-business-lead-scanner.nealfrazier.tech/
@@ -383,6 +389,12 @@ Description: Virginia Beach consulting site focused on offer design, AI-assisted
 Posted: Sat, 11 Apr 2026 23:50:10 UTC
 X Post: https://x.com/NealFrazierTech/status/2043114417173233782
 Built with: OpenAI + Netlify
+
+
+
+
+
+
 
 #51 – Sand & Stems Virginia Beach Flower Delivery
 URL: https://sand-and-stems-virginia-beach-flower-delivery.nealfrazier.tech/
@@ -470,6 +482,68 @@ Built with: Google AI Studio + OpenAI + Netlify
 
 
 
+#62 – Boom Pow
+URL: https://boompow.online
+Description: Boom Pow is a vegan fast food ghost kitchen serving crispy sandwiches, wraps, fries, and shakes at the Virginia Beach Oceanfront.
+Posted: Tue, 14 Apr 2026 06:14:39 UTC
+X Post: https://x.com/NealFrazierTech/status/2043935950451990938
+Built with: OpenClaw + Ollama + OpenAI + Netlify 
+
+
+#63 – Adytum Alchemist Guide
+URL: https://adytum-alchemist-guide.nealfrazier.tech/
+Description: Unlock the secrets of BOTA Tarot through AI. Adytum Alchemist Guide blends occult symbolism with modern AI chemistry to map Key 0 to Key 21.
+Posted: Sun, 19 Apr 2026 17:03:52 UTC
+X Post: https://x.com/NealFrazierTech/status/2045911269954240806
+Built with: Google AI Studio + Ollama + OpenAI + Netlify 
+
+
+#64 – AI AgentUI
+URL: https://ai-agentui.757tech.pro/
+Description: Stop building AI chat interfaces from scratch. Get 50+ plug-and-play React/HTML components to ship your AI agent faster. Copy, paste, and deploy.
+Posted: Sun, 19 Apr 2026 17:05:13 UTC
+X Post: https://x.com/NealFrazierTech/status/2045911608212304024
+Built with: Google AI Studio + Ollama + OpenAI + Netlify 
+
+
+#65 – Avatar Studio
+URL: https://avatar-studio.757tech.pro/
+Description: Stop hunting for profile pics. Avatar Studio lets you generate custom, high-quality avatars instantly using the DiceBear API. Perfect for devs and creators.
+Posted: Sun, 19 Apr 2026 17:06:36 UTC
+X Post: https://x.com/NealFrazierTech/status/2045911955597332685
+Built with: Google AI Studio + Ollama + OpenAI + Netlify 
+
+
+#66 – Badge3D
+URL: https://t.co/1ylaesScEz
+Description: Stop struggling with complex 3D software. Turn any 2D logo into a professional 3D coin or badge instantly with Badge3D. Perfect for branding, game assets, and social profiles.
+Posted: Sun, 19 Apr 2026 17:08:46 UTC
+X Post: https://x.com/NealFrazierTech/status/2045912503448682517
+Built with: Google AI Studio + Ollama + OpenAI + Netlify 
+
+
+#67 – Crypto Tracker Agent
+URL: https://t.co/RmumEY1lTq
+Description: Stop guessing market direction. Get Relational Market Intelligence with Crypto Tracker Agent. Track divergence pairs, rolling correlations, and live price structures in one place.
+Posted: Sun, 19 Apr 2026 17:10:13 UTC
+X Post: https://x.com/NealFrazierTech/status/2045912866046263702
+Built with: Google AI Studio + Ollama + OpenAI + Netlify 
+
+
+#68 – Echo Shrine
+URL: https://echo-shrine.nealfrazier.tech/
+Description: Stop losing your best ideas to digital noise. Echo Shrine is a cinematic memory palace for founders and artists blending dark UI with high-recall storytelling.
+Posted: Sun, 19 Apr 2026 17:11:25 UTC
+X Post: https://x.com/NealFrazierTech/status/2045913169403523140
+Built with: Google AI Studio + Ollama + OpenAI + Netlify 
+
+
+#69 – EnvGuard Pro
+URL: https://envguard-pro.757tech.pro/
+Description: Stop leaking secrets in your CI/CD. EnvGuard Pro brings enterprise-grade environment variable security, automated rotation, and AI honeypots to your stack.
+Posted: Sun, 19 Apr 2026 17:13:14 UTC
+X Post: https://x.com/NealFrazierTech/status/2045913626603585829
+Built with: Google AI Studio + Ollama + OpenAI + Netlify
 
 
 
@@ -477,20 +551,253 @@ Built with: Google AI Studio + OpenAI + Netlify
 
 
 
+#70 – Hacker Portfolio V2
+URL: https://t.co/MS1pVJxJyb
+Description: Launch: Hacker Portfolio V2. A Neo-Cyberpunk terminal with matrix effects & command simulation. Solve the boring portfolio problem with an immersive dev experience.
+Posted: Sun, 19 Apr 2026 17:19:10 UTC
+X Post: https://x.com/NealFrazierTech/status/2045915120778576055
+Built with: Google AI Studio + Ollama + OpenAI + Netlify 
+
+
+#71 – Neon Pulse
+URL: https://t.co/kN0mFtVFWY
+Description: Enter the data stream. Neon Pulse is live: a high-octane arcade experience. Dodge glitches, collect sync nodes, and master the 2026 grid. Mobile-first and fast.
+Posted: Sun, 19 Apr 2026 17:21:16 UTC
+X Post: https://x.com/NealFrazierTech/status/2045915646903427338
+Built with: Ollama + Google AI Studio + OpenAI + Netlify 
+
+
+#72 – nona
+URL: https://nona.757tech.pro/
+Description: Stop choosing between speed and quality. nona delivers high-edge tech services with a bold, cartoon aesthetic. Fast production, premium results.
+Posted: Sun, 19 Apr 2026 17:22:11 UTC
+X Post: https://x.com/NealFrazierTech/status/2045915877065830620
+Built with: Ollama + Google AI Studio + OpenAI + Netlify 
+
+
+#73 – Off-Grid AI Guide
+URL: https://t.co/myzpy5mqnw
+Description: Master the wilderness with the power of local AI. From solar setups to survival tactics, get the ultimate off-grid guide by Neal Frazier. Stop relying on the cloud when you're off the map.
+Posted: Sun, 19 Apr 2026 17:23:57 UTC
+X Post: https://x.com/NealFrazierTech/status/2045916323968864567
+Built with: Ollama + Google AI Studio + OpenAI + Netlify 
+
+
+#74 – ONE SHOT
+URL: https://t.co/fR9xIkV7gE
+Description: Stop guessing. Start executing. ONE SHOT is the definitive directory for high-precision AI prompts and Codex. Tactical minimalist design for maximum output.
+Posted: Sun, 19 Apr 2026 17:31:20 UTC
+X Post: https://x.com/NealFrazierTech/status/2045918180904747113
+Built with: Ollama + Google AI Studio + OpenAI + Netlify 
+
+
+#75 – Paws & Paths Virginia Beach
+URL: https://paws-paths.nealfrazier.tech/
+Description: Stop stressing over dog walks and messy yards. Paws & Paths Virginia Beach is live! Reliable dog walking and pet waste removal for busy pet owners.
+Posted: Sun, 19 Apr 2026 17:32:21 UTC
+X Post: https://x.com/NealFrazierTech/status/2045918437562777806
+Built with: Ollama + Google AI Studio + OpenAI + Netlify 
+
+
+#76 – WWHFD (What Would Henry Ford Do)
+URL: https://wwhfd.nealfrazier.tech/
+Description: Stop guessing about automation. WWHFD explores the evolution of efficiency from Pyramids to AI. Solve the mystery of scalable innovation. 
+Posted: Sun, 19 Apr 2026 17:33:21 UTC
+X Post: https://x.com/NealFrazierTech/status/2045918687748632965
+Built with: Ollama + Google AI Studio + OpenAI + Netlify
+
+
+#77 – Zen Breathing Companion
+URL: https://t.co/PkZfReMmiP
+Description: Stop the digital noise. Zen Breathing Companion is a minimalist, atmospheric timer designed to reduce stress and improve focus through guided breathing. Perfect for quick resets. Try…
+Posted: Sun, 19 Apr 2026 17:34:15 UTC
+X Post: https://x.com/NealFrazierTech/status/2045918917533515822
+Built with: Ollama + Google AI Studio + OpenAI + Netlify
 
 
 
 
+#78 – 100WebsitesIn30Days
+URL: https://100websitesin30days.nealfrazier.tech/
+Description: This website showcases the challenge #100WebsitesIn30Days and my progress along its journey. Includes all drops, timeline articles, resources, and a passage way to join the challenge yourself!!
+Posted: Sun, 19 Apr 2026 22:50:15 UTC
+X Post: https://x.com/NealFrazierTech/status/2045998440115577124
+Built with: Netlify + Google AI Studio + OpenAI + Ollama 
 
-
-
-
-
-
-
-
-
-
-
-
-
+#79 – Neal Frazier Tech (Bliki)
+URL: https://www.nealfrazier.tech
+Description: I have revamped Neal Frazier Tech. This is now a Bliki website which I would like to say thank you
+@ChaiWithJai
+for the major influence and guidance on making this shift. This is an ongoing project and is another #buildinpublic project. The old sites url is https://t.co/dsKWMKsMec
+	Posted: Mon, 20 Apr 2026 01:10:23 UTC
+	X Post: https://x.com/NealFrazierTech/status/2046033703986413986
+	Built with: Netlify + Google AI Studio + OpenAI + Ollama 
+	
+	#80 – Python 30
+	URL: https://python-30.nealfrazier.tech/
+	Description: A free interactive guide to mastering Python in 30 days with a personalized AI tutor.
+	Posted: Tue, 21 Apr 2026 02:22:35 UTC
+	X Post: https://x.com/NealFrazierTech/status/2046414264794038615
+	Built with: Google AI Studio + OpenAI + Netlify + Ollama 
+	
+	#81 – Python Math
+	URL: https://python-math.nealfrazier.tech/
+	Description: Learn math through Python with daily interactive lessons and challenges.
+	Posted: Tue, 21 Apr 2026 02:39:14 UTC
+	X Post: https://x.com/NealFrazierTech/status/2046418455105077535
+	Built with: Google AI Studio + OpenAI + Netlify + Ollama 
+	
+	#82 – AI Mastery
+	URL: https://ai-mastery.nealfrazier.tech/
+	Description: A comprehensive 30-day curriculum to master AI tools, prompt engineering, agents, and security. Start your journey to becoming an AI expert today.
+	Posted: Tue, 21 Apr 2026 02:44:49 UTC
+	X Post: https://x.com/NealFrazierTech/status/2046419857046925535
+	Built with: Google AI Studio + OpenAI + Ollama + Netlify 
+	
+	#83 – AI University
+	URL: https://ai-university.nealfrazier.tech/
+	Description: Von Neumann University offers higher learning for higher intelligence. A prestigious university for AI employees, specializing in NLP, Tool Use, and Alignment.
+	Posted: Tue, 21 Apr 2026 02:50:00 UTC
+	X Post: https://x.com/NealFrazierTech/status/2046421162557620378
+	Built with: Google AI Studio + OpenAI + Ollama + Netlify 
+	
+	#84 – C in 30
+	URL: https://c-in-30.nealfrazier.tech/
+	Description: A practical 30-day C programming course with daily exercises, guided projects, and fundamentals for modern systems programming.
+	Posted: Tue, 21 Apr 2026 02:54:44 UTC
+	X Post: https://x.com/NealFrazierTech/status/2046422354738201078
+	Built with: Google AI Studio + OpenAI + Netlify + Ollama 
+	
+	#85 – Forge Fracture
+	URL: https://forge-fracture.nealfrazier.tech/
+	Description: A high-fidelity social hub for radical digital creatives. Architect monoliths, induce creative entropy, and evolve the neural mesh.
+	Posted: Tue, 21 Apr 2026 03:04:12 UTC
+	X Post: https://x.com/NealFrazierTech/status/2046424735932637487
+	Built with: Google AI Studio + OpenAI + Ollama + Netlify 
+	
+	#86 – IdleKey
+	URL: https://idlekey.nealfrazier.tech/
+	Description: Tired of the AI hype? Monetize your apathy. Sell your unused AI free-tier API quotas and get paid for doing absolutely nothing.
+	Posted: Tue, 21 Apr 2026 03:32:07 UTC
+	X Post: https://x.com/NealFrazierTech/status/2046431763619049826
+	Built with: Google AI Studio + OpenAI + Ollama + Netlify 
+	
+	#87 – 30 Days Linux Fundamentals
+	URL: https://30-days-linux-fundamentals.nealfrazier.tech/
+	Description: This was a special one. Converted one of my first repos I made a couple years ago into an immersive Astro js framework. Start Learning Linux today!!
+	Posted: Wed, 22 Apr 2026 01:13:45 UTC
+	X Post: https://x.com/NealFrazierTech/status/2046759328741282164
+	Built with: Google AI Studio + OpenAI + Netlify 
+	
+	#88 – Nova OS Analytics
+	URL: https://nova-os-analytics.nealfrazier.tech/
+	Description: Explore a public-ready analytics product shell with reusable templates, AI-powered dashboard generation, and deployment-safe UX patterns.
+	Posted: Wed, 22 Apr 2026 03:04:33 UTC
+	X Post: https://x.com/NealFrazierTech/status/2046787213573107795
+	Built with: Google AI Studio + OpenAI + Ollama + Netlify 
+	
+	#89 – BlockFans
+	URL: https://blockfans.nealfrazier.tech/
+	Description: Join the BlockFans waitlist for early access to a Web3 creator network with direct fan support, wallet-based identity, and on-chain subscriptions.
+	Posted: Wed, 22 Apr 2026 03:17:55 UTC
+	X Post: https://x.com/NealFrazierTech/status/2046790575312052419
+	Built with: Google AI Studio + OpenAI + Netlify 
+	
+	#90 – PowerShell 30
+	URL: https://learn-powershell-in-30-days.nealfrazier.tech/
+	Description: A practical, day-by-day learning path to build real PowerShell skills in 30 days.
+	Posted: Wed, 22 Apr 2026 03:23:28 UTC
+	X Post: https://x.com/NealFrazierTech/status/2046791972036260102
+	Built with: Google AI Studio + OpenAI + Netlify
+	
+	
+	#91 – CISA GRC Study Portal
+	URL: https://cisa-grc-study-portal.nealfrazier.tech/
+	Description: An interactive study portal for CISA and GRC preparation with practice content and exam-focused guidance.
+	Posted: Wed, 22 Apr 2026 03:25:59 UTC
+	X Post: https://x.com/NealFrazierTech/status/2046792605862670445
+	Built with: Google AI Studio + OpenAI + Netlify 
+	
+	#92 – Yell Space
+	URL: https://yell-space.nealfrazier.tech/
+	Description: A voice-based stress release app that helps people vent safely and reflect with AI-powered analysis.
+	Posted: Wed, 22 Apr 2026 03:37:07 UTC
+	X Post: https://x.com/NealFrazierTech/status/2046795406441357331
+	Built with: Google AI Studio + OpenAI + Netlify 
+	
+	#93 – Prepped Pigeon
+	URL: https://prepped-pigeon.nealfrazier.tech/
+	Description: Find and reserve parking spots, valet services, and venue reservations in Virginia Beach.
+	Posted: Thu, 23 Apr 2026 01:17:44 UTC
+	X Post: https://x.com/NealFrazierTech/status/2047122717791441097
+	Built with: Google AI Studio + Netlify + OpenAI 
+	
+	#94 – NFC Link Hub
+	URL: https://nfc-link-hub.nealfrazier.tech/
+	Description: A social profile link aggregator with integrated NFC tools for physical sharing and tag writing.
+	Posted: Thu, 23 Apr 2026 01:30:23 UTC
+	X Post: https://x.com/NealFrazierTech/status/2047125903109419208
+	Built with: Google AI Studio + OpenAI + Ollama + Netlify + Supabase 
+	
+	#95 – JusticeWatch
+	URL: https://justicewatch.nealfrazier.tech/
+	Description: Join the JusticeWatch waitlist to unlock a 2026 incident briefing map with source-linked, area-specific case details.
+	Posted: Thu, 23 Apr 2026 01:39:57 UTC
+	X Post: https://x.com/NealFrazierTech/status/2047128307817153011
+	Built with: Google AI Studio + OpenAI + Netlify 
+	
+	#96 – Tidepoint Strategic
+	URL: https://tidepoint.757tech.pro/
+	Description: Tidepoint Strategic is a Hampton Roads think tank helping teams ship faster through AI-augmented strategy, tactical foresight, and execution support.
+	Posted: Thu, 23 Apr 2026 01:48:45 UTC
+	X Post: https://x.com/NealFrazierTech/status/2047130522875273549
+	Built with: Google AI Studio + OpenAI + Netlify 
+	
+	#97 – Pied Piper
+	URL: https://piedpiper.nealfrazier.tech/
+	Description: Pied Piper: The next generation of decentralized lossless compression. Built on the revolutionary Middle-Out engine by Richard Hendricks.
+	Posted: Thu, 23 Apr 2026 01:53:20 UTC
+	X Post: https://x.com/NealFrazierTech/status/2047131679081312355
+	Built with: Google AI Studio + Netlify 
+	
+	#98 – Bullseye
+	URL: https://bullseye.nealfrazier.tech/
+	Description: The lead generation platform for recruiters tired of wasting time on LinkedIn spam. We guarantee you message the right people.
+	Posted: Thu, 23 Apr 2026 02:27:22 UTC
+	X Post: https://x.com/NealFrazierTech/status/2047140241396429283
+	Built with: Google AI Studio + Netlify 
+	
+	#99 – MigrateX
+	URL: https://migratex.757tech.pro/
+	Description: X is phasing out Communities, but your people aren't going anywhere. Use MigrateX to keep your network together.
+	Posted: Thu, 23 Apr 2026 02:44:25 UTC
+	X Post: https://x.com/NealFrazierTech/status/2047144534627271052
+	Built with: Google AI Studio + Netlify 
+	
+	#100 – Riff Raff
+	URL: https://riffraff.nealfrazier.tech/
+	Description: Master the art of Riff Raff metaphors. Explore the Neon Icon dictionary of 1,000+ absurd luxury references or generate your own 'Rap Game' personas.
+	Posted: Thu, 23 Apr 2026 03:33:10 UTC
+	X Post: https://x.com/NealFrazierTech/status/2047156800038846592
+	Built with: Google AI Studio + OpenAI + Netlify
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

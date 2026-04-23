@@ -117,13 +117,27 @@ const DAYS_CONTENT = Array.from({ length: 30 }, (_, i) => {
     })
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
   const shippedTitles = shippedSites.map((site) => site.title);
+  const shippedToday = shippedTitles.length;
+  const cumulativeShipped = configData.projects.filter((project) => new Date(project.date) < dayEnd).length;
+  const targetCount = configData.challenge.targetCount;
+  const remainingToTarget = Math.max(targetCount - cumulativeShipped, 0);
+  const progressPercent = Math.min(100, (cumulativeShipped / targetCount) * 100);
+  const targetByNow = Math.min(
+    targetCount,
+    Math.round((day / 30) * targetCount)
+  );
+  const paceDelta = cumulativeShipped - targetByNow;
   const shipBlock =
     shippedTitles.length > 0
       ? `Shipped site${shippedTitles.length > 1 ? "s" : ""} today: ${shippedTitles.join(", ")}. Logged the public progress on X as part of the build-in-public record.`
-      : "No new site was posted this day; the focus was system work, planning, and preparing the next release wave.";
+    : "No new site was posted this day; the focus was system work, planning, and preparing the next release wave.";
+  const progressBlock = `Progress checkpoint: ${cumulativeShipped}/${targetCount} shipped (${progressPercent.toFixed(
+    0
+  )}%). Today's output: ${shippedToday}. Remaining: ${remainingToTarget}. Pace check: ${paceDelta >= 0 ? "+" : ""}${paceDelta} vs day-${day} target (${targetByNow}).`;
+  const tryHackMeBlock = `TryHackMe streak stayed active: completed coursework today and protected the hot streak while pushing toward 365 consecutive days.`;
 
   const dayTitle = `Day ${day}: ${isWeekend ? "Weekend Shipping + Systems" : "Workday Execution + Night Build"} (${dayLabel})`;
-  const content = `${workBlock} ${catSittingBlock} ${thinkTankBlock} ${shipBlock}`;
+  const content = `${workBlock} ${catSittingBlock} ${thinkTankBlock} ${shipBlock} ${progressBlock} ${tryHackMeBlock}`;
   const retrospect = `${isWeekend ? "Weekend cadence emphasized long creative blocks and deeper experimentation." : "Workday cadence stayed strict: professional delivery first, challenge output second, then public documentation."} ${skateBlock}`;
 
   return {
@@ -142,6 +156,14 @@ export default function ArticlePage({ onBack }: ArticlePageProps) {
   const now = new Date();
   const challengeStart = new Date(challenge.startDate);
   const challengeEnd = new Date(challenge.endDate);
+  const challengeDateLabel = `${challengeStart.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+  })} - ${challengeEnd.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  })}`;
   const msPerDay = 1000 * 60 * 60 * 24;
   const totalChallengeDays = DAYS_CONTENT.length;
   const visibleDayCount = Math.max(
@@ -213,7 +235,7 @@ export default function ArticlePage({ onBack }: ArticlePageProps) {
           </div>
           <div className="text-left">
             <div className="font-bold text-lg">Neal Frazier</div>
-            <div className="text-google-gray text-sm">March 25 - April 24, 2026</div>
+            <div className="text-google-gray text-sm">{challengeDateLabel}</div>
           </div>
         </div>
       </header>
