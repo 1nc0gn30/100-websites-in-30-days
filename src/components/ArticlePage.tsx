@@ -15,9 +15,16 @@ import configData from "../challenge-config.json";
 
 interface ArticlePageProps {
   onBack: () => void;
+  seasonId?: number;
+  onSeasonChange?: (seasonId: number) => void;
 }
 
 const DAY_IMAGE_MODULES = import.meta.glob("../../day*.{png,jpg,jpeg,webp,avif,gif}", {
+  eager: true,
+  import: "default",
+}) as Record<string, string>;
+
+const SUMMER_DAY_IMAGE_MODULES = import.meta.glob("../../summer_day*.{png,jpg,jpeg,webp,avif,gif}", {
   eager: true,
   import: "default",
 }) as Record<string, string>;
@@ -27,6 +34,28 @@ const EXT_PRIORITY = ["png", "jpg", "jpeg", "webp", "avif", "gif"] as const;
 const DAY_IMAGES: Partial<Record<number, string>> = Object.values(DAY_IMAGE_MODULES).reduce(
   (acc, imagePath) => {
     const match = imagePath.match(/day(\d+)(?:-[^/.]+)?\.(png|jpg|jpeg|webp|avif|gif)$/i);
+    if (!match) return acc;
+    const day = Number(match[1]);
+    const ext = match[2].toLowerCase();
+    const current = acc[day];
+
+    if (!current) {
+      acc[day] = imagePath;
+      return acc;
+    }
+
+    const currentExt = current.match(/\.(png|jpg|jpeg|webp|avif|gif)$/i)?.[1]?.toLowerCase() ?? "gif";
+    if (EXT_PRIORITY.indexOf(ext as (typeof EXT_PRIORITY)[number]) < EXT_PRIORITY.indexOf(currentExt as (typeof EXT_PRIORITY)[number])) {
+      acc[day] = imagePath;
+    }
+    return acc;
+  },
+  {} as Partial<Record<number, string>>
+);
+
+const SUMMER_DAY_IMAGES: Partial<Record<number, string>> = Object.values(SUMMER_DAY_IMAGE_MODULES).reduce(
+  (acc, imagePath) => {
+    const match = imagePath.match(/summer_day(\d+)(?:-[^/.]+)?\.(png|jpg|jpeg|webp|avif|gif)$/i);
     if (!match) return acc;
     const day = Number(match[1]);
     const ext = match[2].toLowerCase();
@@ -83,76 +112,14 @@ const QUOTES = [
   { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
 ];
 
-const DAYS_CONTENT = Array.from({ length: 30 }, (_, i) => {
-  const day = i + 1;
-  const dayStart = new Date(configData.challenge.startDate);
-  dayStart.setUTCDate(dayStart.getUTCDate() + i);
-  const dayEnd = new Date(dayStart);
-  dayEnd.setUTCDate(dayEnd.getUTCDate() + 1);
+const season1Data = configData.seasons.find(s => s.id === 1) || configData.seasons[0];
 
-  const dayLabel = dayStart.toLocaleDateString("en-US", {
-    weekday: "short",
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
-  const weekday = dayStart.getUTCDay();
-  const isWeekend = weekday === 0 || weekday === 6;
-  const thinkTankDay = day % 2 === 0;
-  const workBlock = isWeekend
-    ? "Weekend structure today: no 9-5 contractor block, focus shifted to challenge builds and business systems."
-    : "Worked 9am-5pm at MaxxPotential as a private-contractor Security Analyst, then moved into evening build mode.";
-  const catSittingBlock = "Cat-sitting stayed part of the daily rhythm and kept the schedule grounded between work and shipping blocks.";
-  const thinkTankBlock = thinkTankDay
-    ? "Met at a cafe/workspace for think-tank time on real businesses launching this year, then translated those notes into product scope."
-    : "Ran a focused solo execution block after work, tightening scope and moving directly into build + publish reps.";
-  const skateBlock = isWeekend
-    ? "Weekend note: if weather held, I got skateboard sessions in; that includes this weekend cadence and the prior weekend rhythm."
-    : "Skate sessions were held for weekend weather windows so weekday momentum stayed clean.";
+export default function ArticlePage({ onBack, seasonId = 1, onSeasonChange }: ArticlePageProps) {
+  const activeSeason = React.useMemo(() => {
+    return configData.seasons.find(s => s.id === seasonId) || configData.seasons[0];
+  }, [seasonId]);
 
-  const shippedSites = configData.projects
-    .filter((project) => {
-      const posted = new Date(project.date);
-      return posted >= dayStart && posted < dayEnd;
-    })
-    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-  const shippedTitles = shippedSites.map((site) => site.title);
-  const shippedToday = shippedTitles.length;
-  const cumulativeShipped = configData.projects.filter((project) => new Date(project.date) < dayEnd).length;
-  const targetCount = configData.challenge.targetCount;
-  const remainingToTarget = Math.max(targetCount - cumulativeShipped, 0);
-  const progressPercent = Math.min(100, (cumulativeShipped / targetCount) * 100);
-  const targetByNow = Math.min(
-    targetCount,
-    Math.round((day / 30) * targetCount)
-  );
-  const paceDelta = cumulativeShipped - targetByNow;
-  const shipBlock =
-    shippedTitles.length > 0
-      ? `Shipped site${shippedTitles.length > 1 ? "s" : ""} today: ${shippedTitles.join(", ")}. Logged the public progress on X as part of the build-in-public record.`
-    : "No new site was posted this day; the focus was system work, planning, and preparing the next release wave.";
-  const progressBlock = `Progress checkpoint: ${cumulativeShipped}/${targetCount} shipped (${progressPercent.toFixed(
-    0
-  )}%). Today's output: ${shippedToday}. Remaining: ${remainingToTarget}. Pace check: ${paceDelta >= 0 ? "+" : ""}${paceDelta} vs day-${day} target (${targetByNow}).`;
-  const tryHackMeBlock = `TryHackMe streak stayed active: completed coursework today and protected the hot streak while pushing toward 365 consecutive days.`;
-
-  const dayTitle = `Day ${day}: ${isWeekend ? "Weekend Shipping + Systems" : "Workday Execution + Night Build"} (${dayLabel})`;
-  const content = `${workBlock} ${catSittingBlock} ${thinkTankBlock} ${shipBlock} ${progressBlock} ${tryHackMeBlock}`;
-  const retrospect = `${isWeekend ? "Weekend cadence emphasized long creative blocks and deeper experimentation." : "Workday cadence stayed strict: professional delivery first, challenge output second, then public documentation."} ${skateBlock}`;
-
-  return {
-    day,
-    title: dayTitle,
-    content,
-    retrospect,
-    quote: QUOTES[i % QUOTES.length],
-    imageIdea: buildImageIdea(day, dayTitle, retrospect),
-    shippedTitles,
-  };
-});
-
-export default function ArticlePage({ onBack }: ArticlePageProps) {
-  const { challenge } = configData;
+  const { challenge } = activeSeason;
   const now = new Date();
   const challengeStart = new Date(challenge.startDate);
   const challengeEnd = new Date(challenge.endDate);
@@ -164,6 +131,101 @@ export default function ArticlePage({ onBack }: ArticlePageProps) {
     day: "numeric",
     year: "numeric",
   })}`;
+
+  const DAYS_CONTENT = React.useMemo(() => {
+    if (seasonId === 1) {
+      return Array.from({ length: 30 }, (_, i) => {
+        const day = i + 1;
+        const dayStart = new Date(activeSeason.challenge.startDate);
+        dayStart.setUTCDate(dayStart.getUTCDate() + i);
+        const dayEnd = new Date(dayStart);
+        dayEnd.setUTCDate(dayEnd.getUTCDate() + 1);
+
+        const dayLabel = dayStart.toLocaleDateString("en-US", {
+          weekday: "short",
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+        });
+        const weekday = dayStart.getUTCDay();
+        const isWeekend = weekday === 0 || weekday === 6;
+        const thinkTankDay = day % 2 === 0;
+        const workBlock = isWeekend
+          ? "Weekend structure today: no 9-5 contractor block, focus shifted to challenge builds and business systems."
+          : "Worked 9am-5pm at MaxxPotential as a private-contractor Security Analyst, then moved into evening build mode.";
+        const catSittingBlock = "Cat-sitting stayed part of the daily rhythm and kept the schedule grounded between work and shipping blocks.";
+        const thinkTankBlock = thinkTankDay
+          ? "Met at a cafe/workspace for think-tank time on real businesses launching this year, then translated those notes into product scope."
+          : "Ran a focused solo execution block after work, tightening scope and moving directly into build + publish reps.";
+        const skateBlock = isWeekend
+          ? "Weekend note: if weather held, I got skateboard sessions in; that includes this weekend cadence and the prior weekend rhythm."
+          : "Skate sessions were held for weekend weather windows so weekday momentum stayed clean.";
+
+        const shippedSites = activeSeason.projects
+          .filter((project) => {
+            const posted = new Date(project.date);
+            return posted >= dayStart && posted < dayEnd;
+          })
+          .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+        const shippedTitles = shippedSites.map((site) => site.title);
+        const shippedToday = shippedTitles.length;
+        const cumulativeShipped = activeSeason.projects.filter((project) => new Date(project.date) < dayEnd).length;
+        const targetCount = activeSeason.challenge.targetCount;
+        const remainingToTarget = Math.max(targetCount - cumulativeShipped, 0);
+        const progressPercent = Math.min(100, (cumulativeShipped / targetCount) * 100);
+        const targetByNow = Math.min(
+          targetCount,
+          Math.round((day / 30) * targetCount)
+        );
+        const paceDelta = cumulativeShipped - targetByNow;
+        const shipBlock =
+          shippedTitles.length > 0
+            ? `Shipped site${shippedTitles.length > 1 ? "s" : ""} today: ${shippedTitles.join(", ")}. Logged the public progress on X as part of the build-in-public record.`
+            : "No new site was posted this day; the focus was system work, planning, and preparing the next release wave.";
+        const progressBlock = `Progress checkpoint: ${cumulativeShipped}/${targetCount} shipped (${progressPercent.toFixed(
+          0
+        )}%). Today's output: ${shippedToday}. Remaining: ${remainingToTarget}. Pace check: ${paceDelta >= 0 ? "+" : ""}${paceDelta} vs day-${day} target (${targetByNow}).`;
+        const tryHackMeBlock = `TryHackMe streak stayed active: completed coursework today and protected the hot streak while pushing toward 365 consecutive days.`;
+
+        const dayTitle = `Day ${day}: ${isWeekend ? "Weekend Shipping + Systems" : "Workday Execution + Night Build"} (${dayLabel})`;
+        const content = `${workBlock} ${catSittingBlock} ${thinkTankBlock} ${shipBlock} ${progressBlock} ${tryHackMeBlock}`;
+        const retrospect = `${isWeekend ? "Weekend cadence emphasized long creative blocks and deeper experimentation." : "Workday cadence stayed strict: professional delivery first, challenge output second, then public documentation."} ${skateBlock}`;
+
+        return {
+          day,
+          title: dayTitle,
+          content,
+          retrospect,
+          quote: QUOTES[i % QUOTES.length],
+          imageIdea: buildImageIdea(day, dayTitle, retrospect),
+          shippedTitles,
+        };
+      });
+    }
+
+    // Season 2: Summer 2026 (Days 1 & 2)
+    return [
+      {
+        day: 1,
+        title: "Day 1: Summer Sprint Kickoff (Wed, Jul 1, 2026)",
+        content: "Season 2 kicked off with massive energy and a return to the daily shipping sprint. The focus today was testing our velocity and build systems across three distinct deployments: Solana World Map (a Three.js 3D visualization globe), CreatorPlaybooks Mentor Lab (productizing execution frameworks), and Sparks of Joy (a mini interactive layout). Build, audit, and deploy flows all ran cleanly. We logged the public progress on X.",
+        retrospect: "Day 1 established that the speed-scaffolding system is robust and ready. Having three live sites on Day 1 sets a strong foundation for the days ahead.",
+        quote: { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
+        imageIdea: "Day 1 visual prompt: Summer Sprint Kickoff. A screen showcasing a glowing 3D hologram globe, warm desk lighting.",
+        shippedTitles: ["Solana World Map", "CreatorPlaybooks Mentor Lab", "Sparks of Joy"]
+      },
+      {
+        day: 2,
+        title: "Day 2: Interactive Focus & Systems (Thu, Jul 2, 2026)",
+        content: "Day 2 focused on wiring up interactive toy physics and layout scheduling. Shipped the Reno Scheduler for a new connection to manage contractor checklists and timeline blocks. Deployed Mosh Me Cute—a procedural WebGL feedback toy using phone tilt and location coordinates. Verified and deployed configurations to the Netlify Edge network.",
+        retrospect: "Combining interactive 3D WebGL physics with customizable contractor scheduling tools represents the balance of cute design and practical utility we want for Season 2.",
+        quote: { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill" },
+        imageIdea: "Day 2 visual prompt: Interactive Focus & Systems. A cozy room with a neon pink/cyan screen displaying toy shapes and wireframes.",
+        shippedTitles: ["Reno Scheduler", "Mosh Me Cute"]
+      }
+    ];
+  }, [seasonId, activeSeason]);
+
   const msPerDay = 1000 * 60 * 60 * 24;
   const totalChallengeDays = DAYS_CONTENT.length;
   const visibleDayCount = Math.max(
@@ -174,6 +236,7 @@ export default function ArticlePage({ onBack }: ArticlePageProps) {
     )
   );
   const visibleDays = DAYS_CONTENT.slice(0, visibleDayCount);
+  const activeImages = seasonId === 1 ? DAY_IMAGES : SUMMER_DAY_IMAGES;
 
   const handleHoloMove = (event: React.MouseEvent<HTMLDivElement>) => {
     const el = event.currentTarget;
@@ -198,18 +261,44 @@ export default function ArticlePage({ onBack }: ArticlePageProps) {
       className="max-w-4xl mx-auto pb-24"
     >
       {/* Navigation & Meta */}
-      <div className="flex items-center justify-between mb-12 sticky top-20 bg-[#F8F9FA]/80 backdrop-blur-md py-4 z-20 border-b border-gray-100">
+      <div className="flex items-center justify-between mb-12 sticky top-20 bg-[#F8F9FA]/80 backdrop-blur-md py-4 z-20 border-b border-gray-100 gap-4 flex-wrap md:flex-nowrap">
         <button 
           onClick={onBack}
-          className="flex items-center gap-2 text-google-blue font-medium hover:bg-google-blue/5 px-4 py-2 rounded-full transition-colors"
+          className="flex items-center gap-2 text-google-blue font-medium hover:bg-google-blue/5 px-4 py-2 rounded-full transition-colors shrink-0"
         >
           <ArrowLeft size={18} />
           Back to About
         </button>
-        <div className="flex items-center gap-4 text-google-gray">
+
+        {onSeasonChange && (
+          <div className="inline-flex bg-[#F1F3F4] p-0.5 rounded-full border border-[#DADCE0] shadow-xs shrink-0">
+            <button
+              onClick={() => onSeasonChange(1)}
+              className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${
+                seasonId === 1
+                  ? 'bg-white text-google-blue shadow-2xs font-semibold'
+                  : 'text-google-gray hover:text-[#202124]'
+              }`}
+            >
+              Season 1 (Spring)
+            </button>
+            <button
+              onClick={() => onSeasonChange(2)}
+              className={`px-3 py-1 rounded-full text-xs font-medium transition-all ${
+                seasonId === 2
+                  ? 'bg-white text-google-blue shadow-2xs font-semibold'
+                  : 'text-google-gray hover:text-[#202124]'
+              }`}
+            >
+              Season 2 (Summer)
+            </button>
+          </div>
+        )}
+
+        <div className="flex items-center gap-4 text-google-gray shrink-0">
           <div className="flex items-center gap-1 text-sm">
             <Clock size={16} />
-            20 min read
+            {seasonId === 1 ? "20 min read" : "3 min read"}
           </div>
           <div className="h-4 w-px bg-gray-200" />
           <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
@@ -298,7 +387,7 @@ export default function ArticlePage({ onBack }: ArticlePageProps) {
 
               {/* Day Image */}
               <div className="group relative">
-                {DAY_IMAGES[day.day] ? (
+                {activeImages[day.day] ? (
                   <motion.div
                     initial={{ opacity: 0.88, y: 22, scale: 0.985, rotateX: 6 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
@@ -309,20 +398,20 @@ export default function ArticlePage({ onBack }: ArticlePageProps) {
                     onMouseLeave={handleHoloLeave}
                   >
                     <img
-                      src={DAY_IMAGES[day.day]}
+                      src={activeImages[day.day]}
                       alt={`Day ${day.day} journal visual`}
                       className="journal-image-base"
                       loading={idx < 2 ? "eager" : "lazy"}
                     />
                     <img
-                      src={DAY_IMAGES[day.day]}
+                      src={activeImages[day.day]}
                       alt=""
                       aria-hidden="true"
                       className="journal-image-glitch journal-image-glitch-red"
                       loading="lazy"
                     />
                     <img
-                      src={DAY_IMAGES[day.day]}
+                      src={activeImages[day.day]}
                       alt=""
                       aria-hidden="true"
                       className="journal-image-glitch journal-image-glitch-cyan"
@@ -352,7 +441,7 @@ export default function ArticlePage({ onBack }: ArticlePageProps) {
                   </div>
                 )}
                 <p className="mt-3 text-xs text-google-gray text-center italic">
-                  {DAY_IMAGES[day.day]
+                  {activeImages[day.day]
                     ? `Caption: Day ${day.day} field note visual`
                     : `Caption: Idea for Day ${day.day} visual — ${day.imageIdea.split("—")[0]}`}
                 </p>

@@ -79,19 +79,31 @@ function PreviewImage({
   alt,
   link,
   wrapperClassName,
-  imageClassName
+  imageClassName,
+  seasonId = 1,
+  compact = false
 }: {
   src: string;
   alt: string;
   link: string;
   wrapperClassName: string;
   imageClassName: string;
+  seasonId?: number;
+  compact?: boolean;
 }) {
   const [state, setState] = useState<'loading' | 'loaded' | 'error'>('loading');
 
   useEffect(() => {
     setState('loading');
   }, [src]);
+
+  const displayDomain = useMemo(() => {
+    try {
+      return new URL(link).hostname;
+    } catch {
+      return link.replace(/^https?:\/\//, '');
+    }
+  }, [link]);
 
   return (
     <div className={`relative ${wrapperClassName}`}>
@@ -115,18 +127,49 @@ function PreviewImage({
       )}
 
       {state === 'error' && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-[#F1F3F4] text-google-gray p-3 text-center">
-          <ImageOff size={18} className="text-[#9AA0A6]" />
-          <span className="text-xs font-medium">Preview unavailable</span>
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[11px] font-medium text-google-blue hover:underline"
-          >
-            Open website
-          </a>
-        </div>
+        compact ? (
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-[#EEF2F6] to-[#E4E9F0] border border-[#DADCE0] p-1.5 text-center select-none overflow-hidden">
+            <div
+              className="grid grid-cols-2 gap-0.5 rounded-full bg-white p-0.5 border border-[#DADCE0] shadow-sm mb-1"
+              aria-hidden="true"
+            >
+              <span className="h-1 w-1 rounded-full bg-google-blue" />
+              <span className="h-1 w-1 rounded-full bg-google-red" />
+              <span className="h-1 w-1 rounded-full bg-google-yellow" />
+              <span className="h-1 w-1 rounded-full bg-google-green" />
+            </div>
+            <span className="text-[9px] font-semibold text-google-black leading-tight line-clamp-2 truncate max-w-full px-0.5">
+              {alt}
+            </span>
+            <span className="text-[8px] text-google-gray font-mono">S{seasonId}</span>
+          </div>
+        ) : (
+          <div className="absolute inset-0 flex flex-col justify-between p-4 bg-gradient-to-br from-[#EEF2F6] to-[#E4E9F0] border border-[#DADCE0] text-left select-none overflow-hidden">
+            <div className="flex justify-between items-center w-full">
+              <div
+                className="grid grid-cols-2 gap-0.5 rounded-full bg-white p-1 border border-[#DADCE0] shadow-sm shrink-0"
+                aria-hidden="true"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-google-blue" />
+                <span className="h-1.5 w-1.5 rounded-full bg-google-red" />
+                <span className="h-1.5 w-1.5 rounded-full bg-google-yellow" />
+                <span className="h-1.5 w-1.5 rounded-full bg-google-green" />
+              </div>
+              <span className="text-[9px] font-mono text-google-gray uppercase tracking-wider bg-white/70 px-2 py-0.5 rounded-full border border-black/5 shadow-2xs">
+                Season {seasonId}
+              </span>
+            </div>
+            
+            <div className="space-y-1 mt-auto">
+              <h4 className="font-display font-bold text-google-black text-xs sm:text-sm leading-snug line-clamp-2">
+                {alt}
+              </h4>
+              <p className="text-[10px] text-google-blue font-medium hover:underline truncate">
+                {displayDomain}
+              </p>
+            </div>
+          </div>
+        )
       )}
     </div>
   );
@@ -200,7 +243,13 @@ export default function App() {
     return () => clearInterval(timer);
   }, []);
 
-  const { challenge, projects, socialPosts } = configData;
+  const [selectedSeasonId, setSelectedSeasonId] = useState<number>(2);
+
+  const activeSeason = useMemo(() => {
+    return configData.seasons.find(s => s.id === selectedSeasonId) || configData.seasons[configData.seasons.length - 1];
+  }, [selectedSeasonId]);
+
+  const { challenge, projects, socialPosts } = activeSeason;
   const startDate = new Date(challenge.startDate);
   const endDate = new Date(challenge.endDate);
   
@@ -441,9 +490,34 @@ export default function App() {
                 <div className="absolute -bottom-16 right-4 w-56 h-56 bg-google-green/15 blur-3xl rounded-full" />
                 <div className="absolute bottom-2 left-20 w-36 h-36 bg-google-yellow/20 blur-3xl rounded-full" />
                 <div className="relative space-y-7">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-[#DADCE0] bg-[#F8F9FA] px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-google-gray">
-                    <Globe size={14} />
-                    Build In Public Challenge
+                  <div className="flex flex-wrap items-center gap-3">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-[#DADCE0] bg-[#F8F9FA] px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-google-gray">
+                      <Globe size={14} />
+                      Build In Public Challenge
+                    </div>
+                    
+                    <div className="inline-flex bg-[#F1F3F4] p-0.5 rounded-full border border-[#DADCE0] shadow-xs">
+                      <button
+                        onClick={() => { setSelectedSeasonId(1); setActiveTag('all'); }}
+                        className={`px-3.5 py-1 rounded-full text-xs font-medium transition-all ${
+                          selectedSeasonId === 1
+                            ? 'bg-white text-google-blue shadow-2xs font-semibold'
+                            : 'text-google-gray hover:text-[#202124]'
+                        }`}
+                      >
+                        Season 1 (Spring)
+                      </button>
+                      <button
+                        onClick={() => { setSelectedSeasonId(2); setActiveTag('all'); }}
+                        className={`px-3.5 py-1 rounded-full text-xs font-medium transition-all ${
+                          selectedSeasonId === 2
+                            ? 'bg-white text-google-blue shadow-2xs font-semibold'
+                            : 'text-google-gray hover:text-[#202124]'
+                        }`}
+                      >
+                        Season 2 (Summer)
+                      </button>
+                    </div>
                   </div>
                   <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-[#202124] leading-tight">
                     <span className="text-google-blue">100</span>{' '}
@@ -563,6 +637,8 @@ export default function App() {
                           link={project.url} 
                           wrapperClassName="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0" 
                           imageClassName="w-full h-full object-cover" 
+                          seasonId={selectedSeasonId}
+                          compact={true}
                         />
                         <div className="flex-grow space-y-1">
                           <div className="flex justify-between items-start">
@@ -600,15 +676,40 @@ export default function App() {
               </div>
 
               <div className="flex flex-col md:flex-row gap-4 mb-8 items-center justify-between">
-                <div className="relative w-full md:w-96">
-                  <Search size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-google-gray" />
-                  <input 
-                    type="text" 
-                    placeholder="Search projects..." 
-                    className="w-full pl-10 pr-4 py-2 rounded-lg border border-[#DADCE0] focus:ring-2 focus:ring-google-blue/20 focus:border-google-blue outline-none transition-all"
-                    value={galleryQuery}
-                    onChange={(e) => setGalleryQuery(e.target.value)}
-                  />
+                <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
+                  <div className="relative w-full md:w-80">
+                    <Search size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-google-gray" />
+                    <input 
+                      type="text" 
+                      placeholder="Search projects..." 
+                      className="w-full pl-10 pr-4 py-2 rounded-lg border border-[#DADCE0] focus:ring-2 focus:ring-google-blue/20 focus:border-google-blue outline-none transition-all text-sm"
+                      value={galleryQuery}
+                      onChange={(e) => setGalleryQuery(e.target.value)}
+                    />
+                  </div>
+                  
+                  <div className="inline-flex bg-[#F1F3F4] p-0.5 rounded-full border border-[#DADCE0] shadow-xs shrink-0">
+                    <button
+                      onClick={() => { setSelectedSeasonId(1); setActiveTag('all'); }}
+                      className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
+                        selectedSeasonId === 1
+                          ? 'bg-white text-google-blue shadow-2xs font-semibold'
+                          : 'text-google-gray hover:text-[#202124]'
+                      }`}
+                    >
+                      Season 1
+                    </button>
+                    <button
+                      onClick={() => { setSelectedSeasonId(2); setActiveTag('all'); }}
+                      className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
+                        selectedSeasonId === 2
+                          ? 'bg-white text-google-blue shadow-2xs font-semibold'
+                          : 'text-google-gray hover:text-[#202124]'
+                      }`}
+                    >
+                      Season 2
+                    </button>
+                  </div>
                 </div>
                 <div className="flex gap-2 overflow-x-auto pb-2 w-full md:w-auto">
                   <button 
@@ -643,6 +744,8 @@ export default function App() {
                         link={project.url} 
                         wrapperClassName="w-full h-full" 
                         imageClassName="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                        seasonId={selectedSeasonId}
+                        compact={false}
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors pointer-events-none" />
                     </div>
@@ -702,8 +805,31 @@ export default function App() {
               <div className="text-center space-y-4 mb-12">
                 <h1 className="text-4xl font-bold tracking-tight text-google-black">Build Feed</h1>
                 <p className="text-google-gray max-w-2xl mx-auto">
-                  The raw stream of updates, struggles, and wins from the 100 Websites challenge.
+                  The raw stream of updates, struggles, and wins from the {challenge.title} challenge.
                 </p>
+                
+                <div className="inline-flex bg-[#F1F3F4] p-0.5 rounded-full border border-[#DADCE0] shadow-xs mt-2">
+                  <button
+                    onClick={() => setSelectedSeasonId(1)}
+                    className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
+                      selectedSeasonId === 1
+                        ? 'bg-white text-google-blue shadow-2xs font-semibold'
+                        : 'text-google-gray hover:text-[#202124]'
+                    }`}
+                  >
+                    Season 1
+                  </button>
+                  <button
+                    onClick={() => setSelectedSeasonId(2)}
+                    className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
+                      selectedSeasonId === 2
+                        ? 'bg-white text-google-blue shadow-2xs font-semibold'
+                        : 'text-google-gray hover:text-[#202124]'
+                    }`}
+                  >
+                    Season 2
+                  </button>
+                </div>
               </div>
 
               <div className="max-w-3xl mx-auto space-y-6">
@@ -870,7 +996,11 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
             >
-              <ArticlePage onBack={() => navigateToTab('about')} />
+              <ArticlePage 
+                onBack={() => navigateToTab('about')} 
+                seasonId={selectedSeasonId} 
+                onSeasonChange={setSelectedSeasonId}
+              />
             </motion.section>
           )}
           {activeTab === 'contact' && (

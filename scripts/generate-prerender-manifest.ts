@@ -10,7 +10,9 @@ type RouteMeta = {
   ogImage: string;
 };
 
-type ChallengeConfig = {
+type SeasonConfig = {
+  id: number;
+  name: string;
   challenge: {
     title: string;
   };
@@ -19,6 +21,10 @@ type ChallengeConfig = {
     description: string;
   }>;
   socialPosts: Array<unknown>;
+};
+
+type ChallengeConfig = {
+  seasons: SeasonConfig[];
 };
 
 type Manifest = {
@@ -52,53 +58,56 @@ async function main() {
   const baseUrl = 'https://100WebsitesIn30Days.nealfrazier.tech';
   const ogImage = `${withTrailingSlash(baseUrl)}og-image.png`;
 
-  const projectCount = cfg.projects.length;
+  const projectCount = cfg.seasons.reduce((acc, s) => acc + s.projects.length, 0);
+  const latestSeason = cfg.seasons[cfg.seasons.length - 1];
+  const mainTitle = latestSeason.challenge.title;
+
   const routes: RouteMeta[] = [
     {
       route: '/',
-      title: `${cfg.challenge.title} by Neal Frazier`,
-      description: `Live tracker for ${cfg.challenge.title}. ${projectCount} projects are currently listed with links, stats, and shipping notes.`,
+      title: `${mainTitle} by Neal Frazier`,
+      description: `Live tracker for ${mainTitle}. ${projectCount} projects are currently listed with links, stats, and shipping notes.`,
       canonical: canonical(baseUrl, '/'),
       ogImage,
     },
     {
       route: '/gallery',
-      title: `Project Gallery | ${cfg.challenge.title}`,
-      description: `Browse all ${projectCount} shipped websites from the ${cfg.challenge.title} build sprint.`,
+      title: `Project Gallery | ${mainTitle}`,
+      description: `Browse all shipped websites from the ${mainTitle} build sprint.`,
       canonical: canonical(baseUrl, '/gallery'),
       ogImage,
     },
     {
       route: '/feed',
-      title: `Build Feed | ${cfg.challenge.title}`,
+      title: `Build Feed | ${mainTitle}`,
       description: `Read every challenge post from X in a single chronological feed.`,
       canonical: canonical(baseUrl, '/feed'),
       ogImage,
     },
     {
       route: '/about',
-      title: `About the Challenge | ${cfg.challenge.title}`,
+      title: `About the Challenge | ${mainTitle}`,
       description: 'Background, mission, and operating principles behind the 100-websites sprint.',
       canonical: canonical(baseUrl, '/about'),
       ogImage,
     },
     {
       route: '/about/article',
-      title: `Founder Story | ${cfg.challenge.title}`,
+      title: `Founder Story | ${mainTitle}`,
       description: 'Deep-dive article on the journey, systems, and outcomes behind the challenge.',
       canonical: canonical(baseUrl, '/about/article'),
       ogImage,
     },
     {
       route: '/resources',
-      title: `Builder Resources | ${cfg.challenge.title}`,
+      title: `Builder Resources | ${mainTitle}`,
       description: 'Curated docs and tooling references used to build and ship challenge projects.',
       canonical: canonical(baseUrl, '/resources'),
       ogImage,
     },
     {
       route: '/contact',
-      title: `Contact | ${cfg.challenge.title}`,
+      title: `Contact | ${mainTitle}`,
       description: 'Contact Neal Frazier about project work, partnerships, and production build support.',
       canonical: canonical(baseUrl, '/contact'),
       ogImage,
