@@ -75,6 +75,209 @@ interface ResourceItem {
   start: string;
 }
 
+function hashString(str: string): number {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  return Math.abs(hash);
+}
+
+interface PollenatorProps {
+  title: string;
+  seasonId: number;
+  compact?: boolean;
+  domain: string;
+}
+
+function PollenatorThumbnail({ title, seasonId, compact = false, domain }: PollenatorProps) {
+  const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
+  const hash = React.useMemo(() => hashString(title), [title]);
+
+  React.useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let animationFrameId: number;
+
+    // Pick a curated visual theme based on the title hash
+    const colorThemes = [
+      { primary: '#4285F4', secondary: '#34A853', bg: 'from-[#EEF4FE] to-[#E6F4EA]' }, // Blue/Green
+      { primary: '#EA4335', secondary: '#FBBC05', bg: 'from-[#FCE8E6] to-[#FEF7E0]' }, // Red/Yellow
+      { primary: '#4285F4', secondary: '#EA4335', bg: 'from-[#EEF4FE] to-[#FCE8E6]' }, // Blue/Red
+      { primary: '#c678dd', secondary: '#61afef', bg: 'from-[#F3E8FD] to-[#E8F4FD]' }, // Purple/Blue
+      { primary: '#56b6c2', secondary: '#98c379', bg: 'from-[#EBF7F9] to-[#ECF5E8]' }, // Cyan/Green
+    ];
+    const theme = colorThemes[hash % colorThemes.length];
+
+    interface Particle {
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      radius: number;
+      color: string;
+      alpha: number;
+      angle: number;
+    }
+
+    const resizeCanvas = () => {
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+    };
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    const particleCount = compact ? 12 : 24;
+    const particles: Particle[] = [];
+    const colors = [theme.primary, theme.secondary];
+
+    for (let i = 0; i < particleCount; i++) {
+      const radius = 2 + (hash * (i + 1) % 6);
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height;
+      particles.push({
+        x,
+        y,
+        vx: (Math.sin(hash + i) * 0.3),
+        vy: (Math.cos(hash + i) * 0.3),
+        radius,
+        color: colors[i % colors.length],
+        alpha: 0.15 + (Math.random() * 0.3),
+        angle: Math.random() * Math.PI * 2
+      });
+    }
+
+    let mouseX = -9999;
+    let mouseY = -9999;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+    };
+
+    const handleMouseLeave = () => {
+      mouseX = -9999;
+      mouseY = -9999;
+    };
+
+    canvas.addEventListener('mousemove', handleMouseMove);
+    canvas.addEventListener('mouseleave', handleMouseLeave);
+
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach((p) => {
+        p.angle += 0.01;
+        p.x += p.vx + Math.sin(p.angle) * 0.1;
+        p.y += p.vy + Math.cos(p.angle) * 0.1;
+
+        if (p.x < -p.radius) p.x = canvas.width + p.radius;
+        if (p.x > canvas.width + p.radius) p.x = -p.radius;
+        if (p.y < -p.radius) p.y = canvas.height + p.radius;
+        if (p.y > canvas.height + p.radius) p.y = -p.radius;
+
+        const dx = mouseX - p.x;
+        const dy = mouseY - p.y;
+        const dist = Math.hypot(dx, dy);
+        
+        if (dist < 60) {
+          const force = (60 - dist) / 60;
+          p.x -= (dx / dist) * force * 1.5;
+          p.y -= (dy / dist) * force * 1.5;
+        }
+
+        ctx.save();
+        ctx.globalAlpha = p.alpha;
+        ctx.beginPath();
+        const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius * 2);
+        grad.addColorStop(0, p.color);
+        grad.addColorStop(0.5, p.color);
+        grad.addColorStop(1, 'transparent');
+        ctx.fillStyle = grad;
+        ctx.arc(p.x, p.y, p.radius * 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      });
+
+      animationFrameId = requestAnimationFrame(draw);
+    };
+    draw();
+
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+      canvas.removeEventListener('mousemove', handleMouseMove);
+      canvas.removeEventListener('mouseleave', handleMouseLeave);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [title]);
+
+  const bgGradient = [
+    'from-[#EEF4FE] to-[#E6F4EA]',
+    'from-[#FCE8E6] to-[#FEF7E0]',
+    'from-[#EEF4FE] to-[#FCE8E6]',
+    'from-[#F3E8FD] to-[#E8F4FD]',
+    'from-[#EBF7F9] to-[#ECF5E8]',
+  ][hash % 5];
+
+  if (compact) {
+    return (
+      <div className={`absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br ${bgGradient} border border-[#DADCE0] p-1.5 text-center select-none overflow-hidden group`}>
+        <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" />
+        <div className="relative z-10 flex flex-col items-center">
+          <div
+            className="grid grid-cols-2 gap-0.5 rounded-full bg-white p-0.5 border border-[#DADCE0] shadow-sm mb-1 group-hover:scale-110 transition-transform duration-300"
+            aria-hidden="true"
+          >
+            <span className="h-1 w-1 rounded-full bg-google-blue" />
+            <span className="h-1 w-1 rounded-full bg-google-red" />
+            <span className="h-1 w-1 rounded-full bg-google-yellow" />
+            <span className="h-1 w-1 rounded-full bg-google-green" />
+          </div>
+          <span className="text-[9px] font-semibold text-google-black leading-tight line-clamp-2 truncate max-w-full px-0.5 font-display">
+            {title}
+          </span>
+          <span className="text-[8px] text-google-gray font-mono">S{seasonId}</span>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className={`absolute inset-0 flex flex-col justify-between p-4 bg-gradient-to-br ${bgGradient} border border-[#DADCE0] text-left select-none overflow-hidden group`}>
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" />
+      
+      <div className="relative z-10 flex justify-between items-center w-full">
+        <div
+          className="grid grid-cols-2 gap-0.5 rounded-full bg-white p-1 border border-[#DADCE0] shadow-sm shrink-0 group-hover:rotate-12 transition-transform duration-300"
+          aria-hidden="true"
+        >
+          <span className="h-1.5 w-1.5 rounded-full bg-google-blue" />
+          <span className="h-1.5 w-1.5 rounded-full bg-google-red" />
+          <span className="h-1.5 w-1.5 rounded-full bg-google-yellow" />
+          <span className="h-1.5 w-1.5 rounded-full bg-google-green" />
+        </div>
+        <span className="text-[9px] font-mono text-google-gray uppercase tracking-wider bg-white/70 px-2 py-0.5 rounded-full border border-black/5 shadow-2xs">
+          Season {seasonId}
+        </span>
+      </div>
+      
+      <div className="relative z-10 space-y-1 mt-auto">
+        <h4 className="font-display font-bold text-google-black text-xs sm:text-sm leading-snug line-clamp-2 transition-colors group-hover:text-google-blue">
+          {title}
+        </h4>
+        <p className="text-[10px] text-google-blue font-semibold truncate hover:underline">
+          {domain}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function PreviewImage({
   src,
   alt,
@@ -128,49 +331,12 @@ function PreviewImage({
       )}
 
       {state === 'error' && (
-        compact ? (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-[#EEF2F6] to-[#E4E9F0] border border-[#DADCE0] p-1.5 text-center select-none overflow-hidden">
-            <div
-              className="grid grid-cols-2 gap-0.5 rounded-full bg-white p-0.5 border border-[#DADCE0] shadow-sm mb-1"
-              aria-hidden="true"
-            >
-              <span className="h-1 w-1 rounded-full bg-google-blue" />
-              <span className="h-1 w-1 rounded-full bg-google-red" />
-              <span className="h-1 w-1 rounded-full bg-google-yellow" />
-              <span className="h-1 w-1 rounded-full bg-google-green" />
-            </div>
-            <span className="text-[9px] font-semibold text-google-black leading-tight line-clamp-2 truncate max-w-full px-0.5">
-              {alt}
-            </span>
-            <span className="text-[8px] text-google-gray font-mono">S{seasonId}</span>
-          </div>
-        ) : (
-          <div className="absolute inset-0 flex flex-col justify-between p-4 bg-gradient-to-br from-[#EEF2F6] to-[#E4E9F0] border border-[#DADCE0] text-left select-none overflow-hidden">
-            <div className="flex justify-between items-center w-full">
-              <div
-                className="grid grid-cols-2 gap-0.5 rounded-full bg-white p-1 border border-[#DADCE0] shadow-sm shrink-0"
-                aria-hidden="true"
-              >
-                <span className="h-1.5 w-1.5 rounded-full bg-google-blue" />
-                <span className="h-1.5 w-1.5 rounded-full bg-google-red" />
-                <span className="h-1.5 w-1.5 rounded-full bg-google-yellow" />
-                <span className="h-1.5 w-1.5 rounded-full bg-google-green" />
-              </div>
-              <span className="text-[9px] font-mono text-google-gray uppercase tracking-wider bg-white/70 px-2 py-0.5 rounded-full border border-black/5 shadow-2xs">
-                Season {seasonId}
-              </span>
-            </div>
-            
-            <div className="space-y-1 mt-auto">
-              <h4 className="font-display font-bold text-google-black text-xs sm:text-sm leading-snug line-clamp-2">
-                {alt}
-              </h4>
-              <p className="text-[10px] text-google-blue font-medium hover:underline truncate">
-                {displayDomain}
-              </p>
-            </div>
-          </div>
-        )
+        <PollenatorThumbnail 
+          title={alt} 
+          seasonId={seasonId} 
+          compact={compact} 
+          domain={displayDomain} 
+        />
       )}
     </div>
   );
@@ -332,6 +498,11 @@ export default function App() {
         title: 'Contact | 100 Websites in 30 Days',
         description: 'Connect with Neal Frazier about challenge work, systems, and collaborations.',
         path: '/contact',
+      },
+      api: {
+        title: 'Developer & AI Agent API | 100 Websites in 30 Days',
+        description: 'API endpoints and developer documentation for Neal Frazier\'s 100 Websites challenge data.',
+        path: '/developer',
       },
     };
 
