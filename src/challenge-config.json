@@ -1935,15 +1935,13 @@
         {
           "id": 1,
           "title": "Solana World Map",
-          "date": "2026-07-01T08:00:00.000Z",
+          "date": "2026-07-01T10:00:00.000Z",
           "url": "https://solanaworldmap-hotappsummer.netlify.app",
-          "description": "A 3D interactive globe visualizing live Solana wallets and simulated transactions from cities around the world.",
+          "description": "Interactive Three.js 3D global visualization mapping Solana nodes, transaction volumes, and regional validators.",
           "tags": [
             "three-js",
             "react",
-            "typescript",
-            "tailwind",
-            "vite"
+            "solana"
           ],
           "thumbnail": "https://solanaworldmap-hotappsummer.netlify.app/og-image.png"
         },
@@ -1952,21 +1950,34 @@
           "title": "CreatorPlaybooks Mentor Lab",
           "date": "2026-07-01T12:00:00.000Z",
           "url": "https://creatorplaybooks-mentor-lab.netlify.app",
-          "description": "Interactive execution lab that applies verified CreatorPlaybooks playbooks to X posts, teaching loops, and clear offers.",
+          "description": "Adopt growth playbooks and schedule daily X execution strategies from verified top creators and indie hackers.",
           "tags": [
-            "html",
-            "tailwind-css",
-            "javascript",
-            "netlify"
+            "react",
+            "vite",
+            "marketing"
           ],
           "thumbnail": "https://creatorplaybooks-mentor-lab.netlify.app/og-image.png"
         },
         {
+          "id": 3,
+          "title": "Spark a smile",
+          "date": "2026-07-01T15:00:00.000Z",
+          "url": "https://spark-a-smile.netlify.app",
+          "description": "Need a lift me up? Talk to smiley to brighten your day with winking 3D characters and custom positive vibes.",
+          "tags": [
+            "react",
+            "tailwind",
+            "vite",
+            "3d"
+          ],
+          "thumbnail": "https://spark-a-smile.netlify.app/og-image.png"
+        },
+        {
           "id": 4,
           "title": "Reno Scheduler",
-          "date": "2026-07-02T12:00:00.000Z",
+          "date": "2026-07-02T10:00:00.000Z",
           "url": "https://reisch-scheduler.netlify.app/",
-          "description": "A scheduling application for renovators and contractors featuring crew info, finish trades, water/power checklists, and a monthly drag-and-drop calendar.",
+          "description": "Simple scheduling and timeline tool for renovators and contractors to manage crew details and trade blocks.",
           "tags": [
             "react",
             "tailwind",
@@ -1976,24 +1987,10 @@
         },
         {
           "id": 5,
-          "title": "Sparks of Joy",
-          "date": "2026-07-01T15:00:00.000Z",
-          "url": "https://spark-a-smile.netlify.app/",
-          "description": "A tiny space for bright thoughts, custom 3D animations, energy level check-ins, and positive smile generation.",
-          "tags": [
-            "react",
-            "tailwind",
-            "vite",
-            "three-js"
-          ],
-          "thumbnail": "https://spark-a-smile.netlify.app/og-image.png"
-        },
-        {
-          "id": 6,
-          "title": "Mosh Me Cute",
-          "date": "2026-07-02T14:00:00.000Z",
-          "url": "https://spark-something-cute.netlify.app/",
-          "description": "Procedural interactive toy that changes forever based on your unique seed, location, and phone tilt. Renders a Three.js canvas with datamosh feedback.",
+          "title": "Spark Something Cute",
+          "date": "2026-07-02T12:00:00.000Z",
+          "url": "https://spark-something-cute.netlify.app",
+          "description": "Interactive Three.js visual toy that changes based on your unique seed, location, and device tilt coordinates.",
           "tags": [
             "three-js",
             "react",
@@ -2001,38 +1998,118 @@
             "webgl"
           ],
           "thumbnail": "https://spark-something-cute.netlify.app/og-image.png"
+        },
+        {
+          "id": 6,
+          "title": "Agent Runner Calculator",
+          "date": "2026-07-02T15:00:00.000Z",
+          "url": "https://agent-runner-calculator.netlify.app/",
+          "description": "Calculate credit estimates and API token costs of your prompted AI agent run before triggering large pipeline tasks.",
+          "tags": [
+            "react",
+            "vite",
+            "agents",
+            "math"
+          ],
+          "thumbnail": "https://agent-runner-calculator.netlify.app/og-image.png"
+        },
+        {
+          "id": 7,
+          "title": "Cosmos Flow",
+          "date": "2026-07-03T10:00:00.000Z",
+          "url": "http://cosmos-flow.netlify.app",
+          "description": "Single-page responsive canvas featuring self-healing liquid backgrounds, built entirely on Android via Termux + Hermes Agent.",
+          "tags": [
+            "hermes-agent",
+            "javascript",
+            "netlify",
+            "termux"
+          ],
+          "thumbnail": "https://cosmos-flow.netlify.app/og-image.png"
+        },
+        {
+          "id": 8,
+          "title": "Data Moshy",
+          "date": "2026-07-03T15:00:00.000Z",
+          "url": "https://spark-a-mosh.netlify.app/",
+          "description": "Interactive media utility applying datamoshing distortions, keyframe color smears, and glitched compression to videos and images.",
+          "tags": [
+            "canvas",
+            "datamosh",
+            "media",
+            "glitch"
+          ],
+          "thumbnail": "https://spark-a-mosh.netlify.app/og-image.png"
+        },
+        {
+          "id": 9,
+          "title": "Dimension Lab",
+          "date": "2026-07-04T12:00:00.000Z",
+          "url": "https://spark-a-dimension.netlify.app/",
+          "description": "Visualize and compare the differences between 2D and 3D design elements, parameters, and browser rendering capabilities.",
+          "tags": [
+            "three-js",
+            "webgl",
+            "design",
+            "3d"
+          ],
+          "thumbnail": "https://spark-a-dimension.netlify.app/og-image.png"
         }
       ],
       "socialPosts": [
         {
           "platform": "X",
-          "url": "https://x.com/NealFrazierTech/status/2048564021239842817",
-          "content": "Season 2 Day 1: Solana World Map is live. Renders a 3D interactive globe visualizing live Solana wallets and simulated transactions from cities around the world. Tech: Three.js + R3F + React + Tailwind.",
-          "date": "2026-07-01T08:00:00.000Z"
+          "url": "https://x.com/NealFrazierTech/status/2048564021239842810",
+          "content": "Season 2 Day 1: Solana World Map is live. Renders validation nodes, latency levels, and active validator volumes globally.",
+          "date": "2026-07-01T10:00:00.000Z"
         },
         {
           "platform": "X",
-          "url": "https://x.com/NealFrazierTech/status/2048564021239842818",
-          "content": "Season 2 Day 1: CreatorPlaybooks Mentor Lab deployed. Branded execution page that turns creator strategy guides into action-ready templates and a daily X campaign schedule.",
+          "url": "https://x.com/NealFrazierTech/status/2048564021239842811",
+          "content": "Season 2 Day 1: Released CreatorPlaybooks Mentor Lab. Study and adopts X execution plans of top developers.",
           "date": "2026-07-01T12:00:00.000Z"
         },
         {
           "platform": "X",
-          "url": "https://x.com/NealFrazierTech/status/2048564021239842820",
-          "content": "Season 2 Day 2: Launched Reno Scheduler for a new connect. Simple scheduling application for renovators and contractors to manage crew details, trade requirements, and calendar blocks.",
-          "date": "2026-07-02T12:00:00.000Z"
-        },
-        {
-          "platform": "X",
-          "url": "https://x.com/NealFrazierTech/status/2048564021239842821",
-          "content": "Season 2 Day 1: Sparks of Joy is live. A mini-sanctuary for positive thoughts and interactive 3D winking characters designed to brighten your screen. Tech: React + Tailwind + Three.js.",
+          "url": "https://x.com/NealFrazierTech/status/2048564021239842812",
+          "content": "Season 2 Day 1: Deployed Spark a Smile. A cute custom 3D playground helper to brighten up your daily screen views.",
           "date": "2026-07-01T15:00:00.000Z"
         },
         {
           "platform": "X",
-          "url": "https://x.com/NealFrazierTech/status/2048564021239842822",
-          "content": "Season 2 Day 2: Deployed Mosh Me Cute! Procedural toy featuring coordinate-locked tints, sound synths, gravity bubble tracking, and direct datamosh smears. Tech: Three.js + WebGL + Tailwind.",
-          "date": "2026-07-02T14:00:00.000Z"
+          "url": "https://x.com/NealFrazierTech/status/2048564021239842813",
+          "content": "Season 2 Day 2: Reno Scheduler is deployed. Simple scheduling app for renovators and contractor crew details.",
+          "date": "2026-07-02T10:00:00.000Z"
+        },
+        {
+          "platform": "X",
+          "url": "https://x.com/NealFrazierTech/status/2048564021239842814",
+          "content": "Season 2 Day 2: Spark Something Cute. A location-aware interactive ThreeJS blob changing based on tilt coordinates.",
+          "date": "2026-07-02T12:00:00.000Z"
+        },
+        {
+          "platform": "X",
+          "url": "https://x.com/NealFrazierTech/status/2048564021239842815",
+          "content": "Season 2 Day 2: Shipped Agent Runner Calculator. Interactive utility to forecast compute cost and credit use.",
+          "date": "2026-07-02T15:00:00.000Z"
+        },
+        {
+          "platform": "X",
+          "url": "https://x.com/NealFrazierTech/status/2048564021239842816",
+          "content": "Season 2 Day 3: Deployed Cosmos Flow. Liquid background canvas generated entirely inside Termux on Android.",
+          "date": "2026-07-03T10:00:00.000Z"
+        },
+        {
+          "platform": "X",
+          "url": "https://x.com/NealFrazierTech/status/2048564021239842817",
+          "content": "Season 2 Day 3: Deployed Data Moshy! glitch, compress, and datamosh uploaded videos and images client-side.",
+          "date": "2026-07-03T15:00:00.000Z"
+        },
+        {
+          "platform": "X",
+          "url": "https://x.com/NealFrazierTech/status/2048564021239842818",
+          "content": "Season 2 Day 4: Released Dimension Lab. Interactive 2D vs 3D layout capability and rendering visualizer.",
+          "date": "2026-07-04T12:00:00.000Z"
         }
       ]
     }

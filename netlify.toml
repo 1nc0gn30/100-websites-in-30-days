@@ -29,3 +29,11 @@
   for = "/sitemap.xml"
   [headers.values]
     Cache-Control = "public, max-age=3600"
+
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api"
+  status = 200

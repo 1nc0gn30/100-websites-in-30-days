@@ -203,25 +203,43 @@ export default function ArticlePage({ onBack, seasonId = 1, onSeasonChange }: Ar
       });
     }
 
-    // Season 2: Summer 2026 (Days 1 & 2)
+    // Season 2: Summer 2026 (Days 1 to 4)
     return [
       {
         day: 1,
-        title: "Day 1: Summer Sprint Kickoff (Wed, Jul 1, 2026)",
-        content: "Season 2 kicked off with massive energy and a return to the daily shipping sprint. The focus today was testing our velocity and build systems across three distinct deployments: Solana World Map (a Three.js 3D visualization globe), CreatorPlaybooks Mentor Lab (productizing execution frameworks), and Sparks of Joy (a mini interactive layout). Build, audit, and deploy flows all ran cleanly. We logged the public progress on X.",
-        retrospect: "Day 1 established that the speed-scaffolding system is robust and ready. Having three live sites on Day 1 sets a strong foundation for the days ahead.",
+        title: "Day 1: Solana Globes, Mentor Labs, & Winking Smilies (Wed, Jul 1, 2026)",
+        content: "Season 2 kicked off with high velocity. Shipped Solana World Map (a Three.js 3D validator globe), CreatorPlaybooks Mentor Lab (reusable creator execution steps), and Spark a Smile (a 3D interactive smiley helper to brighten up your screen view). Checked our scaffolds and deployed all three smoothly to Netlify.",
+        retrospect: "Starting the season with validation globes, mentor checksheets, and 3D smileys sets a high standard for our daily composition reps.",
         quote: { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
         imageIdea: "Day 1 visual prompt: Summer Sprint Kickoff. A screen showcasing a glowing 3D hologram globe, warm desk lighting.",
-        shippedTitles: ["Solana World Map", "CreatorPlaybooks Mentor Lab", "Sparks of Joy"]
+        shippedTitles: ["Solana World Map", "CreatorPlaybooks Mentor Lab", "Spark a smile"]
       },
       {
         day: 2,
-        title: "Day 2: Interactive Focus & Systems (Thu, Jul 2, 2026)",
-        content: "Day 2 focused on wiring up interactive toy physics and layout scheduling. Shipped the Reno Scheduler for a new connection to manage contractor checklists and timeline blocks. Deployed Mosh Me Cute—a procedural WebGL feedback toy using phone tilt and location coordinates. Verified and deployed configurations to the Netlify Edge network.",
-        retrospect: "Combining interactive 3D WebGL physics with customizable contractor scheduling tools represents the balance of cute design and practical utility we want for Season 2.",
+        title: "Day 2: Contractor Schedules & Location-aware Blobs (Thu, Jul 2, 2026)",
+        content: "Day 2 focused on contractor systems, WebGL physics, and API costing. Shipped the Reno Scheduler to manage finish trades and crew details, Spark Something Cute (an interactive, coordinate-locked Three.js visual blob), and the Agent Runner Calculator to calculate credit usage and API token costs.",
+        retrospect: "Combining scheduling tools, WebGL coordinate blobs, and cost calculators sets a solid pipeline for day-to-day utility.",
         quote: { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill" },
         imageIdea: "Day 2 visual prompt: Interactive Focus & Systems. A cozy room with a neon pink/cyan screen displaying toy shapes and wireframes.",
-        shippedTitles: ["Reno Scheduler", "Mosh Me Cute"]
+        shippedTitles: ["Reno Scheduler", "Spark Something Cute", "Agent Runner Calculator"]
+      },
+      {
+        day: 3,
+        title: "Day 3: Mobile AI Dev & Browser Datamoshing (Fri, Jul 3, 2026)",
+        content: "Day 3 combined portable terminal environments and browser media compression. Deployed Cosmos Flow—our self-healing fluid canvas app written entirely inside Termux on Android—alongside Data Moshy, an interactive browser editor that allows users to upload videos or images and directly inject feedback loops, color smears, and datamosh keyframe distortions.",
+        retrospect: "Pairing a fluid terminal workflow on a mobile phone with a custom canvas video glitch engine shows the versatility of web pipelines.",
+        quote: { text: "Your time is limited, so don't waste it living someone else's life.", author: "Steve Jobs" },
+        imageIdea: "Day 3 visual prompt: Mobile AI Dev & Browser Datamoshing. A close-up of a mobile phone screen displaying a green terminal interface and glowing fluid particle simulation, blurred city night lights background.",
+        shippedTitles: ["Cosmos Flow", "Data Moshy"]
+      },
+      {
+        day: 4,
+        title: "Day 4: Dimension Lab & 2D vs 3D Design (Sat, Jul 4, 2026)",
+        content: "Day 4 focused on visual comparison metrics for spatial layouts. Deployed Dimension Lab—an interactive 3D comparison tool that helps builders visualize and compare design elements, parameters, and render behaviors between standard 2D layouts and full 3D WebGL scenes directly in the browser. Renders multiple test shapes, coordinate grids, and helps brainstorm when and where to use 3D features.",
+        retrospect: "Visualizing standard 2D container limitations side-by-side with 3D camera controls represents a handy developer sandbox to plan luxury layouts.",
+        quote: { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+        imageIdea: "Day 4 visual prompt: Dimension Lab & 2D vs 3D Design. A dark modern user interface displaying side-by-side wireframe models of a 2D flat layout card and a 3D spinning isometric cube, glowing blue highlights.",
+        shippedTitles: ["Dimension Lab"]
       }
     ];
   }, [seasonId, activeSeason]);

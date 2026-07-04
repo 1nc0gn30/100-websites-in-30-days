@@ -112,6 +112,13 @@ async function main() {
       canonical: canonical(baseUrl, '/contact'),
       ogImage,
     },
+    {
+      route: '/developer',
+      title: `Developer & AI Agent API | ${mainTitle}`,
+      description: 'API documentation for developers and AI agents querying Neal Frazier\'s 100 Websites challenge data.',
+      canonical: canonical(baseUrl, '/developer'),
+      ogImage,
+    },
   ];
 
   const manifest: Manifest = {

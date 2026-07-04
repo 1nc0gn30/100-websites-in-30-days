@@ -42,6 +42,7 @@ import {
 import configData from './challenge-config.json';
 import AboutPage from './components/AboutPage';
 import ArticlePage from './components/ArticlePage';
+import ApiDocsPage from './components/ApiDocsPage';
 import ChallengeCTA from './components/ChallengeCTA';
 import { buttonVariants } from './components/ui/button';
 import { Card } from './components/ui/card';
@@ -176,7 +177,7 @@ function PreviewImage({
 }
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<'journey' | 'gallery' | 'social' | 'about' | 'article' | 'resources' | 'contact'>('journey');
+  const [activeTab, setActiveTab] = useState<'journey' | 'gallery' | 'social' | 'about' | 'article' | 'resources' | 'contact' | 'api'>('journey');
   const [activeStatIndex, setActiveStatIndex] = useState(0);
   const [currentTime, setCurrentTime] = useState(new Date());
   const [galleryQuery, setGalleryQuery] = useState('');
@@ -199,6 +200,7 @@ export default function App() {
     article: '/about/article',
     resources: '/resources',
     contact: '/contact',
+    api: '/developer',
   };
 
   const pathToTab = (pathname: string): typeof activeTab => {
@@ -211,6 +213,7 @@ export default function App() {
       '/about/article': 'article',
       '/resources': 'resources',
       '/contact': 'contact',
+      '/developer': 'api',
     };
     return lookup[normalized] ?? 'journey';
   };
@@ -362,7 +365,7 @@ export default function App() {
     canonicalLink.setAttribute('href', canonicalUrl);
   }, [activeTab]);
 
-  const primaryTabs = ['journey', 'gallery', 'social', 'about', 'article', 'resources', 'contact'] as const;
+  const primaryTabs = ['journey', 'gallery', 'social', 'about', 'article', 'resources', 'contact', 'api'] as const;
   const socialLinks = [
     { label: 'LinkedIn', href: 'https://linkedin.com/in/nealfrazier', icon: Linkedin },
     { label: 'Instagram', href: 'https://instagram.com/nealfraziertech', icon: Instagram },
@@ -430,7 +433,7 @@ export default function App() {
                 : 'text-google-gray border-transparent hover:border-[#DADCE0] hover:bg-[#F8F9FA] hover:text-google-black'
               }`}
             >
-              {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              {tab === 'api' ? 'API' : tab.charAt(0).toUpperCase() + tab.slice(1)}
             </button>
           ))}
         </div>
@@ -467,7 +470,7 @@ export default function App() {
                     : 'text-google-gray hover:bg-gray-100 border border-transparent'
                   }`}
                 >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                  {tab === 'api' ? 'API' : tab.charAt(0).toUpperCase() + tab.slice(1)}
                 </button>
               ))}
             </div>
@@ -614,6 +617,25 @@ export default function App() {
                       className={`w-full py-3 rounded-lg font-medium transition-all ${buttonVariants({ variant: 'default' })}`}
                     >
                       Browse Shipped Work <ArrowRight size={16} className="inline ml-2" />
+                    </button>
+                  </div>
+
+                  <div className="google-card p-6 rounded-2xl border border-google-green/20 bg-google-green/5 space-y-4">
+                    <div className="flex items-center gap-2 text-google-green">
+                      <Terminal size={20} />
+                      <span className="font-bold uppercase tracking-wider text-xs">AI & Developer API Gateway</span>
+                    </div>
+                    <p className="text-google-gray leading-relaxed text-sm">
+                      Query challenge progress, seasons, and shipped websites directly using curl or fetch. Supports custom, LLM-optimized Markdown formatting.
+                    </p>
+                    <div className="font-mono text-[11px] bg-google-black text-white/95 p-3 rounded-xl border border-white/5 select-all overflow-x-auto whitespace-nowrap">
+                      curl https://100websitesin30days.nealfrazier.tech/api/projects?format=markdown
+                    </div>
+                    <button 
+                      onClick={() => navigateToTab('api')}
+                      className={`w-full py-3 rounded-lg font-medium transition-all ${buttonVariants({ variant: 'outline' })}`}
+                    >
+                      Explore Developer API Docs <ArrowRight size={16} className="inline ml-2" />
                     </button>
                   </div>
                 </div>
@@ -1148,6 +1170,16 @@ export default function App() {
                   </Card>
                 </div>
               </div>
+            </motion.section>
+          )}
+          {activeTab === 'api' && (
+            <motion.section
+              key="api"
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.98 }}
+            >
+              <ApiDocsPage />
             </motion.section>
           )}
         </AnimatePresence>
