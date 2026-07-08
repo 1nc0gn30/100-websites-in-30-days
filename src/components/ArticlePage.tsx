@@ -203,43 +203,79 @@ export default function ArticlePage({ onBack, seasonId = 1, onSeasonChange }: Ar
       });
     }
 
-    // Season 2: Summer 2026 (Days 1 to 4)
+    // Season 2: Summer 2026 (Days 1 to 8)
     return [
       {
         day: 1,
-        title: "Day 1: Solana Globes, Mentor Labs, & Winking Smilies (Wed, Jul 1, 2026)",
-        content: "Season 2 kicked off with high velocity. Shipped Solana World Map (a Three.js 3D validator globe), CreatorPlaybooks Mentor Lab (reusable creator execution steps), and Spark a Smile (a 3D interactive smiley helper to brighten up your screen view). Checked our scaffolds and deployed all three smoothly to Netlify.",
-        retrospect: "Starting the season with validation globes, mentor checksheets, and 3D smileys sets a high standard for our daily composition reps.",
+        title: "Day 1: Solana Globes, Mentor Labs, Coffee Chats, & Winking Smilies (Wed, Jul 1, 2026)",
+        content: "Season 2 opened with six ships in one day. Solana World Map dropped a live Three.js globe tracking wallets and validator activity. CreatorPlaybooks Mentor Lab shipped reusable creator execution playbooks. Spark a Smile added a winking 3D lift-me-up. Coffee Meet made it easy to book win-win coffee chats. A+ Active Services Review summarized Jai's compound-intelligence offering. You Are What You Eat closed the day as a nutrition-awareness micro-app.",
+        retrospect: "Opening day with six live sites sets a high bar for the season: global data, creator systems, social tooling, partner pages, and wellness micro-apps all in 24 hours.",
         quote: { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
-        imageIdea: "Day 1 visual prompt: Summer Sprint Kickoff. A screen showcasing a glowing 3D hologram globe, warm desk lighting.",
-        shippedTitles: ["Solana World Map", "CreatorPlaybooks Mentor Lab", "Spark a smile"]
+        imageIdea: "Day 1 visual prompt: A wide desk with six glowing browser windows — a 3D Solana globe, mentor cards, a coffee calendar, a partner scorecard, a winking smiley, and a food plate infographic.",
+        shippedTitles: ["Solana World Map", "CreatorPlaybooks Mentor Lab", "Spark a Smile", "Coffee Meet", "A+ Active Services Review", "You Are What You Eat"]
       },
       {
         day: 2,
-        title: "Day 2: Contractor Schedules & Location-aware Blobs (Thu, Jul 2, 2026)",
-        content: "Day 2 focused on contractor systems, WebGL physics, and API costing. Shipped the Reno Scheduler to manage finish trades and crew details, Spark Something Cute (an interactive, coordinate-locked Three.js visual blob), and the Agent Runner Calculator to calculate credit usage and API token costs.",
-        retrospect: "Combining scheduling tools, WebGL coordinate blobs, and cost calculators sets a solid pipeline for day-to-day utility.",
+        title: "Day 2: Contractor Schedules, Location Blobs, Cost Math & Daily Timelines (Thu, Jul 2, 2026)",
+        content: "Day 2 tightened execution tools. Reno Scheduler gave renovators and contractors a clean timeline for crews and trade blocks. Spark Something Cute turned device tilt and coordinates into an interactive Three.js blob. Agent Runner Calculator forecasted credit use and token costs before heavy pipeline runs. Dogged Studio Daily Timeline gave ChaiWithJai a public build cadence tracker.",
+        retrospect: "Pure utility day: scheduling, reactive WebGL, cost math, and a publishing timeline. These are the systems that keep high-volume shipping sustainable.",
         quote: { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill" },
-        imageIdea: "Day 2 visual prompt: Interactive Focus & Systems. A cozy room with a neon pink/cyan screen displaying toy shapes and wireframes.",
-        shippedTitles: ["Reno Scheduler", "Spark Something Cute", "Agent Runner Calculator"]
+        imageIdea: "Day 2 visual prompt: A split screen showing a contractor Gantt chart, a neon Three.js blob reacting to a tilting phone, a calculator dashboard, and a vertical daily timeline.",
+        shippedTitles: ["Reno Scheduler", "Spark Something Cute", "Agent Runner Calculator", "Dogged Studio Daily Timeline"]
       },
       {
         day: 3,
         title: "Day 3: Mobile AI Dev & Browser Datamoshing (Fri, Jul 3, 2026)",
-        content: "Day 3 combined portable terminal environments and browser media compression. Deployed Cosmos Flow—our self-healing fluid canvas app written entirely inside Termux on Android—alongside Data Moshy, an interactive browser editor that allows users to upload videos or images and directly inject feedback loops, color smears, and datamosh keyframe distortions.",
-        retrospect: "Pairing a fluid terminal workflow on a mobile phone with a custom canvas video glitch engine shows the versatility of web pipelines.",
+        content: "Day 3 proved the pipeline can run from anywhere. Cosmos Flow is a self-healing liquid canvas built entirely inside Termux on Android. Data Moshy followed as a client-side media glitch engine that datamoshes uploaded videos and images with color smears and keyframe distortions.",
+        retrospect: "Building on a phone with Hermes Agent + Termux, then shipping a browser media tool, shows the stack is portable and the output is still production-grade.",
         quote: { text: "Your time is limited, so don't waste it living someone else's life.", author: "Steve Jobs" },
-        imageIdea: "Day 3 visual prompt: Mobile AI Dev & Browser Datamoshing. A close-up of a mobile phone screen displaying a green terminal interface and glowing fluid particle simulation, blurred city night lights background.",
+        imageIdea: "Day 3 visual prompt: A mobile phone running a green Termux terminal with fluid particle simulation, next to a desktop canvas applying datamosh to a video frame.",
         shippedTitles: ["Cosmos Flow", "Data Moshy"]
       },
       {
         day: 4,
         title: "Day 4: Dimension Lab & 2D vs 3D Design (Sat, Jul 4, 2026)",
-        content: "Day 4 focused on visual comparison metrics for spatial layouts. Deployed Dimension Lab—an interactive 3D comparison tool that helps builders visualize and compare design elements, parameters, and render behaviors between standard 2D layouts and full 3D WebGL scenes directly in the browser. Renders multiple test shapes, coordinate grids, and helps brainstorm when and where to use 3D features.",
-        retrospect: "Visualizing standard 2D container limitations side-by-side with 3D camera controls represents a handy developer sandbox to plan luxury layouts.",
+        content: "Day 4 focused on spatial decision-making. Dimension Lab compares 2D layout cards against full 3D WebGL scenes, rendering parameters and camera behavior side-by-side so builders know when to go flat and when to go dimensional.",
+        retrospect: "A single deep tool can save hours of layout debate. Dimension Lab turns the 2D-vs-3D choice into a visual, interactive experiment.",
         quote: { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
-        imageIdea: "Day 4 visual prompt: Dimension Lab & 2D vs 3D Design. A dark modern user interface displaying side-by-side wireframe models of a 2D flat layout card and a 3D spinning isometric cube, glowing blue highlights.",
+        imageIdea: "Day 4 visual prompt: A dark UI with a flat 2D layout card on the left and a rotating 3D isometric cube on the right, glowing blue grid lines connecting both panels.",
         shippedTitles: ["Dimension Lab"]
+      },
+      {
+        day: 5,
+        title: "Day 5: Wonderland Escapes & Netlify Agent Runner (Sun, Jul 5, 2026)",
+        content: "Day 5 balanced play and operations. Whimsical Wonderland built a Garden of Happy Nonsense — lighthearted interactive browser magic. Netlify Agent Runner went live as a sci-fi dashboard to manage Netlify Agent Runners from one console.",
+        retrospect: "Creative velocity needs operational backbone. Pairing a whimsical scene with an agent-runner dashboard keeps the work both fun and runnable at scale.",
+        quote: { text: "Simplicity is the ultimate sophistication.", author: "Leonardo da Vinci" },
+        imageIdea: "Day 5 visual prompt: A fairy-tale garden of happy nonsense on the left, and a neon sci-fi dashboard monitoring Netlify Agent Runners on the right.",
+        shippedTitles: ["Whimsical Wonderland", "Netlify Agent Runner"]
+      },
+      {
+        day: 6,
+        title: "Day 6: CreatorPlaybooks System Pass & Agent Runner Console (Mon, Jul 6, 2026)",
+        content: "Day 6 was workflow and tooling. CreatorPlaybooks System Pass standardized prompt templates, cleared pipeline friction, and added cross-day navigation. Netlify Agent Runner Console hardened the runner GUI with status views and deployment orchestration.",
+        retrospect: "Reducing daily setup time is the highest-leverage move for continuous shipping. The system pass and console make tomorrow start faster.",
+        quote: { text: "Without data, you're just another person with an opinion.", author: "W. Edwards Deming" },
+        imageIdea: "Day 6 visual prompt: A clean workflow map with connected step indicators beside a console grid of live Netlify Agent Runners and status lights.",
+        shippedTitles: ["CreatorPlaybooks System Pass", "Netlify Agent Runner Console"]
+      },
+      {
+        day: 7,
+        title: "Day 7: Live Mentor Lab, Moon Phases & Solana Payments (Tue, Jul 7, 2026)",
+        content: "Day 7 wired real data and WebGPU together. CreatorPlaybooks Virtual Mentor Lab now loads all 13 mentors from a live API, renders real cover art, and falls back to animated canvases when media is missing. LunaWebGPU visualized moon phases in 3D with real-time lighting. SolPay added a simple SOL payment request flow.",
+        retrospect: "Live API integrations, WebGPU visuals, and Web3 payments in one day show the stack is maturing fast. Fallbacks keep every surface polished.",
+        quote: { text: "We all need people who will give us feedback. That's how we improve.", author: "Bill Gates" },
+        imageIdea: "Day 7 visual prompt: A dark dashboard with dynamic mentor cards, a 3D moon phase visualizer, and a Solana checkout flow glowing in purple and teal.",
+        shippedTitles: ["CreatorPlaybooks Virtual Mentor Lab", "LunaWebGPU", "SolPay"]
+      },
+      {
+        day: 8,
+        title: "Day 8: Feedback Loops, Matrix Rain, Vector Decoders, VectorCam & Agent Loom (Wed, Jul 8, 2026)",
+        content: "Day 8 was the biggest ship day yet. CreatorPlaybooks Feedback Loops added a glassmorphic localStorage feedback board. Matrix Rain Chamber dropped a WebGPU Matrix fan scene with Neo, Morpheus, and Trinity. Matrix Vector Live Decoder visualized cascading code signals in real time. VectorCam applied Three.js shaders to the webcam feed. Agent Loom wove multiple AI agent threads into one orchestrated execution canvas.",
+        retrospect: "Five distinct projects in one day — feedback UX, retro gaming, live decoding, webcam effects, and agent orchestration. Peak creative velocity with zero blank media.",
+        quote: { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
+        imageIdea: "Day 8 visual prompt: A montage of a glassmorphic feedback board, green Matrix digital rain, a vector decoder feed, a distorted webcam view, and an agent loom weaving thread nodes.",
+        shippedTitles: ["CreatorPlaybooks Feedback Loops", "Matrix Rain Chamber", "Matrix Vector Live Decoder", "VectorCam", "Agent Loom"]
       }
     ];
   }, [seasonId, activeSeason]);
