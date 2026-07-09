@@ -12,6 +12,13 @@
   --color-google-green: #34A853;
   --color-google-gray: #5F6368;
   --color-google-black: #202124;
+  /* Season 2 — Summer accent palette */
+  --color-summer-coral: #FF6B5B;
+  --color-summer-mango: #FFB547;
+  --color-summer-turq: #00C2A8;
+  --color-summer-sun: #FFD23F;
+  --color-summer-rose: #FF4E8E;
+  --color-summer-deep: #1A1245;
 }
 
 @layer base {
@@ -229,4 +236,164 @@ h1, h2, h3, h4 {
   77% { transform: translate3d(1.8%, -0.8%, 0) scale(1.035); }
   82% { transform: translate3d(-1.2%, 0.7%, 0) scale(1.03); }
   88% { transform: translate3d(0.9%, -0.5%, 0) scale(1.025); }
+}
+
+/* ===== Season 2 — Summer Theme ===== */
+.summer-hero {
+  position: relative;
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(255, 210, 63, 0.35), transparent 55%),
+    radial-gradient(ellipse at 80% 10%, rgba(255, 78, 142, 0.25), transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(0, 194, 168, 0.22), transparent 60%),
+    linear-gradient(135deg, #1A1245 0%, #3B1B6B 30%, #7A1B5E 60%, #B83A5C 100%);
+  overflow: hidden;
+}
+
+/* Animated sun rays rotating slowly */
+.summer-sun-rays {
+  position: absolute;
+  inset: -50%;
+  pointer-events: none;
+  opacity: 0.18;
+  background:
+    conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      rgba(255, 210, 63, 0.5) 8deg,
+      transparent 16deg,
+      transparent 30deg,
+      rgba(255, 181, 71, 0.4) 38deg,
+      transparent 46deg,
+      transparent 60deg,
+      rgba(255, 107, 91, 0.35) 68deg,
+      transparent 76deg
+    );
+  animation: summerRayRotate 28s linear infinite;
+}
+
+@keyframes summerRayRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Floating heat-shimmer blobs for summer */
+.summer-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(48px);
+  mix-blend-mode: screen;
+  animation: summerFloat 9s ease-in-out infinite;
+}
+
+.summer-blob-coral { background: rgba(255, 107, 91, 0.55); }
+.summer-blob-mango { background: rgba(255, 181, 71, 0.5); }
+.summer-blob-turq { background: rgba(0, 194, 168, 0.45); }
+.summer-blob-rose { background: rgba(255, 78, 142, 0.5); }
+
+@keyframes summerFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(24px, -20px) scale(1.1); }
+  66% { transform: translate(-18px, 14px) scale(0.95); }
+}
+
+/* Summer season toggle — pill glows */
+.summer-toggle-active {
+  background: linear-gradient(135deg, #FF6B5B, #FFD23F);
+  color: #1A1245 !important;
+  font-weight: 700;
+  box-shadow:
+    0 2px 14px rgba(255, 107, 91, 0.35),
+    0 0 0 1px rgba(255, 210, 63, 0.4) inset;
+}
+
+/* Summer stat cards — neon-edged glass over deep base */
+.summer-stat {
+  background: rgba(26, 18, 69, 0.55);
+  border: 1px solid rgba(255, 210, 63, 0.25);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 8px 32px rgba(26, 18, 69, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.summer-stat:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 14px 40px rgba(255, 107, 91, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Summer progress bars — gradient fills that shimmer */
+.summer-progress-fill {
+  background: linear-gradient(90deg, #FF6B5B, #FFD23F, #00C2A8);
+  background-size: 200% 100%;
+  animation: summerShimmer 3s linear infinite;
+}
+
+@keyframes summerShimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+/* Summer headings — gradient text */
+.summer-gradient-text {
+  background: linear-gradient(90deg, #FFD23F, #FF6B5B, #FF4E8E, #00C2A8);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Summer cards — dark glass with warm border */
+.summer-card {
+  background: rgba(26, 18, 69, 0.45);
+  border: 1px solid rgba(255, 181, 71, 0.18);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  transition: transform 200ms ease, border-color 200ms ease;
+}
+
+.summer-card:hover {
+  border-color: rgba(255, 210, 63, 0.45);
+  transform: translateY(-2px);
+}
+
+/* Summer tag pills — neon translucent */
+.summer-tag {
+  background: rgba(255, 210, 63, 0.12);
+  color: #FFD23F;
+  border: 1px solid rgba(255, 210, 63, 0.25);
+}
+
+.summer-tag-active {
+  background: linear-gradient(135deg, #FF6B5B, #FFD23F);
+  color: #1A1245;
+  border: none;
+  font-weight: 700;
+}
+
+/* Summer focus/CTA card — warm glow */
+.summer-cta {
+  background: rgba(26, 18, 69, 0.6);
+  border: 1px solid rgba(255, 78, 142, 0.3);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(255, 78, 142, 0.15);
+}
+
+/* Summer thumbnail fallback — dark warm gradient instead of pastel */
+.summer-thumb {
+  background: linear-gradient(135deg, #1A1245, #3B1B6B, #7A1B5E);
+}
+
+/* Summer shimmer dot for live badge */
+.summer-live-dot {
+  background: #00C2A8;
+  box-shadow: 0 0 8px rgba(0, 194, 168, 0.8);
+  animation: summerPulse 2s ease-in-out infinite;
+}
+
+@keyframes summerPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
 }

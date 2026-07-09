@@ -90,6 +90,27 @@ interface PollenatorProps {
   domain: string;
 }
 
+function CountUp({ end, duration = 1200, suffix = '', className = '' }: { end: number; duration?: number; suffix?: string; className?: string }) {
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    let raf: number;
+    const start = performance.now();
+    const tick = (now: number) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // easeOutCubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setDisplay(Math.round(eased * end));
+      if (progress < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [end, duration]);
+
+  return <span className={className}>{display}{suffix}</span>;
+}
+
 function PollenatorThumbnail({ title, seasonId, compact = false, domain }: PollenatorProps) {
   const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
   const hash = React.useMemo(() => hashString(title), [title]);
@@ -110,7 +131,15 @@ function PollenatorThumbnail({ title, seasonId, compact = false, domain }: Polle
       { primary: '#c678dd', secondary: '#61afef', bg: 'from-[#F3E8FD] to-[#E8F4FD]' }, // Purple/Blue
       { primary: '#56b6c2', secondary: '#98c379', bg: 'from-[#EBF7F9] to-[#ECF5E8]' }, // Cyan/Green
     ];
-    const theme = colorThemes[hash % colorThemes.length];
+    // Summer (Season 2) uses a warm neon palette on dark base
+    const summerThemes = [
+      { primary: '#FF6B5B', secondary: '#FFD23F', bg: 'summer-thumb' }, // Coral/Sun
+      { primary: '#FF4E8E', secondary: '#FFB547', bg: 'summer-thumb' }, // Rose/Mango
+      { primary: '#00C2A8', secondary: '#FFD23F', bg: 'summer-thumb' }, // Turq/Sun
+      { primary: '#FF6B5B', secondary: '#00C2A8', bg: 'summer-thumb' }, // Coral/Turq
+      { primary: '#FF4E8E', secondary: '#00C2A8', bg: 'summer-thumb' }, // Rose/Turq
+    ];
+    const theme = (seasonId === 2 ? summerThemes : colorThemes)[hash % (seasonId === 2 ? summerThemes : colorThemes).length];
 
     interface Particle {
       x: number;
@@ -216,6 +245,7 @@ function PollenatorThumbnail({ title, seasonId, compact = false, domain }: Polle
     };
   }, [title]);
 
+  const isSummerThumb = seasonId === 2;
   const bgGradient = [
     'from-[#EEF4FE] to-[#E6F4EA]',
     'from-[#FCE8E6] to-[#FEF7E0]',
@@ -224,53 +254,67 @@ function PollenatorThumbnail({ title, seasonId, compact = false, domain }: Polle
     'from-[#EBF7F9] to-[#ECF5E8]',
   ][hash % 5];
 
+  const thumbBgClass = isSummerThumb ? 'summer-thumb' : `bg-gradient-to-br ${bgGradient}`;
+  const thumbBorder = isSummerThumb ? 'border-summer-sun/25' : 'border-[#DADCE0]';
+  const thumbTextTitle = isSummerThumb ? 'text-white' : 'text-google-black';
+  const thumbTextSub = isSummerThumb ? 'text-summer-sun/70' : 'text-google-gray';
+  const thumbTextDomain = isSummerThumb ? 'text-summer-sun' : 'text-google-blue';
+  const thumbHoverTitle = isSummerThumb ? 'group-hover:text-summer-sun' : 'group-hover:text-google-blue';
+  const dotColors = isSummerThumb
+    ? ['bg-summer-coral', 'bg-summer-sun', 'bg-summer-turq', 'bg-summer-rose']
+    : ['bg-google-blue', 'bg-google-red', 'bg-google-yellow', 'bg-google-green'];
+  const dotBorder = isSummerThumb ? 'border-summer-sun/30 bg-summer-deep/50' : 'border-[#DADCE0] bg-white';
+  const seasonBadge = isSummerThumb
+    ? 'text-summer-sun/80 bg-summer-deep/60 border-summer-sun/20'
+    : 'text-google-gray bg-white/70 border-black/5 shadow-2xs';
+
   if (compact) {
     return (
-      <div className={`absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br ${bgGradient} border border-[#DADCE0] p-1.5 text-center select-none overflow-hidden group`}>
+      <div className={`absolute inset-0 flex flex-col items-center justify-center ${thumbBgClass} border ${thumbBorder} p-1.5 text-center select-none overflow-hidden group`}>
         <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" />
         <div className="relative z-10 flex flex-col items-center">
           <div
-            className="grid grid-cols-2 gap-0.5 rounded-full bg-white p-0.5 border border-[#DADCE0] shadow-sm mb-1 group-hover:scale-110 transition-transform duration-300"
+            className={`grid grid-cols-2 gap-0.5 rounded-full p-0.5 border shadow-sm mb-1 group-hover:scale-110 transition-transform duration-300 ${dotBorder}`}
             aria-hidden="true"
           >
-            <span className="h-1 w-1 rounded-full bg-google-blue" />
-            <span className="h-1 w-1 rounded-full bg-google-red" />
-            <span className="h-1 w-1 rounded-full bg-google-yellow" />
-            <span className="h-1 w-1 rounded-full bg-google-green" />
+            <span className={`h-1 w-1 rounded-full ${dotColors[0]}`} />
+            <span className={`h-1 w-1 rounded-full ${dotColors[1]}`} />
+            <span className={`h-1 w-1 rounded-full ${dotColors[2]}`} />
+            <span className={`h-1 w-1 rounded-full ${dotColors[3]}`} />
           </div>
-          <span className="text-[9px] font-semibold text-google-black leading-tight line-clamp-2 truncate max-w-full px-0.5 font-display">
+          <span className={`text-[9px] font-semibold leading-tight line-clamp-2 truncate max-w-full px-0.5 font-display ${thumbTextTitle}`}>
             {title}
           </span>
-          <span className="text-[8px] text-google-gray font-mono">S{seasonId}</span>
+          <span className={`text-[8px] font-mono ${thumbTextSub}`}>S{seasonId}</span>
         </div>
       </div>
     );
   }
 
   return (
-    <div className={`absolute inset-0 flex flex-col justify-between p-4 bg-gradient-to-br ${bgGradient} border border-[#DADCE0] text-left select-none overflow-hidden group`}>
+    <div className={`absolute inset-0 flex flex-col justify-between p-4 ${thumbBgClass} border ${thumbBorder} text-left select-none overflow-hidden group`}>
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" />
       
       <div className="relative z-10 flex justify-between items-center w-full">
         <div
-          className="grid grid-cols-2 gap-0.5 rounded-full bg-white p-1 border border-[#DADCE0] shadow-sm shrink-0 group-hover:rotate-12 transition-transform duration-300"
+          className={`grid grid-cols-2 gap-0.5 rounded-full p-1 border shadow-sm shrink-0 group-hover:rotate-12 transition-transform duration-300 ${dotBorder}`}
           aria-hidden="true"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-google-blue" />
-          <span className="h-1.5 w-1.5 rounded-full bg-google-red" />
-          <span className="h-1.5 w-1.5 rounded-full bg-google-yellow" />
-          <span className="h-1.5 w-1.5 rounded-full bg-google-green" />
+          <span className={`h-1.5 w-1.5 rounded-full ${dotColors[0]}`} />
+          <span className={`h-1.5 w-1.5 rounded-full ${dotColors[1]}`} />
+          <span className={`h-1.5 w-1.5 rounded-full ${dotColors[2]}`} />
+          <span className={`h-1.5 w-1.5 rounded-full ${dotColors[3]}`} />
         </div>
-        <span className="text-[9px] font-mono text-google-gray uppercase tracking-wider bg-white/70 px-2 py-0.5 rounded-full border border-black/5 shadow-2xs">
+        <span className={`text-[9px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full border ${seasonBadge}`}>
           Season {seasonId}
         </span>
       </div>
       
       <div className="relative z-10 space-y-1 mt-auto">
-        <h4 className="font-display font-bold text-google-black text-xs sm:text-sm leading-snug line-clamp-2 transition-colors group-hover:text-google-blue">
+        <h4 className={`font-display font-bold text-xs sm:text-sm leading-snug line-clamp-2 transition-colors ${thumbTextTitle} ${thumbHoverTitle}`}>
           {title}
         </h4>
-        <p className="text-[10px] text-google-blue font-semibold truncate hover:underline">
+        <p className={`text-[10px] font-semibold truncate hover:underline ${thumbTextDomain}`}>
           {domain}
         </p>
       </div>
@@ -324,8 +368,8 @@ function PreviewImage({
       )}
 
       {state === 'loading' && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-[#F8F9FA] text-google-gray">
-          <Loader2 size={18} className="animate-spin text-google-blue" />
+        <div className={`absolute inset-0 flex flex-col items-center justify-center gap-2 ${seasonId === 2 ? 'summer-thumb text-summer-sun/70' : 'bg-[#F8F9FA] text-google-gray'}`}>
+          <Loader2 size={18} className={`animate-spin ${seasonId === 2 ? 'text-summer-sun' : 'text-google-blue'}`} />
           <span className="text-xs font-medium">Loading preview...</span>
         </div>
       )}
@@ -413,6 +457,8 @@ export default function App() {
   }, []);
 
   const [selectedSeasonId, setSelectedSeasonId] = useState<number>(2);
+
+  const isSummer = selectedSeasonId === 2;
 
   const activeSeason = useMemo(() => {
     return configData.seasons.find(s => s.id === selectedSeasonId) || configData.seasons[configData.seasons.length - 1];
@@ -583,11 +629,11 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-[#3C4043] font-sans selection:bg-google-blue/30">
+    <div className={`min-h-screen font-sans selection:bg-google-blue/30 ${isSummer ? 'bg-gradient-to-br from-summer-deep via-[#2A1850] to-[#4A1B5E] text-white' : 'bg-white text-[#3C4043]'}`}>
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/92 backdrop-blur-md border-b border-[#DADCE0] px-4 md:px-8 min-h-16 py-2 flex items-center justify-between">
+      <nav className={`sticky top-0 z-50 backdrop-blur-md border-b px-4 md:px-8 min-h-16 py-2 flex items-center justify-between ${isSummer ? 'bg-summer-deep/85 border-summer-sun/15' : 'bg-white/92 border-[#DADCE0]'}`}>
         <div 
-          className="flex items-center gap-2 cursor-pointer group shrink-0" 
+          className={`flex items-center gap-2 cursor-pointer group shrink-0 ${isSummer ? 'text-white' : ''}`} 
           onClick={() => navigateToTab('journey')}
         >
           <Logo showTitle />
@@ -600,8 +646,8 @@ export default function App() {
               onClick={() => navigateToTab(tab)}
               className={`px-3 py-2 rounded-full text-sm font-medium transition-all border ${
                 activeTab === tab 
-                ? 'text-google-blue border-google-blue/25 bg-google-blue/8' 
-                : 'text-google-gray border-transparent hover:border-[#DADCE0] hover:bg-[#F8F9FA] hover:text-google-black'
+                ? (isSummer ? 'text-summer-sun border-summer-sun/30 bg-summer-sun/10' : 'text-google-blue border-google-blue/25 bg-google-blue/8') 
+                : (isSummer ? 'text-white/70 border-transparent hover:border-summer-sun/20 hover:bg-summer-sun/5 hover:text-summer-sun' : 'text-google-gray border-transparent hover:border-[#DADCE0] hover:bg-[#F8F9FA] hover:text-google-black')
               }`}
             >
               {tab === 'api' ? 'API' : tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -610,7 +656,7 @@ export default function App() {
         </div>
 
         <button 
-          className="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors"
+          className={`lg:hidden p-2 rounded-md transition-colors ${isSummer ? 'hover:bg-summer-sun/10 text-white' : 'hover:bg-gray-100'}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
         >
@@ -625,7 +671,7 @@ export default function App() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="fixed inset-0 z-40 bg-white pt-20 px-4 pb-8 lg:hidden"
+            className={`fixed inset-0 z-40 pt-20 px-4 pb-8 lg:hidden ${isSummer ? 'bg-summer-deep/97' : 'bg-white'}`}
           >
             <div className="flex flex-col gap-2 max-w-md mx-auto">
               {primaryTabs.map((tab) => (
@@ -637,8 +683,8 @@ export default function App() {
                   }}
                   className={`w-full text-left px-4 py-3 rounded-lg text-lg font-medium transition-all ${
                     activeTab === tab 
-                    ? 'text-google-blue bg-google-blue/10 border border-google-blue/20' 
-                    : 'text-google-gray hover:bg-gray-100 border border-transparent'
+                    ? (isSummer ? 'text-summer-sun bg-summer-sun/10 border border-summer-sun/25' : 'text-google-blue bg-google-blue/10 border border-google-blue/20') 
+                    : (isSummer ? 'text-white/70 hover:bg-summer-sun/5 border border-transparent' : 'text-google-gray hover:bg-gray-100 border border-transparent')
                   }`}
                 >
                   {tab === 'api' ? 'API' : tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -658,25 +704,38 @@ export default function App() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.98 }}
             >
-              <div className="relative overflow-hidden rounded-3xl border border-[#DADCE0] bg-white p-8 md:p-12 mb-10 shadow-[0_16px_48px_rgba(60,64,67,0.14)]">
-                <div className="absolute -top-12 -left-10 w-56 h-56 bg-google-blue/15 blur-3xl rounded-full" />
-                <div className="absolute top-12 right-16 w-44 h-44 bg-google-red/15 blur-3xl rounded-full" />
-                <div className="absolute -bottom-16 right-4 w-56 h-56 bg-google-green/15 blur-3xl rounded-full" />
-                <div className="absolute bottom-2 left-20 w-36 h-36 bg-google-yellow/20 blur-3xl rounded-full" />
+              <div className={`relative overflow-hidden rounded-3xl border ${isSummer ? 'border-summer-mango/25 summer-hero' : 'border-[#DADCE0] bg-white'} p-8 md:p-12 mb-10 shadow-[0_16px_48px_rgba(60,64,67,0.14)]`}>
+                {isSummer && (
+                  <>
+                    <div className="summer-sun-rays" />
+                    <div className="summer-blob summer-blob-coral" style={{ top: '-8%', left: '-6%', width: '14rem', height: '14rem' }} />
+                    <div className="summer-blob summer-blob-mango" style={{ top: '12%', right: '8%', width: '10rem', height: '10rem', animationDelay: '1.5s' }} />
+                    <div className="summer-blob summer-blob-turq" style={{ bottom: '-10%', right: '12%', width: '12rem', height: '12rem', animationDelay: '3s' }} />
+                    <div className="summer-blob summer-blob-rose" style={{ bottom: '4%', left: '18%', width: '9rem', height: '9rem', animationDelay: '4.5s' }} />
+                  </>
+                )}
+                {!isSummer && (
+                  <>
+                    <div className="absolute -top-12 -left-10 w-56 h-56 bg-google-blue/15 blur-3xl rounded-full" />
+                    <div className="absolute top-12 right-16 w-44 h-44 bg-google-red/15 blur-3xl rounded-full" />
+                    <div className="absolute -bottom-16 right-4 w-56 h-56 bg-google-green/15 blur-3xl rounded-full" />
+                    <div className="absolute bottom-2 left-20 w-36 h-36 bg-google-yellow/20 blur-3xl rounded-full" />
+                  </>
+                )}
                 <div className="relative space-y-7">
                   <div className="flex flex-wrap items-center gap-3">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-[#DADCE0] bg-[#F8F9FA] px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-google-gray">
-                      <Globe size={14} />
-                      Build In Public Challenge
+                    <div className={`inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] ${isSummer ? 'border-summer-sun/30 bg-summer-deep/40 text-summer-sun' : 'border-[#DADCE0] bg-[#F8F9FA] text-google-gray'}`}>
+                      {isSummer ? <Sparkles size={14} /> : <Globe size={14} />}
+                      {isSummer ? 'Summer Sprint — Season 2' : 'Build In Public Challenge'}
                     </div>
                     
-                    <div className="inline-flex bg-[#F1F3F4] p-0.5 rounded-full border border-[#DADCE0] shadow-xs">
+                    <div className={`inline-flex p-0.5 rounded-full border shadow-xs ${isSummer ? 'bg-summer-deep/40 border-summer-sun/20' : 'bg-[#F1F3F4] border-[#DADCE0]'}`}>
                       <button
                         onClick={() => { setSelectedSeasonId(1); setActiveTag('all'); }}
                         className={`px-3.5 py-1 rounded-full text-xs font-medium transition-all ${
                           selectedSeasonId === 1
                             ? 'bg-white text-google-blue shadow-2xs font-semibold'
-                            : 'text-google-gray hover:text-[#202124]'
+                            : isSummer ? 'text-summer-sun/70 hover:text-summer-sun' : 'text-google-gray hover:text-[#202124]'
                         }`}
                       >
                         Season 1 (Spring)
@@ -685,7 +744,7 @@ export default function App() {
                         onClick={() => { setSelectedSeasonId(2); setActiveTag('all'); }}
                         className={`px-3.5 py-1 rounded-full text-xs font-medium transition-all ${
                           selectedSeasonId === 2
-                            ? 'bg-white text-google-blue shadow-2xs font-semibold'
+                            ? 'summer-toggle-active'
                             : 'text-google-gray hover:text-[#202124]'
                         }`}
                       >
@@ -693,110 +752,134 @@ export default function App() {
                       </button>
                     </div>
                   </div>
-                  <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-[#202124] leading-tight">
-                    <span className="text-google-blue">100</span>{' '}
-                    <span className="text-google-red">Websites</span>{' '}
-                    <span className="text-google-yellow">in</span>{' '}
-                    <span className="text-google-green">30 Days</span>
+                  <h1 className={`text-4xl md:text-6xl font-bold tracking-tight leading-tight ${isSummer ? 'text-white' : 'text-[#202124]'}`}>
+                    {isSummer ? (
+                      <>
+                        <span className="summer-gradient-text">100</span>{' '}
+                        <span className="text-summer-coral">Websites</span>{' '}
+                        <span className="text-summer-sun">in</span>{' '}
+                        <span className="text-summer-turq">30 Days</span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="text-google-blue">100</span>{' '}
+                        <span className="text-google-red">Websites</span>{' '}
+                        <span className="text-google-yellow">in</span>{' '}
+                        <span className="text-google-green">30 Days</span>
+                      </>
+                    )}
                   </h1>
-                  <p className="text-base md:text-lg text-google-gray max-w-3xl leading-relaxed">
-                    A live shipping sprint and public proof-of-work log. Every build is launched, documented, and indexed as this challenge moves toward 100 shipped websites.
+                  <p className={`text-base md:text-lg max-w-3xl leading-relaxed ${isSummer ? 'text-white/75' : 'text-google-gray'}`}>
+                    {isSummer
+                      ? 'The heat is on. A live summer shipping sprint burning through ideas and shipping real products at full throttle. Every build launches, gets documented, and lands in the gallery.'
+                      : 'A live shipping sprint and public proof-of-work log. Every build is launched, documented, and indexed as this challenge moves toward 100 shipped websites.'}
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                    <div className="rounded-2xl border border-google-blue/20 bg-google-blue/5 px-4 py-3">
-                      <p className="text-[11px] uppercase tracking-[0.18em] text-google-blue">Challenge Window</p>
-                      <p className="text-sm text-[#202124] font-medium">{formatDate(challenge.startDate)} - {formatDate(challenge.endDate)}</p>
+                    <div className={`rounded-2xl border px-4 py-3 ${isSummer ? 'border-summer-coral/30 bg-summer-coral/10' : 'border-google-blue/20 bg-google-blue/5'}`}>
+                      <p className={`text-[11px] uppercase tracking-[0.18em] ${isSummer ? 'text-summer-coral' : 'text-google-blue'}`}>{isSummer ? 'Summer Window' : 'Challenge Window'}</p>
+                      <p className={`text-sm font-medium ${isSummer ? 'text-white' : 'text-[#202124]'}`}>{formatDate(challenge.startDate)} - {formatDate(challenge.endDate)}</p>
                     </div>
-                    <div className="rounded-2xl border border-google-red/20 bg-google-red/5 px-4 py-3">
-                      <p className="text-[11px] uppercase tracking-[0.18em] text-google-red">Velocity Signal</p>
-                      <p className="text-sm text-[#202124] font-medium">{velocityPerDay} launches/day</p>
+                    <div className={`rounded-2xl border px-4 py-3 ${isSummer ? 'border-summer-mango/30 bg-summer-mango/10' : 'border-google-red/20 bg-google-red/5'}`}>
+                      <p className={`text-[11px] uppercase tracking-[0.18em] ${isSummer ? 'text-summer-mango' : 'text-google-red'}`}>Velocity Signal</p>
+                      <p className={`text-sm font-medium ${isSummer ? 'text-white' : 'text-[#202124]'}`}>{velocityPerDay} launches/day</p>
                     </div>
-                    <div className="rounded-2xl border border-google-green/20 bg-google-green/5 px-4 py-3">
-                      <p className="text-[11px] uppercase tracking-[0.18em] text-google-green">Runway Remaining</p>
-                      <p className="text-sm text-[#202124] font-medium">{daysRemaining} day{daysRemaining === 1 ? '' : 's'} left</p>
+                    <div className={`rounded-2xl border px-4 py-3 ${isSummer ? 'border-summer-turq/30 bg-summer-turq/10' : 'border-google-green/20 bg-google-green/5'}`}>
+                      <p className={`text-[11px] uppercase tracking-[0.18em] ${isSummer ? 'text-summer-turq' : 'text-google-green'}`}>{isSummer ? 'Days of Heat Left' : 'Runway Remaining'}</p>
+                      <p className={`text-sm font-medium ${isSummer ? 'text-white' : 'text-[#202124]'}`}>{daysRemaining} day{daysRemaining === 1 ? '' : 's'} left</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <Card className="google-card p-6 flex flex-col items-center text-center space-y-2">
-                  <div className="p-3 rounded-full bg-google-blue/10 text-google-blue mb-2">
-                    <LayoutGrid size={24} />
+                <div className={`p-6 flex flex-col items-center text-center space-y-2 ${isSummer ? 'summer-stat rounded-2xl' : 'google-card'}`}>
+                  <div className={`p-3 rounded-full mb-2 relative ${isSummer ? 'bg-summer-coral/15 text-summer-coral' : 'bg-google-blue/10 text-google-blue'}`}>
+                    {isSummer && <span className="absolute inset-0 rounded-full bg-summer-coral/20 animate-ping" style={{ animationDuration: '2.5s' }} />}
+                    <LayoutGrid size={24} className="relative z-10" />
                   </div>
-                  <span className="text-sm font-medium text-google-gray uppercase tracking-wider">Shipped</span>
-                  <div className="text-4xl font-bold">{projects.length}<span className="text-google-gray text-xl ml-1">/100</span></div>
-                </Card>
+                  <span className={`text-sm font-medium uppercase tracking-wider ${isSummer ? 'text-summer-sun/80' : 'text-google-gray'}`}>Shipped</span>
+                  <div className={`text-4xl font-bold ${isSummer ? 'text-white' : ''}`}>
+                    <CountUp end={projects.length} className={isSummer ? 'summer-gradient-text' : ''} /><span className={`text-xl ml-1 ${isSummer ? 'text-summer-sun/60' : 'text-google-gray'}`}>/100</span>
+                  </div>
+                </div>
 
-                <Card className="google-card p-6 flex flex-col items-center text-center space-y-2">
-                  <div className="p-3 rounded-full bg-google-green/10 text-google-green mb-2">
-                    <Calendar size={24} />
+                <div className={`p-6 flex flex-col items-center text-center space-y-2 ${isSummer ? 'summer-stat rounded-2xl' : 'google-card'}`}>
+                  <div className={`p-3 rounded-full mb-2 relative ${isSummer ? 'bg-summer-turq/15 text-summer-turq' : 'bg-google-green/10 text-google-green'}`}>
+                    {isSummer && <span className="absolute inset-0 rounded-full bg-summer-turq/20 animate-ping" style={{ animationDuration: '3s', animationDelay: '0.5s' }} />}
+                    <Calendar size={24} className="relative z-10" />
                   </div>
-                  <span className="text-sm font-medium text-google-gray uppercase tracking-wider">Current Day</span>
-                  <div className="text-4xl font-bold">{currentDay}<span className="text-google-gray text-xl ml-1">/ {totalDays}</span></div>
-                </Card>
+                  <span className={`text-sm font-medium uppercase tracking-wider ${isSummer ? 'text-summer-sun/80' : 'text-google-gray'}`}>Current Day</span>
+                  <div className={`text-4xl font-bold ${isSummer ? 'text-white' : ''}`}>
+                    <CountUp end={currentDay} className={isSummer ? 'summer-gradient-text' : ''} /><span className={`text-xl ml-1 ${isSummer ? 'text-summer-sun/60' : 'text-google-gray'}`}>/ {totalDays}</span>
+                  </div>
+                </div>
 
-                <Card className="google-card p-6 flex flex-col items-center text-center space-y-2">
-                  <div className="p-3 rounded-full bg-google-yellow/10 text-google-yellow mb-2">
-                    <TrendingUp size={24} />
+                <div className={`p-6 flex flex-col items-center text-center space-y-2 ${isSummer ? 'summer-stat rounded-2xl' : 'google-card'}`}>
+                  <div className={`p-3 rounded-full mb-2 relative ${isSummer ? 'bg-summer-sun/15 text-summer-sun' : 'bg-google-yellow/10 text-google-yellow'}`}>
+                    {isSummer && <span className="absolute inset-0 rounded-full bg-summer-sun/20 animate-ping" style={{ animationDuration: '2.8s', animationDelay: '1s' }} />}
+                    <TrendingUp size={24} className="relative z-10" />
                   </div>
-                  <span className="text-sm font-medium text-google-gray uppercase tracking-wider">Velocity</span>
-                  <div className="text-4xl font-bold">{velocityPerDay}<span className="text-google-gray text-xl ml-1">/day</span></div>
-                </Card>
+                  <span className={`text-sm font-medium uppercase tracking-wider ${isSummer ? 'text-summer-sun/80' : 'text-google-gray'}`}>Velocity</span>
+                  <div className={`text-4xl font-bold ${isSummer ? 'text-white' : ''}`}>
+                    <CountUp end={parseFloat(velocityPerDay)} className={isSummer ? 'summer-gradient-text' : ''} /><span className={`text-xl ml-1 ${isSummer ? 'text-summer-sun/60' : 'text-google-gray'}`}>/day</span>
+                  </div>
+                </div>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 <div className="space-y-8">
                   <div className="space-y-4">
                     <div className="flex justify-between items-end">
-                      <h3 className="text-sm font-bold uppercase tracking-wider text-google-gray">Overall Progress</h3>
-                      <span className="text-2xl font-bold text-google-blue">{progressPercent.toFixed(0)}%</span>
+                      <h3 className={`text-sm font-bold uppercase tracking-wider ${isSummer ? 'text-summer-sun/80' : 'text-google-gray'}`}>Overall Progress</h3>
+                      <span className={`text-2xl font-bold ${isSummer ? 'text-summer-coral' : 'text-google-blue'}`}>{progressPercent.toFixed(0)}%</span>
                     </div>
                     <div className="h-3 bg-gray-100 rounded-full overflow-hidden border border-[#DADCE0]">
                       <motion.div 
                         initial={{ width: 0 }} 
                         animate={{ width: `${progressPercent}%` }} 
-                        className="h-full bg-google-blue" 
+                        className={`h-full ${isSummer ? 'summer-progress-fill' : 'bg-google-blue'}`} 
                       />
                     </div>
                   </div>
 
                   <div className="space-y-4">
                     <div className="flex justify-between items-end">
-                      <h3 className="text-sm font-bold uppercase tracking-wider text-google-gray">Time Elapsed</h3>
-                      <span className="text-2xl font-bold text-google-green">{timePercent.toFixed(0)}%</span>
+                      <h3 className={`text-sm font-bold uppercase tracking-wider ${isSummer ? 'text-summer-sun/80' : 'text-google-gray'}`}>Time Elapsed</h3>
+                      <span className={`text-2xl font-bold ${isSummer ? 'text-summer-turq' : 'text-google-green'}`}>{timePercent.toFixed(0)}%</span>
                     </div>
                     <div className="h-3 bg-gray-100 rounded-full overflow-hidden border border-[#DADCE0]">
                       <motion.div 
                         initial={{ width: 0 }} 
                         animate={{ width: `${timePercent}%` }} 
-                        className="h-full bg-google-green" 
+                        className={`h-full ${isSummer ? 'summer-progress-fill' : 'bg-google-green'}`}
                       />
                     </div>
                   </div>
 
-                  <div className="google-card p-6 rounded-2xl border border-[#DADCE0] bg-white space-y-4">
-                    <div className="flex items-center gap-2 text-google-blue">
+                  <div className={`p-6 rounded-2xl border space-y-4 ${isSummer ? 'summer-card' : 'google-card border-[#DADCE0] bg-white'}`}>
+                    <div className={`flex items-center gap-2 ${isSummer ? 'text-summer-sun' : 'text-google-blue'}`}>
                       <Sparkles size={20} />
-                      <span className="font-bold uppercase tracking-wider text-xs">Current Focus</span>
+                      <span className="font-bold uppercase tracking-wider text-xs">{isSummer ? 'Summer Focus' : 'Current Focus'}</span>
                     </div>
-                    <p className="text-google-gray leading-relaxed">
-                      Focusing on <span className="text-google-black font-medium">performance, accessibility, and clean composition</span>. Using a streamlined stack of React, Tailwind, and Vite to keep the feedback loop tight.
+                    <p className={`leading-relaxed ${isSummer ? 'text-white/75' : 'text-google-gray'}`}>
+                      {isSummer
+                        ? <>Focusing on <span className="text-summer-sun font-medium">bold visual design, 3D/WebGL, and high-impact product launches</span>. Summer season pushes the limits of what a 30-day sprint can produce — sci-fi-grade UIs, live data dashboards, and AI-powered tools.</>
+                        : <>Focusing on <span className="text-google-black font-medium">performance, accessibility, and clean composition</span>. Using a streamlined stack of React, Tailwind, and Vite to keep the feedback loop tight.</>}
                     </p>
                     <button 
                       onClick={() => navigateToTab('gallery')}
-                      className={`w-full py-3 rounded-lg font-medium transition-all ${buttonVariants({ variant: 'default' })}`}
+                      className={`w-full py-3 rounded-lg font-medium transition-all ${isSummer ? 'bg-gradient-to-r from-summer-coral to-summer-sun text-summer-deep hover:shadow-lg hover:shadow-summer-coral/30' : buttonVariants({ variant: 'default' })}`}
                     >
                       Browse Shipped Work <ArrowRight size={16} className="inline ml-2" />
                     </button>
                   </div>
 
-                  <div className="google-card p-6 rounded-2xl border border-google-green/20 bg-google-green/5 space-y-4">
-                    <div className="flex items-center gap-2 text-google-green">
+                  <div className={`p-6 rounded-2xl border space-y-4 ${isSummer ? 'summer-cta' : 'google-card border-google-green/20 bg-google-green/5'}`}>
+                    <div className={`flex items-center gap-2 ${isSummer ? 'text-summer-turq' : 'text-google-green'}`}>
                       <Terminal size={20} />
                       <span className="font-bold uppercase tracking-wider text-xs">AI & Developer API Gateway</span>
                     </div>
-                    <p className="text-google-gray leading-relaxed text-sm">
+                    <p className={`leading-relaxed text-sm ${isSummer ? 'text-white/75' : 'text-google-gray'}`}>
                       Query challenge progress, seasons, and shipped websites directly using curl or fetch. Supports custom, LLM-optimized Markdown formatting.
                     </p>
                     <div className="font-mono text-[11px] bg-google-black text-white/95 p-3 rounded-xl border border-white/5 select-all overflow-x-auto whitespace-nowrap">
@@ -804,7 +887,7 @@ export default function App() {
                     </div>
                     <button 
                       onClick={() => navigateToTab('api')}
-                      className={`w-full py-3 rounded-lg font-medium transition-all ${buttonVariants({ variant: 'outline' })}`}
+                      className={`w-full py-3 rounded-lg font-medium transition-all ${isSummer ? 'bg-gradient-to-r from-summer-turq/20 to-summer-sun/20 border border-summer-turq/30 text-summer-turq hover:from-summer-turq hover:to-summer-sun hover:text-summer-deep' : buttonVariants({ variant: 'outline' })}`}
                     >
                       Explore Developer API Docs <ArrowRight size={16} className="inline ml-2" />
                     </button>
@@ -813,17 +896,17 @@ export default function App() {
 
                 <div className="space-y-6">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-bold">Recent Shipments</h3>
+                    <h3 className={`text-lg font-bold ${isSummer ? 'text-white' : ''}`}>Recent Shipments</h3>
                     <button 
                       onClick={() => navigateToTab('gallery')} 
-                      className="text-sm text-google-blue hover:underline font-medium"
+                      className={`text-sm hover:underline font-medium ${isSummer ? 'text-summer-sun' : 'text-google-blue'}`}
                     >
                       View All
                     </button>
                   </div>
                   <div className="grid grid-cols-1 gap-4">
                     {sortedProjects.slice(0, 5).map((project) => (
-                      <Card key={project.id} className="google-card p-4 flex gap-4 hover:border-google-blue transition-colors cursor-pointer group" onClick={() => navigateToTab('gallery')}>
+                      <div key={project.id} className={`p-4 flex gap-4 cursor-pointer group ${isSummer ? 'summer-card' : 'google-card hover:border-google-blue transition-colors'}`} onClick={() => navigateToTab('gallery')}>
                         <PreviewImage 
                           src={project.thumbnail} 
                           alt={project.title} 
@@ -835,19 +918,19 @@ export default function App() {
                         />
                         <div className="flex-grow space-y-1">
                           <div className="flex justify-between items-start">
-                            <h4 className="font-medium group-hover:text-google-blue transition-colors">{project.title}</h4>
-                            <span className="text-xs text-google-gray font-mono">{formatDate(project.date)}</span>
+                            <h4 className={`font-medium transition-colors ${isSummer ? 'text-white group-hover:text-summer-sun' : 'group-hover:text-google-blue'}`}>{project.title}</h4>
+                            <span className={`text-xs font-mono ${isSummer ? 'text-summer-sun/60' : 'text-google-gray'}`}>{formatDate(project.date)}</span>
                           </div>
-                          <p className="text-sm text-google-gray line-clamp-2">{project.description}</p>
+                          <p className={`text-sm line-clamp-2 ${isSummer ? 'text-white/65' : 'text-google-gray'}`}>{project.description}</p>
                           <div className="flex gap-2 pt-1">
                             {project.tags.slice(0, 2).map(tag => (
-                              <span key={tag} className="text-[10px] px-1.5 py-0.5 rounded bg-gray-100 text-google-gray font-medium">
+                              <span key={tag} className={`text-[10px] px-1.5 py-0.5 rounded font-medium ${isSummer ? 'summer-tag' : 'bg-gray-100 text-google-gray'}`}>
                                 {tag}
                               </span>
                             ))}
                           </div>
                         </div>
-                      </Card>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -862,32 +945,34 @@ export default function App() {
               exit={{ opacity: 0, scale: 0.98 }}
             >
               <div className="text-center space-y-4 mb-12">
-                <h1 className="text-4xl font-bold tracking-tight text-google-black">Project Gallery</h1>
-                <p className="text-google-gray max-w-2xl mx-auto">
-                  Every website shipped during the 100-website sprint. From tiny utilities to full-scale landing pages.
+                <h1 className={`text-4xl font-bold tracking-tight ${isSummer ? 'summer-gradient-text' : 'text-google-black'}`}>{isSummer ? 'Summer Gallery' : 'Project Gallery'}</h1>
+                <p className={`max-w-2xl mx-auto ${isSummer ? 'text-summer-sun/70' : 'text-google-gray'}`}>
+                  {isSummer
+                    ? 'Every site shipped during the summer sprint — 3D globes, AI tools, creator labs, and more.'
+                    : 'Every website shipped during the 100-website sprint. From tiny utilities to full-scale landing pages.'}
                 </p>
               </div>
 
               <div className="flex flex-col md:flex-row gap-4 mb-8 items-center justify-between">
                 <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
                   <div className="relative w-full md:w-80">
-                    <Search size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-google-gray" />
+                    <Search size={18} className={`absolute left-3 top-1/2 -translate-y-1/2 ${isSummer ? 'text-summer-sun/50' : 'text-google-gray'}`} />
                     <input 
                       type="text" 
                       placeholder="Search projects..." 
-                      className="w-full pl-10 pr-4 py-2 rounded-lg border border-[#DADCE0] focus:ring-2 focus:ring-google-blue/20 focus:border-google-blue outline-none transition-all text-sm"
+                      className={`w-full pl-10 pr-4 py-2 rounded-lg border outline-none transition-all text-sm ${isSummer ? 'bg-summer-deep/40 border-summer-sun/25 text-white placeholder:text-summer-sun/40 focus:ring-2 focus:ring-summer-coral/30 focus:border-summer-coral' : 'border-[#DADCE0] focus:ring-2 focus:ring-google-blue/20 focus:border-google-blue'}`}
                       value={galleryQuery}
                       onChange={(e) => setGalleryQuery(e.target.value)}
                     />
                   </div>
                   
-                  <div className="inline-flex bg-[#F1F3F4] p-0.5 rounded-full border border-[#DADCE0] shadow-xs shrink-0">
+                  <div className={`inline-flex p-0.5 rounded-full border shadow-xs shrink-0 ${isSummer ? 'bg-summer-deep/40 border-summer-sun/20' : 'bg-[#F1F3F4] border-[#DADCE0]'}`}>
                     <button
                       onClick={() => { setSelectedSeasonId(1); setActiveTag('all'); }}
                       className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
                         selectedSeasonId === 1
                           ? 'bg-white text-google-blue shadow-2xs font-semibold'
-                          : 'text-google-gray hover:text-[#202124]'
+                          : isSummer ? 'text-summer-sun/70 hover:text-summer-sun' : 'text-google-gray hover:text-[#202124]'
                       }`}
                     >
                       Season 1
@@ -896,7 +981,7 @@ export default function App() {
                       onClick={() => { setSelectedSeasonId(2); setActiveTag('all'); }}
                       className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
                         selectedSeasonId === 2
-                          ? 'bg-white text-google-blue shadow-2xs font-semibold'
+                          ? 'summer-toggle-active'
                           : 'text-google-gray hover:text-[#202124]'
                       }`}
                     >
@@ -908,7 +993,7 @@ export default function App() {
                   <button 
                     onClick={() => setActiveTag('all')}
                     className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
-                      activeTag === 'all' ? 'bg-google-blue text-white' : 'bg-gray-100 text-google-gray hover:bg-gray-200'
+                      activeTag === 'all' ? (isSummer ? 'summer-tag-active' : 'bg-google-blue text-white') : (isSummer ? 'summer-tag' : 'bg-gray-100 text-google-gray hover:bg-gray-200')
                     }`}
                   >
                     All
@@ -918,7 +1003,7 @@ export default function App() {
                       key={tag}
                       onClick={() => setActiveTag(tag)}
                       className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${
-                        activeTag === tag ? 'bg-google-blue text-white' : 'bg-gray-100 text-google-gray hover:bg-gray-200'
+                        activeTag === tag ? (isSummer ? 'summer-tag-active' : 'bg-google-blue text-white') : (isSummer ? 'summer-tag' : 'bg-gray-100 text-google-gray hover:bg-gray-200')
                       }`}
                     >
                       {tag}
@@ -929,7 +1014,7 @@ export default function App() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredProjects.map((project) => (
-                  <Card key={project.id} className="google-card group overflow-hidden flex flex-col h-full">
+                  <div key={project.id} className={`group overflow-hidden flex flex-col h-full ${isSummer ? 'summer-card' : 'google-card'}`}>
                     <div className="aspect-video relative overflow-hidden">
                       <PreviewImage 
                         src={project.thumbnail} 
@@ -944,13 +1029,13 @@ export default function App() {
                     </div>
                     <div className="p-5 flex-grow space-y-3">
                       <div className="flex justify-between items-start gap-2">
-                        <h3 className="font-bold text-google-black group-hover:text-google-blue transition-colors">{project.title}</h3>
-                        <span className="text-[10px] font-mono text-google-gray">{formatDate(project.date)}</span>
+                        <h3 className={`font-bold transition-colors ${isSummer ? 'text-white group-hover:text-summer-sun' : 'text-google-black group-hover:text-google-blue'}`}>{project.title}</h3>
+                        <span className={`text-[10px] font-mono ${isSummer ? 'text-summer-sun/60' : 'text-google-gray'}`}>{formatDate(project.date)}</span>
                       </div>
-                      <p className="text-sm text-google-gray line-clamp-3 leading-relaxed">{project.description}</p>
+                      <p className={`text-sm line-clamp-3 leading-relaxed ${isSummer ? 'text-white/65' : 'text-google-gray'}`}>{project.description}</p>
                       <div className="flex flex-wrap gap-2 pt-2">
                         {project.tags.map(tag => (
-                          <span key={tag} className="text-[10px] px-1.5 py-0.5 rounded bg-gray-100 text-google-gray font-medium">
+                          <span key={tag} className={`text-[10px] px-1.5 py-0.5 rounded font-medium ${isSummer ? 'summer-tag' : 'bg-gray-100 text-google-gray'}`}>
                             {tag}
                           </span>
                         ))}
@@ -961,25 +1046,25 @@ export default function App() {
                         href={project.url} 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className={`w-full py-2 rounded-lg font-medium text-center block transition-all ${buttonVariants({ variant: 'outline', size: 'sm' })}`}
+                        className={`w-full py-2 rounded-lg font-medium text-center block transition-all ${isSummer ? 'bg-gradient-to-r from-summer-coral/20 to-summer-sun/20 border border-summer-sun/30 text-summer-sun hover:from-summer-coral hover:to-summer-sun hover:text-summer-deep' : buttonVariants({ variant: 'outline', size: 'sm' })}`}
                       >
                         Visit Site <ExternalLink size={14} className="inline ml-1" />
                       </a>
                     </div>
-                  </Card>
+                  </div>
                 ))}
                 {filteredProjects.length === 0 && (
                   <div className="col-span-full py-20 text-center space-y-4">
-                    <div className="mx-auto w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center text-google-gray">
+                    <div className={`mx-auto w-16 h-16 rounded-full flex items-center justify-center ${isSummer ? 'bg-summer-sun/10 text-summer-sun' : 'bg-gray-100 text-google-gray'}`}>
                       <Search size={32} />
                     </div>
                     <div>
-                      <h3 className="text-lg font-medium">No projects found</h3>
-                      <p className="text-google-gray">Try adjusting your search or filter criteria.</p>
+                      <h3 className={`text-lg font-medium ${isSummer ? 'text-white' : ''}`}>No projects found</h3>
+                      <p className={isSummer ? 'text-summer-sun/60' : 'text-google-gray'}>Try adjusting your search or filter criteria.</p>
                     </div>
                     <button 
                       onClick={() => { setGalleryQuery(''); setActiveTag('all'); }}
-                      className="text-google-blue font-medium hover:underline"
+                      className={`font-medium hover:underline ${isSummer ? 'text-summer-sun' : 'text-google-blue'}`}
                     >
                       Clear all filters
                     </button>
@@ -996,18 +1081,18 @@ export default function App() {
               exit={{ opacity: 0, scale: 0.98 }}
             >
               <div className="text-center space-y-4 mb-12">
-                <h1 className="text-4xl font-bold tracking-tight text-google-black">Build Feed</h1>
-                <p className="text-google-gray max-w-2xl mx-auto">
+                <h1 className={`text-4xl font-bold tracking-tight ${isSummer ? 'summer-gradient-text' : 'text-google-black'}`}>{isSummer ? 'Summer Feed' : 'Build Feed'}</h1>
+                <p className={`max-w-2xl mx-auto ${isSummer ? 'text-summer-sun/70' : 'text-google-gray'}`}>
                   The raw stream of updates, struggles, and wins from the {challenge.title} challenge.
                 </p>
                 
-                <div className="inline-flex bg-[#F1F3F4] p-0.5 rounded-full border border-[#DADCE0] shadow-xs mt-2">
+                <div className={`inline-flex p-0.5 rounded-full border shadow-xs mt-2 ${isSummer ? 'bg-summer-deep/40 border-summer-sun/20' : 'bg-[#F1F3F4] border-[#DADCE0]'}`}>
                   <button
                     onClick={() => setSelectedSeasonId(1)}
                     className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
                       selectedSeasonId === 1
                         ? 'bg-white text-google-blue shadow-2xs font-semibold'
-                        : 'text-google-gray hover:text-[#202124]'
+                        : isSummer ? 'text-summer-sun/70 hover:text-summer-sun' : 'text-google-gray hover:text-[#202124]'
                     }`}
                   >
                     Season 1
@@ -1016,7 +1101,7 @@ export default function App() {
                     onClick={() => setSelectedSeasonId(2)}
                     className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
                       selectedSeasonId === 2
-                        ? 'bg-white text-google-blue shadow-2xs font-semibold'
+                        ? 'summer-toggle-active'
                         : 'text-google-gray hover:text-[#202124]'
                     }`}
                   >
@@ -1357,8 +1442,8 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="mt-12 border-t border-[#DADCE0] bg-[#F8F9FA] px-4 py-10 md:px-8">
-        <div className="max-w-7xl mx-auto rounded-3xl border border-[#E8EAED] bg-white p-5 md:p-8 shadow-sm">
+      <footer className={`mt-12 border-t px-4 py-10 md:px-8 ${isSummer ? 'border-summer-sun/15 bg-summer-deep/50' : 'border-[#DADCE0] bg-[#F8F9FA]'}`}>
+        <div className={`max-w-7xl mx-auto rounded-3xl border p-5 md:p-8 shadow-sm ${isSummer ? 'border-summer-sun/20 bg-summer-deep/40' : 'border-[#E8EAED] bg-white'}`}>
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.9fr_1fr] gap-6 md:gap-8">
             <section className="space-y-4">
               <div className="hidden sm:block">
@@ -1366,41 +1451,41 @@ export default function App() {
               </div>
               <div className="sm:hidden">
                 <Logo showTitle={false} />
-                <h3 className="mt-3 text-lg font-semibold text-google-black">100 Websites in 30 Days</h3>
+                <h3 className={`mt-3 text-lg font-semibold ${isSummer ? 'text-white' : 'text-google-black'}`}>100 Websites in 30 Days</h3>
               </div>
-              <p className="text-sm leading-relaxed text-google-gray max-w-xl">
+              <p className={`text-sm leading-relaxed max-w-xl ${isSummer ? 'text-white/60' : 'text-google-gray'}`}>
                 Public build sprint documenting real launches, systems, and execution from idea to deployment.
               </p>
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#DADCE0] bg-[#F8F9FA] px-3 py-1 text-xs font-medium text-google-gray">
-                <span className="inline-block h-2 w-2 rounded-full bg-google-green" />
-                Live challenge tracker
+              <div className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-medium ${isSummer ? 'border-summer-turq/30 bg-summer-turq/10 text-summer-turq' : 'border-[#DADCE0] bg-[#F8F9FA] text-google-gray'}`}>
+                <span className={`inline-block h-2 w-2 rounded-full ${isSummer ? 'summer-live-dot' : 'bg-google-green'}`} />
+                {isSummer ? 'Summer sprint live' : 'Live challenge tracker'}
               </div>
             </section>
 
             <section className="space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-google-gray">Site Links</p>
+              <p className={`text-xs font-semibold uppercase tracking-[0.16em] ${isSummer ? 'text-summer-sun/70' : 'text-google-gray'}`}>Site Links</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2">
                 <button
                   onClick={() => navigateToTab('about')}
-                  className="w-full text-left rounded-xl border border-[#E8EAED] px-3 py-2.5 text-sm font-medium text-google-gray transition-colors hover:border-google-blue/30 hover:text-google-blue hover:bg-google-blue/5"
+                  className={`w-full text-left rounded-xl border px-3 py-2.5 text-sm font-medium transition-colors ${isSummer ? 'border-summer-sun/15 text-white/70 hover:border-summer-sun/40 hover:text-summer-sun hover:bg-summer-sun/5' : 'border-[#E8EAED] text-google-gray hover:border-google-blue/30 hover:text-google-blue hover:bg-google-blue/5'}`}
                 >
                   About Challenge
                 </button>
                 <button
                   onClick={() => navigateToTab('resources')}
-                  className="w-full text-left rounded-xl border border-[#E8EAED] px-3 py-2.5 text-sm font-medium text-google-gray transition-colors hover:border-google-blue/30 hover:text-google-blue hover:bg-google-blue/5"
+                  className={`w-full text-left rounded-xl border px-3 py-2.5 text-sm font-medium transition-colors ${isSummer ? 'border-summer-sun/15 text-white/70 hover:border-summer-sun/40 hover:text-summer-sun hover:bg-summer-sun/5' : 'border-[#E8EAED] text-google-gray hover:border-google-blue/30 hover:text-google-blue hover:bg-google-blue/5'}`}
                 >
                   Resources
                 </button>
                 <button
                   onClick={() => navigateToTab('article')}
-                  className="w-full text-left rounded-xl border border-[#E8EAED] px-3 py-2.5 text-sm font-medium text-google-gray transition-colors hover:border-google-blue/30 hover:text-google-blue hover:bg-google-blue/5"
+                  className={`w-full text-left rounded-xl border px-3 py-2.5 text-sm font-medium transition-colors ${isSummer ? 'border-summer-sun/15 text-white/70 hover:border-summer-sun/40 hover:text-summer-sun hover:bg-summer-sun/5' : 'border-[#E8EAED] text-google-gray hover:border-google-blue/30 hover:text-google-blue hover:bg-google-blue/5'}`}
                 >
                   Article
                 </button>
                 <button
                   onClick={() => navigateToTab('contact')}
-                  className="w-full text-left rounded-xl border border-[#E8EAED] px-3 py-2.5 text-sm font-medium text-google-gray transition-colors hover:border-google-blue/30 hover:text-google-blue hover:bg-google-blue/5"
+                  className={`w-full text-left rounded-xl border px-3 py-2.5 text-sm font-medium transition-colors ${isSummer ? 'border-summer-sun/15 text-white/70 hover:border-summer-sun/40 hover:text-summer-sun hover:bg-summer-sun/5' : 'border-[#E8EAED] text-google-gray hover:border-google-blue/30 hover:text-google-blue hover:bg-google-blue/5'}`}
                 >
                   Contact
                 </button>
@@ -1408,7 +1493,7 @@ export default function App() {
             </section>
 
             <section className="space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-google-gray">Social</p>
+              <p className={`text-xs font-semibold uppercase tracking-[0.16em] ${isSummer ? 'text-summer-sun/70' : 'text-google-gray'}`}>Social</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2">
                 {socialLinks.map((link) => (
                   <a
@@ -1416,7 +1501,7 @@ export default function App() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl border border-[#E8EAED] px-3 py-2.5 text-sm font-medium text-google-gray transition-colors hover:border-google-blue/30 hover:text-google-blue hover:bg-google-blue/5"
+                    className={`inline-flex items-center gap-2 rounded-xl border px-3 py-2.5 text-sm font-medium transition-colors ${isSummer ? 'border-summer-sun/15 text-white/70 hover:border-summer-sun/40 hover:text-summer-sun hover:bg-summer-sun/5' : 'border-[#E8EAED] text-google-gray hover:border-google-blue/30 hover:text-google-blue hover:bg-google-blue/5'}`}
                   >
                     <link.icon size={15} />
                     {link.label}
@@ -1426,11 +1511,11 @@ export default function App() {
             </section>
           </div>
 
-          <div className="mt-6 border-t border-[#E8EAED] pt-4 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
-            <p className="text-xs text-google-gray">© 2026 Neal Frazier. All rights reserved.</p>
+          <div className={`mt-6 border-t pt-4 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between ${isSummer ? 'border-summer-sun/15' : 'border-[#E8EAED]'}`}>
+            <p className={`text-xs ${isSummer ? 'text-white/50' : 'text-google-gray'}`}>© 2026 Neal Frazier. All rights reserved.</p>
             <button
               onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })}
-              className="text-xs font-medium text-google-gray hover:text-google-blue transition-colors text-left sm:text-right"
+              className={`text-xs font-medium transition-colors text-left sm:text-right ${isSummer ? 'text-summer-sun/70 hover:text-summer-sun' : 'text-google-gray hover:text-google-blue'}`}
             >
               Back to top
             </button>
