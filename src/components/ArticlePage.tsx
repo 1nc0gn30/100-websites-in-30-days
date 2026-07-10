@@ -276,6 +276,24 @@ export default function ArticlePage({ onBack, seasonId = 1, onSeasonChange }: Ar
         quote: { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
         imageIdea: "Day 8 visual prompt: A montage of a glassmorphic feedback board, green Matrix digital rain, a vector decoder feed, a distorted webcam view, and an agent loom weaving thread nodes.",
         shippedTitles: ["CreatorPlaybooks Feedback Loops", "Matrix Rain Chamber", "Matrix Vector Live Decoder", "VectorCam", "Agent Loom"]
+      },
+      {
+        day: 9,
+        title: "Day 9: Virtual Coffee, Unstuck Marketplace, Aeropulse & Ideas Wall (Thu, Jul 9, 2026)",
+        content: "Day 9 was a high-velocity sprint shipping four distinct platforms. Shipped Virtual Coffee with Maya (booking and brew-bar custom physics), Unstuck (niche marketplace for SaaS founders with Stripe booking and Netlify Forms), Aeropulse (live weather recommendations app for #HotARSummer), and CreatorPlaybooks Shareable Ideas Wall (exportable localStorage JSON feedback module).",
+        retrospect: "Transitioning from single-user features to marketplace checkout routing and public feedback walls enables real transaction value.",
+        quote: { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+        imageIdea: "Day 9 visual prompt: A dark dashboard showing a virtual coffee brew-bar on the left, Stripe payment inputs in the middle, and a glowing neon ideas wall on the right.",
+        shippedTitles: ["Virtual Coffee with Maya", "Unstuck", "Aeropulse", "CreatorPlaybooks Shareable Ideas Wall"]
+      },
+      {
+        day: 10,
+        title: "Day 10: Interactive Upvote Ladders & Role Filters (Fri, Jul 10, 2026)",
+        content: "Day 10 focused on interactive voting and filter systems. We shipped the CreatorPlaybooks Interactive Voting Ladder on the ideas wall, enabling visitors to upvote submissions, store upvote signals locally in localStorage, sort dynamically by upvote rank, and filter ideas by creator role using clean vanilla JS.",
+        retrospect: "Dynamic sorting and client-side filtering turn a static list into an engaging community product with zero database overhead.",
+        quote: { text: "Opportunities don't happen. You create them.", author: "Chris Grosser" },
+        imageIdea: "Day 10 visual prompt: A neon upvote board displaying cards with dynamic green counter badges and active filter pills lit in turquoise.",
+        shippedTitles: ["CreatorPlaybooks Interactive Voting Ladder"]
       }
     ];
   }, [seasonId, activeSeason]);

@@ -2279,6 +2279,76 @@
             "ai"
           ],
           "thumbnail": "https://agent-loom.netlify.app/og-image.png"
+        },
+        {
+          "id": 26,
+          "title": "Virtual Coffee with Maya",
+          "date": "2026-07-09T10:00:00.000Z",
+          "url": "https://virtual-coffee-with-maya.netlify.app",
+          "description": "A cute, cozy little web app that makes the first 'hello' easy. Brew a virtual cup and book a 20-minute Cal.com chat.",
+          "tags": [
+            "react",
+            "vite",
+            "scheduler",
+            "cal-com"
+          ],
+          "thumbnail": "https://virtual-coffee-with-maya.netlify.app/og-image.png"
+        },
+        {
+          "id": 27,
+          "title": "Unstuck",
+          "date": "2026-07-09T14:00:00.000Z",
+          "url": "https://unstuck-mentor.netlify.app",
+          "description": "Niche marketplace for SaaS founders and creator-founders to get unstuck in outcome-based 30-minute sessions with vetted experts.",
+          "tags": [
+            "react",
+            "vite",
+            "stripe",
+            "marketplace"
+          ],
+          "thumbnail": "https://unstuck-mentor.netlify.app/og-image.png"
+        },
+        {
+          "id": 28,
+          "title": "Aeropulse",
+          "date": "2026-07-09T18:00:00.000Z",
+          "url": "https://spark-the-weather.netlify.app",
+          "description": "Live weather app providing suggestions on what to do based on location and weather metrics. Part of #HotARSummer challenge.",
+          "tags": [
+            "javascript",
+            "weather",
+            "location",
+            "api"
+          ],
+          "thumbnail": "https://spark-the-weather.netlify.app/og-image.png"
+        },
+        {
+          "id": 29,
+          "title": "CreatorPlaybooks Shareable Ideas Wall",
+          "date": "2026-07-09T20:00:00.000Z",
+          "url": "https://creatorplaybooks.netlify.app/ideas-wall.html",
+          "description": "Day 8: Extend the feedback loop into a shareable community ideas wall with public-facing social proof, JSON data exports, and shareable recap cards.",
+          "tags": [
+            "react",
+            "vite",
+            "community",
+            "JSON"
+          ],
+          "thumbnail": "https://creatorplaybooks.netlify.app/og-image.png"
+        },
+        {
+          "id": 30,
+          "title": "CreatorPlaybooks Interactive Voting Ladder",
+          "date": "2026-07-10T12:00:00.000Z",
+          "url": "https://creatorplaybooks.netlify.app/ideas-wall.html",
+          "description": "Day 9: Adds interactive community upvotes (voting ladder) and role-based filtering, automatically saving counts to localStorage and sorting elements dynamically.",
+          "tags": [
+            "react",
+            "vite",
+            "upvoting",
+            "filtering"
+          ],
+          "thumbnail": "https://creatorplaybooks.netlify.app/og-image.png"
         }
       ],
       "socialPosts": [
@@ -2431,6 +2501,36 @@
           "url": "https://x.com/NealFrazierTech/status/2048564021239842834",
           "content": "Season 2 Day 7: Agent Loom is live. Weave together multiple AI agent threads into a single orchestrated execution loom.",
           "date": "2026-07-08T16:00:00.000Z"
+        },
+        {
+          "platform": "X",
+          "url": "https://x.com/NealFrazierTech/status/2075290448621404519",
+          "content": "Season 2 Day 9: Virtual Coffee with Maya is live. A cute, cozy little web app that makes the first 'hello' easy. Brew a virtual cup and book a 20-minute Cal.com chat.",
+          "date": "2026-07-09T10:00:00.000Z"
+        },
+        {
+          "platform": "X",
+          "url": "https://x.com/NealFrazierTech/status/2075293227653968090",
+          "content": "Season 2 Day 9: Unstuck is live. Outcome-based, 30-minute coaching sessions with vetted SaaS and creator experts from the CreatorPlaybooks builder network.",
+          "date": "2026-07-09T14:00:00.000Z"
+        },
+        {
+          "platform": "X",
+          "url": "https://x.com/NealFrazierTech/status/2075407768467443803",
+          "content": "Season 2 Day 9: Aeropulse weather app is live. Get local suggestions of what to do based on location and real-time weather metrics.",
+          "date": "2026-07-09T18:00:00.000Z"
+        },
+        {
+          "platform": "X",
+          "url": "https://x.com/NealFrazierTech/status/2075592017615204730",
+          "content": "Season 2 Day 9: CreatorPlaybooks Shareable Ideas Wall is live. Turn feedback into public proof with a public community ideas page, exportable feedback JSON, and shareable recap cards.",
+          "date": "2026-07-09T20:00:00.000Z"
+        },
+        {
+          "platform": "X",
+          "url": "https://x.com/NealFrazierTech/status/2075599219298099248",
+          "content": "Season 2 Day 10: CreatorPlaybooks Interactive Voting Ladder is live. Interactive community upvotes stored in localStorage, dynamic upvote-based sorting, and role filters.",
+          "date": "2026-07-10T12:00:00.000Z"
         }
       ]
     }
