@@ -745,7 +745,7 @@ export default function App() {
                         className={`px-3.5 py-1 rounded-full text-xs font-medium transition-all ${
                           selectedSeasonId === 2
                             ? 'summer-toggle-active'
-                            : 'text-google-gray hover:text-[#202124]'
+                            : isSummer ? 'text-white/80 hover:text-white font-semibold' : 'text-google-gray hover:text-[#202124]'
                         }`}
                       >
                         Season 2 (Summer)
@@ -982,7 +982,7 @@ export default function App() {
                       className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
                         selectedSeasonId === 2
                           ? 'summer-toggle-active'
-                          : 'text-google-gray hover:text-[#202124]'
+                          : isSummer ? 'text-white/80 hover:text-white font-semibold' : 'text-google-gray hover:text-[#202124]'
                       }`}
                     >
                       Season 2
@@ -1102,10 +1102,10 @@ export default function App() {
                     className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
                       selectedSeasonId === 2
                         ? 'summer-toggle-active'
-                        : 'text-google-gray hover:text-[#202124]'
-                    }`}
-                  >
-                    Season 2
+                        : isSummer ? 'text-white/80 hover:text-white font-semibold' : 'text-google-gray hover:text-[#202124]'
+                        }`}
+                        >
+                        Season 2
                   </button>
                 </div>
               </div>

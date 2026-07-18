@@ -2349,6 +2349,160 @@
             "filtering"
           ],
           "thumbnail": "https://creatorplaybooks.netlify.app/og-image.png"
+        },
+        {
+          "id": 31,
+          "title": "Live Cryptographic Hashing Visualizer",
+          "date": "2026-07-14T01:40:18.865Z",
+          "url": "https://spark-a-hash.netlify.app",
+          "description": "Interactive visualizer that shows cryptographic hashing in real time as you type or drop data.",
+          "tags": [
+            "javascript",
+            "crypto",
+            "visualizer",
+            "education"
+          ],
+          "thumbnail": "https://spark-a-hash.netlify.app/og-image.png"
+        },
+        {
+          "id": 32,
+          "title": "WD-40: Cybersecurity Rust Safety Lube",
+          "date": "2026-07-15T12:18:42.066Z",
+          "url": "https://spark-wd40.netlify.app",
+          "description": "Cybersecurity-themed playful utility applying 'Rust safety lube' concepts to code hardening and secure habits.",
+          "tags": [
+            "rust",
+            "cybersecurity",
+            "humor",
+            "tool"
+          ],
+          "thumbnail": "https://spark-wd40.netlify.app/og-image.png"
+        },
+        {
+          "id": 33,
+          "title": "Rust Data Types: A Visual Reference",
+          "date": "2026-07-16T18:42:09.520Z",
+          "url": "https://rust-data-types-info.netlify.app",
+          "description": "A visual cheat sheet for common Rust programming language data types.",
+          "tags": [
+            "rust",
+            "education",
+            "reference",
+            "cheatsheet"
+          ],
+          "thumbnail": "https://rust-data-types-info.netlify.app/og-image.png"
+        },
+        {
+          "id": 34,
+          "title": "The Hidden Coast",
+          "date": "2026-07-18T03:20:41.744Z",
+          "url": "https://the-hidden-coast.netlify.app",
+          "description": "Explore the layered history of Virginia Beach's hidden coastal past.",
+          "tags": [
+            "history",
+            "virginia-beach",
+            "education",
+            "local"
+          ],
+          "thumbnail": "https://the-hidden-coast.netlify.app/og-image.png"
+        },
+        {
+          "id": 36,
+          "title": "CypherTag — AI Color System from Mood",
+          "date": "2026-07-18T14:24:18.982Z",
+          "url": "https://capable-pie-0ff8b8.netlify.app",
+          "description": "Turn a mood, lyric, or photo into a locked color system with AI.",
+          "tags": [
+            "ai",
+            "design",
+            "color",
+            "tool"
+          ],
+          "thumbnail": "https://capable-pie-0ff8b8.netlify.app/og-image.png"
+        },
+        {
+          "id": 37,
+          "title": "NealFrazier.Tech — Hermes Workspace Portfolio",
+          "date": "2026-07-18T14:39:47.695Z",
+          "url": "https://soft-gingersnap-7d5b9a.netlify.app",
+          "description": "Action-first builder portfolio: sci-fi interfaces, live data, and shipped micro-products.",
+          "tags": [
+            "portfolio",
+            "react",
+            "ai",
+            "showcase"
+          ],
+          "thumbnail": "https://soft-gingersnap-7d5b9a.netlify.app/og-image.png"
+        },
+        {
+          "id": 38,
+          "title": "Neal Frazier Bliki",
+          "date": "2026-07-18T18:35:10.976Z",
+          "url": "https://www.nealfrazier.tech",
+          "description": "Expert IT systems, local SEO, and composable web development for the Hampton Roads 757 region, plus a personal bliki.",
+          "tags": [
+            "consulting",
+            "local-seo",
+            "portfolio",
+            "bliki"
+          ],
+          "thumbnail": "https://www.nealfrazier.tech/og-image.png"
+        },
+        {
+          "id": 40,
+          "title": "GapLoom",
+          "date": "2026-06-23T17:42:05.000Z",
+          "url": "https://hotappsummer-gaploom.netlify.app",
+          "description": "Turn app gaps into design mood boards.",
+          "tags": [
+            "design",
+            "hot-app-summer",
+            "moodboard",
+            "tool"
+          ],
+          "thumbnail": "https://hotappsummer-gaploom.netlify.app/og-image.png"
+        },
+        {
+          "id": 41,
+          "title": "Hot App Summer Wisdom",
+          "date": "2026-06-22T14:06:34.000Z",
+          "url": "https://hotappsummer-wisdom.netlify.app",
+          "description": "Hot App Summer learning companion — distill build wisdom into quick, shareable lessons.",
+          "tags": [
+            "education",
+            "hot-app-summer",
+            "learning",
+            "tool"
+          ],
+          "thumbnail": "https://hotappsummer-wisdom.netlify.app/og-image.png"
+        },
+        {
+          "id": 42,
+          "title": "Insane Visuals",
+          "date": "2026-07-08T13:47:44.000Z",
+          "url": "https://insanevisuals-hotappsummer.netlify.app",
+          "description": "Three.js music visualizations — reactive audio-driven generative art.",
+          "tags": [
+            "threejs",
+            "audio",
+            "visualizer",
+            "creative"
+          ],
+          "thumbnail": "https://insanevisuals-hotappsummer.netlify.app/og-image.png"
+        },
+        {
+          "id": 43,
+          "title": "Maya Growth",
+          "date": "2026-07-14T00:18:00.000Z",
+          "url": "https://mayagrowth-hotsummer.netlify.app",
+          "description": "Maya Growth coaching playbooks and expert platform.",
+          "tags": [
+            "coaching",
+            "playbooks",
+            "platform",
+            "growth"
+          ],
+          "thumbnail": "https://mayagrowth-hotsummer.netlify.app/og-image.png"
         }
       ],
       "socialPosts": [
